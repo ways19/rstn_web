@@ -87,7 +87,7 @@
                         </button>
 
                         <!-- LEVEL 3 ITEMS FOR RAWAT JALAN -->
-                        <div x-show="openMenus['rawat_jalan']" x-transition class="pl-7 pr-3 py-1 space-y-2 text-xs md:text-[13px]" style="display: none;">
+                        <div x-show="openMenus['rawat_jalan']" x-transition class="pl-7 pr-3 py-1.5 space-y-2 text-sm" style="display: none;">
                             <a href="{{ route('admin.services.index') }}" class="block text-slate-300 font-medium hover:text-white transition py-0.5">• Poliklinik & Spesialis</a>
                             <a href="{{ route('admin.doctors.index') }}" class="block text-slate-400 hover:text-white transition py-0.5">• Jadwal Praktik Dokter</a>
                             <a href="{{ route('admin.services.create') }}" class="block text-teal-300 font-semibold hover:text-white transition py-0.5">+ Tambah Layanan Baru</a>
@@ -109,7 +109,7 @@
                         </button>
 
                         <!-- LEVEL 3 ITEMS FOR RAWAT INAP -->
-                        <div x-show="openMenus['rawat_inap']" x-transition class="pl-7 pr-3 py-1 space-y-2 text-xs md:text-[13px]" style="display: none;">
+                        <div x-show="openMenus['rawat_inap']" x-transition class="pl-7 pr-3 py-1.5 space-y-2 text-sm" style="display: none;">
                             <a href="{{ route('admin.beds.index') }}" class="block text-slate-300 font-medium hover:text-white transition py-0.5">• Ketersediaan Tempat Tidur</a>
                             <a href="{{ route('admin.beds.index') }}" class="block text-slate-400 hover:text-white transition py-0.5">• Ruang VIP & Kelas 1, 2, 3</a>
                             <a href="{{ route('admin.beds.index') }}" class="block text-slate-400 hover:text-white transition py-0.5">• ICU & Isolasi Tekanan Negatif</a>
@@ -131,7 +131,7 @@
                         </button>
 
                         <!-- LEVEL 3 ITEMS FOR DARURAT -->
-                        <div x-show="openMenus['darurat_bedah']" x-transition class="pl-7 pr-3 py-1 space-y-2 text-xs md:text-[13px]" style="display: none;">
+                        <div x-show="openMenus['darurat_bedah']" x-transition class="pl-7 pr-3 py-1.5 space-y-2 text-sm" style="display: none;">
                             <a href="{{ route('admin.services.index') }}" class="block text-slate-400 hover:text-white transition py-0.5">• IGD 24 Jam & Triage</a>
                             <a href="{{ route('admin.services.index') }}" class="block text-slate-400 hover:text-white transition py-0.5">• Kamar Operasi (IBS)</a>
                             <a href="{{ route('admin.services.index') }}" class="block text-slate-400 hover:text-white transition py-0.5">• Laboratorium & Radiologi</a>
@@ -174,7 +174,7 @@
                         </button>
 
                         <!-- LEVEL 3 ITEMS FOR PENDAFTARAN -->
-                        <div x-show="openMenus['antrean']" x-transition class="pl-7 pr-3 py-1 space-y-2 text-xs md:text-[13px]" style="display: none;">
+                        <div x-show="openMenus['antrean']" x-transition class="pl-7 pr-3 py-1.5 space-y-2 text-sm" style="display: none;">
                             <a href="{{ route('admin.registrations.index') }}" class="block text-slate-300 font-medium hover:text-white transition py-0.5">• Daftar Antrean Masuk</a>
                             <a href="{{ route('admin.registrations.index') }}?status=pending" class="block text-amber-300 hover:text-white transition py-0.5">• Antrean Menunggu Konfirmasi</a>
                             <a href="{{ route('admin.registrations.index') }}?status=confirmed" class="block text-emerald-300 hover:text-white transition py-0.5">• Antrean Terverifikasi</a>
@@ -196,7 +196,7 @@
                         </button>
 
                         <!-- LEVEL 3 ITEMS FOR ADUAN -->
-                        <div x-show="openMenus['aduan']" x-transition class="pl-7 pr-3 py-1 space-y-2 text-xs md:text-[13px]" style="display: none;">
+                        <div x-show="openMenus['aduan']" x-transition class="pl-7 pr-3 py-1.5 space-y-2 text-sm" style="display: none;">
                             <a href="{{ route('admin.complaints.index') }}" class="block text-slate-300 font-medium hover:text-white transition py-0.5">• Semua Aduan Pasien</a>
                             <a href="{{ route('admin.complaints.index') }}?status=new" class="block text-rose-300 hover:text-white transition py-0.5">• Tiket Aduan Baru</a>
                             <a href="{{ route('admin.complaints.index') }}?status=in_progress" class="block text-yellow-300 hover:text-white transition py-0.5">• Aduan Sedang Diproses</a>
@@ -247,7 +247,7 @@
                         </button>
 
                         <!-- LEVEL 3 ITEMS FOR BERITA -->
-                        <div x-show="openMenus['publikasi']" x-transition class="pl-7 pr-3 py-1 space-y-2 text-xs md:text-[13px]" style="display: none;">
+                        <div x-show="openMenus['publikasi']" x-transition class="pl-7 pr-3 py-1.5 space-y-2 text-sm" style="display: none;">
                             <a href="{{ route('admin.posts.index') }}" class="block text-slate-300 font-medium hover:text-white transition py-0.5">• Daftar Artikel & Berita</a>
                             <a href="{{ route('admin.posts.create') }}" class="block text-emerald-300 font-semibold hover:text-white transition py-0.5">+ Tulis Berita Baru</a>
                             <a href="{{ route('admin.posts.index') }}?category=pengumuman" class="block text-slate-400 hover:text-white transition py-0.5">• Maklumat & Pengumuman</a>
@@ -269,7 +269,7 @@
                         </button>
 
                         <!-- LEVEL 3 ITEMS FOR BANNER -->
-                        <div x-show="openMenus['info_publik']" x-transition class="pl-7 pr-3 py-1 space-y-2 text-xs md:text-[13px]" style="display: none;">
+                        <div x-show="openMenus['info_publik']" x-transition class="pl-7 pr-3 py-1.5 space-y-2 text-sm" style="display: none;">
                             <a href="{{ route('admin.banners.index') }}" class="block text-slate-300 font-medium hover:text-white transition py-0.5">• Slider Beranda Utama</a>
                             <a href="{{ route('admin.banners.create') }}" class="block text-indigo-300 font-semibold hover:text-white transition py-0.5">+ Tambah Banner Baru</a>
                         </div>
@@ -318,7 +318,7 @@
                         </button>
 
                         <!-- LEVEL 3 ITEMS FOR MODUL & NAVIGASI -->
-                        <div x-show="openMenus['modul_nav']" x-transition class="pl-7 pr-3 py-1 space-y-2 text-xs md:text-[13px]" style="display: none;">
+                        <div x-show="openMenus['modul_nav']" x-transition class="pl-7 pr-3 py-1.5 space-y-2 text-sm" style="display: none;">
                             <a href="{{ route('admin.modules.index') }}" class="block {{ request()->routeIs('admin.modules*') ? 'text-cyan-300 font-bold' : 'text-slate-300 font-medium' }} hover:text-white transition py-0.5">• Pengelolaan Modul</a>
                             <a href="{{ route('admin.menus.index') }}" class="block {{ request()->routeIs('admin.menus*') ? 'text-cyan-300 font-bold' : 'text-slate-300 font-medium' }} hover:text-white transition py-0.5">• Pengelolaan Menu (Navigasi)</a>
                         </div>
@@ -339,7 +339,7 @@
                         </button>
 
                         <!-- LEVEL 3 ITEMS FOR MASTER DATA -->
-                        <div x-show="openMenus['master_medis']" x-transition class="pl-7 pr-3 py-1 space-y-2 text-xs md:text-[13px]" style="display: none;">
+                        <div x-show="openMenus['master_medis']" x-transition class="pl-7 pr-3 py-1.5 space-y-2 text-sm" style="display: none;">
                             @can('manage_doctors')
                                 <a href="{{ route('admin.doctors.index') }}" class="block text-slate-300 font-medium hover:text-white transition py-0.5">• Dokter Spesialis & Poli</a>
                             @endcan
@@ -364,7 +364,7 @@
                         </button>
 
                         <!-- LEVEL 3 ITEMS FOR PENGATURAN -->
-                        <div x-show="openMenus['sistem']" x-transition class="pl-7 pr-3 py-1 space-y-2 text-xs md:text-[13px]" style="display: none;">
+                        <div x-show="openMenus['sistem']" x-transition class="pl-7 pr-3 py-1.5 space-y-2 text-sm" style="display: none;">
                             <a href="{{ route('admin.settings.index') }}" class="block text-slate-300 font-medium hover:text-white transition py-0.5">• Identitas & Profil Website</a>
                             <a href="{{ route('admin.settings.index') }}#kontak" class="block text-slate-400 hover:text-white transition py-0.5">• Kontak & Peta Lokasi RS</a>
                             <a href="{{ route('admin.settings.index') }}#sosmed" class="block text-slate-400 hover:text-white transition py-0.5">• Media Sosial Resmi</a>
@@ -386,7 +386,7 @@
                         </button>
 
                         <!-- LEVEL 3 ITEMS FOR RBAC -->
-                        <div x-show="openMenus['rbac']" x-transition class="pl-7 pr-3 py-1 space-y-2 text-xs md:text-[13px]" style="display: none;">
+                        <div x-show="openMenus['rbac']" x-transition class="pl-7 pr-3 py-1.5 space-y-2 text-sm" style="display: none;">
                             <a href="{{ route('admin.users.index') }}" class="block {{ request()->routeIs('admin.users*') ? 'text-amber-300 font-bold' : 'text-slate-300 font-medium' }} hover:text-white transition py-0.5">• Manajemen Petugas & Admin</a>
                             <a href="{{ route('admin.roles.index') }}" class="block {{ request()->routeIs('admin.roles*') ? 'text-amber-300 font-bold' : 'text-slate-300 font-medium' }} hover:text-white transition py-0.5">• Peran & Hak Akses (RBAC)</a>
                             <a href="{{ route('admin.users.create') }}" class="block text-amber-300 font-semibold hover:text-white transition py-0.5">+ Tambah Pengguna Baru</a>

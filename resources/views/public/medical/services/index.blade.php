@@ -18,27 +18,27 @@
         <!-- Category Filter Tabs -->
         <div class="flex overflow-x-auto pb-4 gap-2 mb-10 border-b border-slate-200">
             <a href="{{ route('services', ['kategori' => 'semua']) }}" 
-               class="px-5 py-2.5 rounded-xl text-xs font-bold transition whitespace-nowrap {{ $category === 'semua' ? 'bg-[#007b83] text-white shadow-md' : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200' }}">
+               class="px-5 py-2.5 rounded-xl text-sm font-semibold transition whitespace-nowrap {{ $category === 'semua' ? 'bg-[#007b83] text-white shadow-md' : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200' }}">
                 Semua Layanan
             </a>
             <a href="{{ route('services', ['kategori' => 'darurat']) }}" 
-               class="px-5 py-2.5 rounded-xl text-xs font-bold transition whitespace-nowrap {{ $category === 'darurat' ? 'bg-[#007b83] text-white shadow-md' : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200' }}">
+               class="px-5 py-2.5 rounded-xl text-sm font-semibold transition whitespace-nowrap {{ $category === 'darurat' ? 'bg-[#007b83] text-white shadow-md' : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200' }}">
                 Gawat Darurat (24 Jam)
             </a>
             <a href="{{ route('services', ['kategori' => 'rawat-jalan']) }}" 
-               class="px-5 py-2.5 rounded-xl text-xs font-bold transition whitespace-nowrap {{ $category === 'rawat-jalan' ? 'bg-[#007b83] text-white shadow-md' : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200' }}">
+               class="px-5 py-2.5 rounded-xl text-sm font-semibold transition whitespace-nowrap {{ $category === 'rawat-jalan' ? 'bg-[#007b83] text-white shadow-md' : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200' }}">
                 Rawat Jalan
             </a>
             <a href="{{ route('services', ['kategori' => 'rawat-inap']) }}" 
-               class="px-5 py-2.5 rounded-xl text-xs font-bold transition whitespace-nowrap {{ $category === 'rawat-inap' ? 'bg-[#007b83] text-white shadow-md' : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200' }}">
+               class="px-5 py-2.5 rounded-xl text-sm font-semibold transition whitespace-nowrap {{ $category === 'rawat-inap' ? 'bg-[#007b83] text-white shadow-md' : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200' }}">
                 Rawat Inap
             </a>
             <a href="{{ route('services', ['kategori' => 'unggulan']) }}" 
-               class="px-5 py-2.5 rounded-xl text-xs font-bold transition whitespace-nowrap {{ $category === 'unggulan' ? 'bg-[#007b83] text-white shadow-md' : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200' }}">
+               class="px-5 py-2.5 rounded-xl text-sm font-semibold transition whitespace-nowrap {{ $category === 'unggulan' ? 'bg-[#007b83] text-white shadow-md' : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200' }}">
                 Layanan Unggulan
             </a>
             <a href="{{ route('services', ['kategori' => 'penunjang']) }}" 
-               class="px-5 py-2.5 rounded-xl text-xs font-bold transition whitespace-nowrap {{ $category === 'penunjang' ? 'bg-[#007b83] text-white shadow-md' : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200' }}">
+               class="px-5 py-2.5 rounded-xl text-sm font-semibold transition whitespace-nowrap {{ $category === 'penunjang' ? 'bg-[#007b83] text-white shadow-md' : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200' }}">
                 Penunjang Medis
             </a>
         </div>
@@ -62,13 +62,13 @@
                                     {{ $svc['title'] }}
                                 </a>
                             </h2>
-                            <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+                            <p class="text-sm text-slate-600 mt-2 leading-relaxed">
                                 {{ $svc['excerpt'] }}
                             </p>
 
                             <div class="mt-4 pt-3 border-t border-slate-100">
-                                <span class="text-[11px] font-bold text-slate-700 uppercase tracking-wider block mb-2">Fasilitas Utama:</span>
-                                <ul class="space-y-1.5 text-xs text-slate-600">
+                                <span class="text-xs font-semibold text-slate-700 uppercase tracking-wider block mb-2">Fasilitas Utama:</span>
+                                <ul class="space-y-1.5 text-xs sm:text-sm text-slate-600">
                                     @foreach(array_slice($svc['facilities'] ?? [], 0, 3) as $fac)
                                         <li class="flex items-center space-x-2">
                                             <span class="w-1.5 h-1.5 rounded-full bg-[#007b83]"></span>
@@ -80,11 +80,11 @@
                         </div>
 
                         <div class="pt-5 mt-5 border-t border-slate-100 flex items-center justify-between">
-                            <a href="{{ route('services.detail', $svc['slug']) }}" class="text-xs font-bold text-[#007b83] group-hover:underline inline-flex items-center space-x-1">
+                            <a href="{{ route('services.detail', $svc['slug']) }}" class="text-sm font-semibold text-[#007b83] group-hover:underline inline-flex items-center space-x-1">
                                 <span>Detail Layanan</span>
                                 <span>&rarr;</span>
                             </a>
-                            <a href="{{ route('registration') }}" class="text-[11px] font-bold text-white bg-[#007b83] hover:bg-[#005b64] px-3 py-1.5 rounded-lg shadow-sm">
+                            <a href="{{ route('registration') }}" class="text-xs font-semibold text-white bg-[#007b83] hover:bg-[#005b64] px-3 py-1.5 rounded-lg shadow-sm">
                                 Pendaftaran
                             </a>
                         </div>

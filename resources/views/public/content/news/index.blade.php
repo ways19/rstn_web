@@ -27,21 +27,21 @@
                     <div class="p-6 flex-grow flex flex-col justify-between">
                         <div>
                             <span class="text-xs text-slate-400 font-medium">{{ $item['date'] }}</span>
-                            <h2 class="text-base font-bold text-slate-900 mt-2 leading-snug group-hover:text-[#007b83] transition">
+                            <h2 class="text-base sm:text-lg font-bold text-slate-900 mt-2 leading-snug group-hover:text-[#007b83] transition">
                                 <a href="{{ route('news.detail', $item['slug']) }}">
                                     {{ $item['title'] }}
                                 </a>
                             </h2>
-                            <p class="text-xs text-slate-500 mt-2.5 line-clamp-3 leading-relaxed">
+                            <p class="text-sm text-slate-600 mt-2.5 line-clamp-3 leading-relaxed">
                                 {{ $item['excerpt'] }}
                             </p>
                         </div>
                         <div class="pt-5 mt-5 border-t border-slate-100 flex items-center justify-between">
-                            <a href="{{ route('news.detail', $item['slug']) }}" class="text-xs font-bold text-[#007b83] group-hover:underline inline-flex items-center space-x-1">
+                            <a href="{{ route('news.detail', $item['slug']) }}" class="text-sm font-semibold text-[#007b83] group-hover:underline inline-flex items-center space-x-1">
                                 <span>Baca Artikel</span>
                                 <span>&rarr;</span>
                             </a>
-                            <span class="text-[11px] text-slate-400">PKRS RSTN</span>
+                            <span class="text-xs text-slate-400">PKRS RSTN</span>
                         </div>
                     </div>
                 </article>

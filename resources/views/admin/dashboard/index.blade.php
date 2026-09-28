@@ -1,8 +1,8 @@
 <x-layouts.admin title="Dashboard">
     <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
         <div>
-            <h1 class="text-2xl font-extrabold text-slate-900 tracking-tight">Ringkasan Dashboard</h1>
-            <p class="text-xs text-slate-500 mt-1">Statistik operasional pendaftaran antrean, aduan masyarakat, dan ketersediaan fasilitas rumah sakit.</p>
+            <h1 class="text-2xl lg:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">Ringkasan Dashboard</h1>
+            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Statistik operasional pendaftaran antrean, aduan masyarakat, dan ketersediaan fasilitas rumah sakit.</p>
         </div>
         <div>
             <a href="{{ route('admin.registrations.index') }}" class="inline-flex items-center space-x-2 px-4 py-2.5 rounded-xl font-bold text-sm text-white bg-[#3b7ddd] hover:bg-[#2b65b6] shadow-sm transition">
@@ -19,7 +19,7 @@
         <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:border-slate-300 transition">
             <div class="flex items-start justify-between">
                 <div>
-                    <h2 class="text-xs md:text-sm font-bold text-slate-500 uppercase tracking-wider">Pendaftar Online</h2>
+                    <h2 class="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Pendaftar Online</h2>
                     <h3 class="text-3xl lg:text-4xl font-extrabold text-slate-900 mt-2 tracking-tight">{{ $stats['total_registrations'] }}</h3>
                 </div>
                 <div class="w-12 h-12 rounded-xl bg-blue-50 text-[#3b7ddd] flex items-center justify-center shrink-0">
@@ -36,7 +36,7 @@
         <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:border-slate-300 transition">
             <div class="flex items-start justify-between">
                 <div>
-                    <h2 class="text-xs md:text-sm font-bold text-slate-500 uppercase tracking-wider">Aduan & Masukan</h2>
+                    <h2 class="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Aduan & Masukan</h2>
                     <h3 class="text-3xl lg:text-4xl font-extrabold text-slate-900 mt-2 tracking-tight">{{ $stats['total_complaints'] }}</h3>
                 </div>
                 <div class="w-12 h-12 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center shrink-0">
@@ -53,7 +53,7 @@
         <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:border-slate-300 transition">
             <div class="flex items-start justify-between">
                 <div>
-                    <h2 class="text-xs md:text-sm font-bold text-slate-500 uppercase tracking-wider">Bed Tersedia (Kosong)</h2>
+                    <h2 class="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Bed Tersedia (Kosong)</h2>
                     <h3 class="text-3xl lg:text-4xl font-extrabold text-emerald-600 mt-2 tracking-tight">{{ $stats['available_beds'] }}</h3>
                 </div>
                 <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
@@ -70,7 +70,7 @@
         <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:border-slate-300 transition">
             <div class="flex items-start justify-between">
                 <div>
-                    <h2 class="text-xs md:text-sm font-bold text-slate-500 uppercase tracking-wider">Dokter Spesialis</h2>
+                    <h2 class="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Dokter Spesialis</h2>
                     <h3 class="text-3xl lg:text-4xl font-extrabold text-slate-900 mt-2 tracking-tight">{{ $stats['total_doctors'] }}</h3>
                 </div>
                 <div class="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center shrink-0">
@@ -94,7 +94,7 @@
                 <div class="p-6 pb-4 flex items-center justify-between border-b border-slate-100">
                     <div>
                         <h3 class="font-extrabold text-base md:text-lg text-slate-900">Antrean Pendaftaran Online Terbaru</h3>
-                        <p class="text-xs md:text-sm text-slate-500 mt-0.5">Pasien yang terdaftar melalui portal pendaftaran web.</p>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 mt-0.5">Pasien yang terdaftar melalui portal pendaftaran web.</p>
                     </div>
                     <a href="{{ route('admin.registrations.index') }}" class="text-sm font-bold text-[#3b7ddd] hover:text-[#2b65b6] hover:underline flex items-center space-x-1">
                         <span>Lihat Semua</span>
@@ -162,7 +162,7 @@
                 <div class="p-6 pb-4 flex items-center justify-between border-b border-slate-100">
                     <div>
                         <h3 class="font-extrabold text-base md:text-lg text-slate-900">Aduan & Saran</h3>
-                        <p class="text-xs md:text-sm text-slate-500 mt-0.5">Umpan balik dari pasien.</p>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 mt-0.5">Umpan balik dari pasien.</p>
                     </div>
                     <a href="{{ route('admin.complaints.index') }}" class="text-sm font-bold text-[#3b7ddd] hover:text-[#2b65b6] hover:underline flex items-center space-x-1">
                         <span>Semua</span>

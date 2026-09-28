@@ -106,8 +106,8 @@
             </div>
             <div>
                 <h2 class="text-base font-bold text-slate-800 group-hover:text-[#007b83] transition">Pendaftaran Online</h2>
-                <p class="text-xs text-slate-500 mt-1 leading-relaxed">Daftar rawat jalan via SAPA RSTN & Mobile JKN mandiri tanpa antre.</p>
-                <span class="inline-flex items-center text-xs font-semibold text-[#007b83] mt-2 group-hover:underline">
+                <p class="text-sm text-slate-600 mt-1 leading-relaxed">Daftar rawat jalan via SAPA RSTN & Mobile JKN mandiri tanpa antre.</p>
+                <span class="inline-flex items-center text-sm font-semibold text-[#007b83] mt-2 group-hover:underline">
                     Daftar Sekarang &rarr;
                 </span>
             </div>
@@ -120,8 +120,8 @@
             </div>
             <div>
                 <h2 class="text-base font-bold text-slate-800 group-hover:text-blue-600 transition">Jadwal Dokter</h2>
-                <p class="text-xs text-slate-500 mt-1 leading-relaxed">Cek jadwal praktik dokter spesialis dan ketersediaan poliklinik.</p>
-                <span class="inline-flex items-center text-xs font-semibold text-blue-600 mt-2 group-hover:underline">
+                <p class="text-sm text-slate-600 mt-1 leading-relaxed">Cek jadwal praktik dokter spesialis dan ketersediaan poliklinik.</p>
+                <span class="inline-flex items-center text-sm font-semibold text-blue-600 mt-2 group-hover:underline">
                     Lihat Jadwal &rarr;
                 </span>
             </div>
@@ -134,8 +134,8 @@
             </div>
             <div>
                 <h2 class="text-base font-bold text-slate-800 group-hover:text-amber-600 transition">Informasi Kamar</h2>
-                <p class="text-xs text-slate-500 mt-1 leading-relaxed">Ketersediaan bed rawat inap VVIP, VIP, Kelas 1, 2, 3, dan ICU.</p>
-                <span class="inline-flex items-center text-xs font-semibold text-amber-600 mt-2 group-hover:underline">
+                <p class="text-sm text-slate-600 mt-1 leading-relaxed">Ketersediaan bed rawat inap VVIP, VIP, Kelas 1, 2, 3, dan ICU.</p>
+                <span class="inline-flex items-center text-sm font-semibold text-amber-600 mt-2 group-hover:underline">
                     Cek Ketersediaan &rarr;
                 </span>
             </div>
@@ -148,8 +148,8 @@
             </div>
             <div>
                 <h2 class="text-base font-bold text-white">IGD 24 Jam</h2>
-                <p class="text-xs text-red-100 mt-1 leading-relaxed">Layanan kegawatdaruratan dan armada ambulans siaga 24/7.</p>
-                <span class="inline-flex items-center text-xs font-bold text-amber-300 mt-2">
+                <p class="text-sm text-red-100 mt-1 leading-relaxed">Layanan kegawatdaruratan dan armada ambulans siaga 24/7.</p>
+                <span class="inline-flex items-center text-sm font-bold text-amber-300 mt-2">
                     (0275) 321118 &rarr;
                 </span>
             </div>
@@ -279,16 +279,16 @@
                                     {{ $svc['title'] }}
                                 </a>
                             </h3>
-                            <p class="text-xs text-slate-500 mt-2 line-clamp-2 leading-relaxed">
+                            <p class="text-sm text-slate-600 mt-2 line-clamp-2 leading-relaxed">
                                 {{ $svc['excerpt'] }}
                             </p>
                         </div>
                         <div class="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between">
-                            <a href="{{ route('services.detail', $svc['slug']) }}" class="text-xs font-bold text-[#007b83] group-hover:underline inline-flex items-center space-x-1">
+                            <a href="{{ route('services.detail', $svc['slug']) }}" class="text-sm font-semibold text-[#007b83] group-hover:underline inline-flex items-center space-x-1">
                                 <span>Informasi Layanan</span>
                                 <span>&rarr;</span>
                             </a>
-                            <span class="text-[11px] text-slate-400">RSUD Tjokronegoro</span>
+                            <span class="text-xs text-slate-400">RSUD Tjokronegoro</span>
                         </div>
                     </div>
                 </article>
@@ -352,20 +352,20 @@
                 <div class="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 flex items-start space-x-4">
                     <img :src="doctor.photo" :alt="doctor.name" class="w-20 h-24 rounded-xl object-cover shrink-0 bg-slate-100 shadow-sm">
                     <div class="flex-grow">
-                        <span class="text-[11px] font-bold text-teal-700 bg-teal-50 px-2.5 py-0.5 rounded-full inline-block mb-1" x-text="doctor.poli"></span>
-                        <h3 class="text-sm font-bold text-slate-900 leading-snug" x-text="doctor.name"></h3>
-                        <p class="text-xs text-slate-500 mt-0.5" x-text="doctor.sub"></p>
+                        <span class="text-xs font-semibold text-teal-700 bg-teal-50 px-2.5 py-0.5 rounded-full inline-block mb-1" x-text="doctor.poli"></span>
+                        <h3 class="text-base font-bold text-slate-900 leading-snug" x-text="doctor.name"></h3>
+                        <p class="text-xs sm:text-sm text-slate-500 mt-0.5" x-text="doctor.sub"></p>
                         
                         <div class="mt-3 pt-2 border-t border-slate-100 text-xs text-slate-600">
                             <span class="font-semibold text-slate-700 block">Jadwal:</span>
-                            <span class="text-[11px] text-teal-800 font-medium" x-text="doctor.schedule"></span>
+                            <span class="text-xs text-teal-800 font-medium" x-text="doctor.schedule"></span>
                         </div>
 
                         <div class="mt-3 flex items-center justify-between">
-                            <a :href="`{{ url('/dokter') }}/${doctor.id}`" class="text-xs font-bold text-[#007b83] hover:underline">
+                            <a :href="`{{ url('/dokter') }}/${doctor.id}`" class="text-sm font-semibold text-[#007b83] hover:underline">
                                 Profil Lengkap &rarr;
                             </a>
-                            <a href="{{ route('registration') }}" class="text-[11px] font-bold text-white bg-[#007b83] hover:bg-[#005b64] px-2.5 py-1 rounded-lg shadow-sm">
+                            <a href="{{ route('registration') }}" class="text-xs font-semibold text-white bg-[#007b83] hover:bg-[#005b64] px-3 py-1.5 rounded-lg shadow-sm">
                                 Booking Poli
                             </a>
                         </div>
@@ -409,17 +409,17 @@
                     <div class="p-6 flex-grow flex flex-col justify-between">
                         <div>
                             <span class="text-xs text-slate-400 font-medium">{{ $item['date'] }}</span>
-                            <h3 class="text-base font-bold text-slate-900 mt-2 leading-snug group-hover:text-[#007b83] transition">
+                            <h3 class="text-base sm:text-lg font-bold text-slate-900 mt-2 leading-snug group-hover:text-[#007b83] transition">
                                 <a href="{{ route('news.detail', $item['slug']) }}">
                                     {{ $item['title'] }}
                                 </a>
                             </h3>
-                            <p class="text-xs text-slate-500 mt-2.5 line-clamp-3 leading-relaxed">
+                            <p class="text-sm text-slate-600 mt-2.5 line-clamp-3 leading-relaxed">
                                 {{ $item['excerpt'] }}
                             </p>
                         </div>
                         <div class="pt-4 mt-4 border-t border-slate-100">
-                            <a href="{{ route('news.detail', $item['slug']) }}" class="text-xs font-bold text-[#007b83] group-hover:underline inline-flex items-center space-x-1">
+                            <a href="{{ route('news.detail', $item['slug']) }}" class="text-sm font-semibold text-[#007b83] group-hover:underline inline-flex items-center space-x-1">
                                 <span>Baca Selengkapnya</span>
                                 <span>&rarr;</span>
                             </a>

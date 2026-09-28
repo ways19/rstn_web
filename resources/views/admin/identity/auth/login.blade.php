@@ -3,8 +3,8 @@
         
         <!-- Header Text (AdminKit style) -->
         <div class="text-center mb-6">
-            <h1 class="text-2xl font-bold text-[#212529] dark:text-white tracking-tight">Selamat Datang Kembali</h1>
-            <p class="text-xs text-[#6c757d] dark:text-slate-400 mt-1">Masuk ke panel administrator RSUD R.A.A. Tjokronegoro</p>
+            <h1 class="text-2xl sm:text-3xl font-bold text-[#212529] dark:text-white tracking-tight">Selamat Datang Kembali</h1>
+            <p class="text-sm text-[#6c757d] dark:text-slate-400 mt-1">Masuk ke panel administrator RSUD R.A.A. Tjokronegoro</p>
         </div>
 
         <!-- Login Card -->
@@ -15,28 +15,28 @@
             </div>
 
             @if($errors->any())
-                <div class="bg-[#f8d7da] dark:bg-rose-950/40 border border-[#f5c2c7] dark:border-rose-800 text-[#842029] dark:text-rose-200 px-4 py-3 rounded-md text-xs">
+                <div class="bg-[#f8d7da] dark:bg-rose-950/40 border border-[#f5c2c7] dark:border-rose-800 text-[#842029] dark:text-rose-200 px-4 py-3 rounded-md text-xs sm:text-sm">
                     {{ $errors->first() }}
                 </div>
             @endif
 
-            <form action="{{ route('admin.login.submit') }}" method="POST" class="space-y-4 text-xs">
+            <form action="{{ route('admin.login.submit') }}" method="POST" class="space-y-4 text-sm">
                 @csrf
                 <div>
                     <label class="block font-semibold text-[#212529] dark:text-slate-200 mb-1">Email</label>
                     <input type="email" name="email" value="{{ old('email', 'admin@rstjokronegoro.id') }}" required autofocus
                            placeholder="Enter your email"
-                           class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 text-xs focus:outline-none focus:ring-2 focus:ring-[#3b7ddd]/40 focus:border-[#3b7ddd]">
+                           class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 text-sm focus:outline-none focus:ring-2 focus:ring-[#3b7ddd]/40 focus:border-[#3b7ddd]">
                 </div>
 
                 <div>
                     <div class="flex items-center justify-between mb-1">
                         <label class="font-semibold text-[#212529] dark:text-slate-200">Password</label>
-                        <span class="text-[11px] text-[#6c757d] dark:text-slate-400">Default: <code>password</code></span>
+                        <span class="text-xs text-[#6c757d] dark:text-slate-400">Default: <code>password</code></span>
                     </div>
                     <input type="password" name="password" value="password" required
                            placeholder="Enter your password"
-                           class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 text-xs focus:outline-none focus:ring-2 focus:ring-[#3b7ddd]/40 focus:border-[#3b7ddd]">
+                           class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 text-sm focus:outline-none focus:ring-2 focus:ring-[#3b7ddd]/40 focus:border-[#3b7ddd]">
                 </div>
 
                 <!-- Captcha Verification -->
@@ -60,7 +60,7 @@
                 }">
                     <div class="flex items-center justify-between mb-1.5">
                         <label class="font-semibold text-[#212529] dark:text-slate-200">Kode Keamanan (Captcha)</label>
-                        <span class="text-[11px] text-[#6c757d] dark:text-slate-400">6 karakter (angka, huruf besar & kecil)</span>
+                        <span class="text-xs text-[#6c757d] dark:text-slate-400">6 karakter (angka, huruf besar & kecil)</span>
                     </div>
 
                     <div class="flex items-center gap-2 mb-2">
@@ -83,7 +83,7 @@
 
                     <input type="text" name="captcha" required autocomplete="off" maxlength="6"
                            placeholder="Masukkan 6 karakter kode di atas"
-                           class="w-full px-3.5 py-2.5 tracking-wider font-mono rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 text-xs focus:outline-none focus:ring-2 focus:ring-[#3b7ddd]/40 focus:border-[#3b7ddd]">
+                           class="w-full px-3.5 py-2.5 tracking-wider font-mono rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 text-sm focus:outline-none focus:ring-2 focus:ring-[#3b7ddd]/40 focus:border-[#3b7ddd]">
                 </div>
 
                 <div class="flex items-center justify-between">
@@ -94,14 +94,14 @@
                     <a href="{{ route('home') }}" class="text-[#3b7ddd] hover:underline">Ke Web Publik &rarr;</a>
                 </div>
 
-                <button type="submit" class="w-full py-3 rounded-xl font-bold text-xs text-white bg-[#3b7ddd] hover:bg-[#326abc] shadow-sm transition">
+                <button type="submit" class="w-full py-3 rounded-xl font-bold text-sm text-white bg-[#3b7ddd] hover:bg-[#326abc] shadow-sm transition">
                     Sign in
                 </button>
             </form>
         </div>
 
         <!-- Footer Notice -->
-        <div class="text-center text-xs text-[#6c757d] dark:text-slate-500">
+        <div class="text-center text-xs sm:text-sm text-[#6c757d] dark:text-slate-500">
             RSUD R.A.A. Tjokronegoro Purworejo &bull; AdminKit Theme
         </div>
     </div>

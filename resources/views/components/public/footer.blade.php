@@ -7,15 +7,15 @@
                 <div class="flex items-center space-x-3">
                     <img src="{{ asset('logo.png') }}" alt="Logo RSUD R.A.A. Tjokronegoro" class="h-12 w-auto bg-white p-1 rounded-lg" onerror="this.src='https://ui-avatars.com/api/?name=RSTN&background=007B83&color=fff'">
                     <div>
-                        <span class="text-white font-bold text-base block leading-tight whitespace-nowrap">RSUD R.A.A. Tjokronegoro</span>
-                        <span class="text-xs text-teal-400 whitespace-nowrap">Kabupaten Purworejo</span>
+                        <span class="text-white font-bold text-base sm:text-lg block leading-tight whitespace-nowrap">RSUD R.A.A. Tjokronegoro</span>
+                        <span class="text-xs sm:text-sm text-teal-400 whitespace-nowrap">Kabupaten Purworejo</span>
                     </div>
                 </div>
-                <p class="text-xs text-slate-400 leading-relaxed">
+                <p class="text-sm text-slate-400 leading-relaxed">
                     Rumah Sakit Umum Daerah milik Pemerintah Kabupaten Purworejo dengan komitmen memberikan pelayanan kesehatan berkualitas, cepat, aman, dan berorientasi pada keselamatan pasien.
                 </p>
                 <div class="pt-2">
-                    <div class="inline-flex items-center space-x-2 bg-slate-800/80 px-3 py-1.5 rounded-lg border border-teal-500/30 text-xs">
+                    <div class="inline-flex items-center space-x-2 bg-slate-800/80 px-3 py-1.5 rounded-lg border border-teal-500/30 text-xs sm:text-sm">
                         <span class="text-teal-400 font-bold">★ TERAKREDITASI KARS</span>
                         <span class="text-slate-400">— PARIPURNA</span>
                     </div>
@@ -24,8 +24,8 @@
 
             <!-- Col 2: Quick Links -->
             <div>
-                <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-4 border-b border-slate-700 pb-2">Navigasi Utama</h4>
-                <ul class="space-y-2 text-xs">
+                <h4 class="text-white font-semibold text-sm sm:text-base uppercase tracking-wider mb-4 border-b border-slate-700 pb-2">Navigasi Utama</h4>
+                <ul class="space-y-2.5 text-sm">
                     <li><a href="{{ route('home') }}" class="hover:text-teal-300 transition">Beranda</a></li>
                     <li><a href="{{ route('about') }}" class="hover:text-teal-300 transition">Profil & Visi Misi</a></li>
                     <li><a href="{{ route('services') }}" class="hover:text-teal-300 transition">Layanan Rawat Jalan & Inap</a></li>
@@ -38,8 +38,8 @@
 
             <!-- Col 3: Layanan Unggulan -->
             <div>
-                <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-4 border-b border-slate-700 pb-2">Layanan Unggulan</h4>
-                <ul class="space-y-2 text-xs text-slate-400">
+                <h4 class="text-white font-semibold text-sm sm:text-base uppercase tracking-wider mb-4 border-b border-slate-700 pb-2">Layanan Unggulan</h4>
+                <ul class="space-y-2.5 text-sm text-slate-400">
                     <li class="flex items-center space-x-2">
                         <span class="w-1.5 h-1.5 rounded-full bg-teal-400"></span>
                         <span>Instalasi Gawat Darurat (24 Jam)</span>
@@ -69,10 +69,10 @@
 
             <!-- Col 4: Kontak & Alamat -->
             <div>
-                <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-4 border-b border-slate-700 pb-2">Kontak & Lokasi</h4>
-                <address class="not-italic text-xs text-slate-400 space-y-3">
+                <h4 class="text-white font-semibold text-sm sm:text-base uppercase tracking-wider mb-4 border-b border-slate-700 pb-2">Kontak & Lokasi</h4>
+                <address class="not-italic text-sm text-slate-400 space-y-3">
                     <p class="flex items-start space-x-2">
-                        <svg class="w-4 h-4 text-teal-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        <svg class="w-4 h-4 text-teal-400 mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                         <span>Jl. Jenderal Sudirman No. 60, Pangenjurutengah, Kec. Purworejo, Kabupaten Purworejo, Jawa Tengah 54114</span>
                     </p>
                     <p class="flex items-center space-x-2">
@@ -88,14 +88,14 @@
         </div>
 
         <!-- Bottom Copyright & Disclaimer -->
-        <div class="mt-12 pt-6 border-t border-slate-800 text-center md:flex md:justify-between md:items-center text-xs text-slate-500">
+        <div class="mt-12 pt-6 border-t border-slate-800 text-center md:flex md:justify-between md:items-center text-xs sm:text-sm text-slate-400">
             <p>&copy; {{ date('Y') }} RSUD R.A.A. Tjokronegoro Purworejo. Hak Cipta Dilindungi Undang-Undang.</p>
             <div class="mt-3 md:mt-0 space-x-4">
-                <a href="{{ route('sitemap') }}" class="hover:text-slate-300">Peta Situs (Sitemap)</a>
+                <a href="{{ route('sitemap') }}" class="hover:text-slate-200">Peta Situs (Sitemap)</a>
                 <span>•</span>
-                <a href="{{ route('robots') }}" class="hover:text-slate-300">Robots.txt</a>
+                <a href="{{ route('robots') }}" class="hover:text-slate-200">Robots.txt</a>
                 <span>•</span>
-                <a href="{{ route('contact') }}" class="hover:text-slate-300">Pengaduan Masyarakat</a>
+                <a href="{{ route('contact') }}" class="hover:text-slate-200">Pengaduan Masyarakat</a>
             </div>
         </div>
     </div>

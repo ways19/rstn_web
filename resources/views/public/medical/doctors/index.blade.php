@@ -58,7 +58,7 @@
                 <!-- Reset Filter -->
                 <div class="md:col-span-3">
                     <button @click="searchQuery = ''; selectedSpeciality = 'semua'; selectedDay = 'semua'" 
-                            class="w-full py-3.5 px-4 rounded-xl text-xs font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 transition">
+                            class="w-full py-3.5 px-4 rounded-xl text-sm font-semibold text-slate-600 bg-slate-100 hover:bg-slate-200 transition">
                         Reset Filter
                     </button>
                 </div>
@@ -68,13 +68,13 @@
             <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-2">
                 <button @click="selectedSpeciality = 'semua'" 
                         :class="selectedSpeciality === 'semua' ? 'bg-[#007b83] text-white shadow-sm' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'"
-                        class="px-4 py-1.5 rounded-full text-xs font-semibold transition">
+                        class="px-4 py-2 rounded-full text-sm font-medium transition">
                     Semua Spesialis
                 </button>
                 <template x-for="spec in [...new Set(doctors.map(d => d.speciality))]" :key="spec">
                     <button @click="selectedSpeciality = spec" 
                             :class="selectedSpeciality === spec ? 'bg-[#007b83] text-white shadow-sm' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'"
-                            class="px-4 py-1.5 rounded-full text-xs font-semibold transition"
+                            class="px-4 py-2 rounded-full text-sm font-medium transition"
                             x-text="spec">
                     </button>
                 </template>
@@ -89,25 +89,25 @@
                         <div class="flex items-start space-x-4">
                             <img :src="doctor.photo" :alt="doctor.name" class="w-24 h-28 rounded-2xl object-cover shrink-0 bg-slate-100 shadow-sm">
                             <div>
-                                <span class="text-[11px] font-bold text-teal-700 bg-teal-50 px-2.5 py-0.5 rounded-full inline-block mb-1" x-text="doctor.poli"></span>
-                                <h3 class="text-base font-bold text-slate-900 leading-snug" x-text="doctor.name"></h3>
-                                <p class="text-xs text-slate-500 mt-1" x-text="doctor.sub"></p>
-                                <span class="text-[11px] text-slate-400 mt-1 block">Pengalaman: <strong class="text-slate-600" x-text="doctor.experience"></strong></span>
+                                <span class="text-xs font-semibold text-teal-700 bg-teal-50 px-2.5 py-0.5 rounded-full inline-block mb-1" x-text="doctor.poli"></span>
+                                <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug" x-text="doctor.name"></h3>
+                                <p class="text-sm text-slate-500 mt-1" x-text="doctor.sub"></p>
+                                <span class="text-xs text-slate-400 mt-1 block">Pengalaman: <strong class="text-slate-600" x-text="doctor.experience"></strong></span>
                             </div>
                         </div>
 
                         <!-- Schedule Box -->
                         <div class="mt-5 p-3.5 bg-slate-50 rounded-2xl border border-slate-100">
-                            <span class="text-[11px] font-bold text-slate-700 uppercase tracking-wider block mb-1">Jadwal Praktik:</span>
-                            <p class="text-xs font-semibold text-[#007b83]" x-text="doctor.schedule"></p>
+                            <span class="text-xs font-semibold text-slate-700 uppercase tracking-wider block mb-1">Jadwal Praktik:</span>
+                            <p class="text-sm font-semibold text-[#007b83]" x-text="doctor.schedule"></p>
                         </div>
                     </div>
 
                     <div class="p-6 pt-0 flex items-center justify-between">
-                        <a :href="`{{ url('/dokter') }}/${doctor.id}`" class="text-xs font-bold text-[#007b83] hover:underline">
+                        <a :href="`{{ url('/dokter') }}/${doctor.id}`" class="text-sm font-semibold text-[#007b83] hover:underline">
                             Lihat Profil &rarr;
                         </a>
-                        <a href="{{ route('registration') }}" class="px-4 py-2 text-xs font-bold text-white bg-[#007b83] hover:bg-[#005b64] rounded-xl shadow-md transition">
+                        <a href="{{ route('registration') }}" class="px-4 py-2 text-xs sm:text-sm font-semibold text-white bg-[#007b83] hover:bg-[#005b64] rounded-xl shadow-md transition">
                             Daftar Poli
                         </a>
                     </div>
