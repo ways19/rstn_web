@@ -85,6 +85,10 @@
         }
     </script>
 
+    <style>
+        [x-cloak] { display: none !important; }
+    </style>
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     {{ $styles ?? '' }}
     @stack('styles')

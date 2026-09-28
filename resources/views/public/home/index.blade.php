@@ -46,7 +46,8 @@
     <!-- Slides Container -->
     <div class="relative min-h-[520px] md:min-h-[580px] flex items-center">
         <template x-for="(slide, index) in slides" :key="index">
-            <div x-show="currentSlide === index"
+            <div x-cloak
+                 x-show="currentSlide === index"
                  x-transition:enter="transition ease-out duration-700"
                  x-transition:enter-start="opacity-0 scale-95"
                  x-transition:enter-end="opacity-100 scale-100"
@@ -60,7 +61,7 @@
                 <div class="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-900/80 to-transparent"></div>
 
                 <!-- Slide Content -->
-                <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center py-20">
+                <div class="relative max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center py-20">
                     <div class="max-w-2xl space-y-5">
                         <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-teal-500/20 border border-teal-400/40 text-teal-300 text-xs font-semibold tracking-wide">
                             <span class="w-2 h-2 rounded-full bg-teal-400 animate-ping"></span>
@@ -97,7 +98,7 @@
 </section>
 
 <!-- Quick Action Service Cards (Overlap Bar) -->
-<section class="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 sm:-mt-14">
+<section class="relative z-30 max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 sm:-mt-14">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <!-- Card 1: Pendaftaran Online -->
         <a href="{{ route('registration') }}" class="group bg-white rounded-2xl p-5 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex items-start space-x-4 transform hover:-translate-y-1">

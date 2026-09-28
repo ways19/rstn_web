@@ -36,6 +36,10 @@
     --color-adminkit-muted: #6c757d;
 }
 
+[x-cloak] {
+    display: none !important;
+}
+
 /* Custom smooth scroll, base typography & selection like RSCM */
 html {
     scroll-behavior: smooth;

@@ -1,6 +1,6 @@
 <!-- Main Navigation Header (Public) styled like RSCM -->
 <header class="sticky top-0 z-50 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-xs border-b border-slate-100 dark:border-slate-800 transition-colors duration-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-20">
             <!-- Left: Hospital Logo & Brand Title (Clean Horizontal Layout) -->
             <a href="{{ route('home') }}" class="flex items-center space-x-3 group flex-shrink-0">
@@ -15,7 +15,6 @@
                 </div>
             </a>
 
-            <!-- Center: Navigation Links (RSCM Style with Active Indicator) -->
             @php
                 $pubNavItems = \App\Models\Menu::where('location', 'public')
                     ->whereNull('parent_id')
@@ -24,58 +23,63 @@
                     ->orderBy('order')
                     ->get();
             @endphp
-            <nav class="hidden lg:flex items-center space-x-5 xl:space-x-7 text-sm font-medium text-[#40444d] dark:text-slate-200">
-                @foreach($pubNavItems as $navItem)
-                    @if($navItem->activeChildren->count() > 0)
-                        <div class="relative py-2" x-data="{ open: false }" @click.away="open = false" @mouseenter="open = true" @mouseleave="open = false">
-                            <button type="button" @click="open = !open"
-                                    class="flex items-center space-x-1.5 py-1 transition cursor-pointer {{ $navItem->isActiveRoute() ? 'text-[#0e9384] dark:text-teal-400 font-semibold border-b-2 border-[#0e9384]' : 'hover:text-[#0e9384] dark:hover:text-teal-400' }}">
-                                <span>{{ $navItem->title }}</span>
-                                <svg class="w-3.5 h-3.5 transition-transform duration-200" :class="open ? 'rotate-180 text-[#0e9384] dark:text-teal-400' : 'text-slate-400 dark:text-slate-500'" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                            </button>
-                            <div x-show="open" 
-                                 x-transition:enter="transition ease-out duration-150"
-                                 x-transition:enter-start="opacity-0 translate-y-2"
-                                 x-transition:enter-end="opacity-100 translate-y-0"
-                                 x-transition:leave="transition ease-in duration-100"
-                                 x-transition:leave-start="opacity-100 translate-y-0"
-                                 x-transition:leave-end="opacity-0 translate-y-2"
-                                 class="absolute left-0 mt-2 w-64 bg-white dark:bg-slate-900 rounded-xl shadow-xl border border-slate-100 dark:border-slate-800 py-2 z-50 text-sm font-medium"
-                                 style="display: none;">
-                                @foreach($navItem->activeChildren as $child)
-                                    <a href="{{ $child->link }}" target="{{ $child->target }}" class="block px-4 py-2.5 text-slate-700 dark:text-slate-200 hover:text-[#0e9384] dark:hover:text-teal-400 hover:bg-teal-50/70 dark:hover:bg-slate-800/70 transition">
-                                        {{ $child->title }}
-                                    </a>
-                                @endforeach
-                            </div>
-                        </div>
-                    @else
-                        <a href="{{ $navItem->link }}" target="{{ $navItem->target }}"
-                           class="py-1 transition {{ $navItem->isActiveRoute() ? 'text-[#0e9384] dark:text-teal-400 font-semibold border-b-2 border-[#0e9384]' : 'hover:text-[#0e9384] dark:hover:text-teal-400' }}">
-                            {{ $navItem->title }}
-                        </a>
-                    @endif
-                @endforeach
-            </nav>
 
-            <!-- Right: Search Capsule, CTA Button & Theme Toggle (RSCM Layout) -->
-            <div class="hidden lg:flex items-center space-x-3.5">
-                <!-- Search Box like RSCM -->
+            <!-- Right Group: Navigation Links, Search Capsule, Divider & CTA Button (Aligned like RSCM) -->
+            <div class="hidden lg:flex items-center space-x-4 xl:space-x-5 flex-shrink-0">
+                <!-- Navigation Menus -->
+                <nav class="flex items-center space-x-4 xl:space-x-6 text-[13px] xl:text-sm font-medium text-slate-700 dark:text-slate-200">
+                    @foreach($pubNavItems as $navItem)
+                        @if($navItem->activeChildren->count() > 0)
+                            <div class="relative py-2" x-data="{ open: false }" @click.away="open = false" @mouseenter="open = true" @mouseleave="open = false">
+                                <button type="button" @click="open = !open"
+                                        class="flex items-center space-x-1 py-1 transition cursor-pointer {{ $navItem->isActiveRoute() ? 'text-[#0e9384] dark:text-teal-400 font-semibold' : 'hover:text-[#0e9384] dark:hover:text-teal-400' }}">
+                                    <span>{{ $navItem->title }}</span>
+                                    <svg class="w-3.5 h-3.5 transition-transform duration-200" :class="open ? 'rotate-180 text-[#0e9384] dark:text-teal-400' : 'text-slate-400 dark:text-slate-500'" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </button>
+                                <div x-show="open" 
+                                     x-transition:enter="transition ease-out duration-150"
+                                     x-transition:enter-start="opacity-0 translate-y-2"
+                                     x-transition:enter-end="opacity-100 translate-y-0"
+                                     x-transition:leave="transition ease-in duration-100"
+                                     x-transition:leave-start="opacity-100 translate-y-0"
+                                     x-transition:leave-end="opacity-0 translate-y-2"
+                                     class="absolute left-0 mt-1 w-56 bg-white dark:bg-slate-900 rounded-xl shadow-xl border border-slate-100 dark:border-slate-800 py-2 z-50 text-sm font-medium"
+                                     style="display: none;">
+                                    @foreach($navItem->activeChildren as $child)
+                                        <a href="{{ $child->link }}" target="{{ $child->target }}" class="block px-4 py-2 text-slate-700 dark:text-slate-200 hover:text-[#0e9384] dark:hover:text-teal-400 hover:bg-teal-50/70 dark:hover:bg-slate-800/70 transition">
+                                            {{ $child->title }}
+                                        </a>
+                                    @endforeach
+                                </div>
+                            </div>
+                        @else
+                            <a href="{{ $navItem->link }}" target="{{ $navItem->target }}"
+                               class="py-1 transition {{ $navItem->isActiveRoute() ? 'text-[#0e9384] dark:text-teal-400 font-semibold' : 'hover:text-[#0e9384] dark:hover:text-teal-400' }}">
+                                {{ $navItem->title }}
+                            </a>
+                        @endif
+                    @endforeach
+                </nav>
+
+                <!-- Search Capsule (Pill input like RSCM) -->
                 <form action="{{ route('news') }}" method="GET" class="relative">
                     <input type="text" name="q" placeholder="Cari..." 
-                           class="w-32 xl:w-40 pl-3.5 pr-8 py-2 text-xs rounded-full bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-200/80 dark:border-slate-700 focus:outline-none focus:ring-1 focus:ring-[#0e9384] focus:w-48 transition-all">
-                    <button type="submit" class="absolute right-2.5 top-2.5 text-slate-400 hover:text-[#0e9384] transition" aria-label="Cari">
+                           class="w-28 xl:w-36 pl-3 pr-7 py-1.5 text-xs rounded-md bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-1 focus:ring-[#0e9384] focus:w-44 transition-all">
+                    <button type="submit" class="absolute right-2 top-2 text-slate-400 hover:text-[#0e9384] transition" aria-label="Cari">
                         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                     </button>
                 </form>
 
-                <!-- Theme Toggle Button -->
-                <x-theme-toggle size="sm" />
+                <!-- Vertical Divider Line -->
+                <div class="h-4 w-px bg-slate-300 dark:bg-slate-700"></div>
 
-                <!-- CTA Button: Pendaftaran Online (RSCM Teal Button) -->
-                <a href="{{ route('registration') }}" class="inline-flex items-center justify-center px-4 py-2.5 rounded-lg text-xs font-semibold text-white bg-[#0e9384] hover:bg-[#0b7a6d] shadow-sm transition whitespace-nowrap">
+                <!-- CTA Button: Pendaftaran Online (RSCM Solid Teal Button) -->
+                <a href="{{ route('registration') }}" class="inline-flex items-center justify-center px-4 py-2 rounded-lg text-xs font-semibold text-white bg-[#0e9384] hover:bg-[#0b7a6d] shadow-xs transition whitespace-nowrap">
                     <span>Pendaftaran Online</span>
                 </a>
+
+                <!-- Theme Toggle Button -->
+                <x-theme-toggle size="sm" />
             </div>
 
             <!-- Mobile Actions (Theme Toggle, Daftar, Hamburger) -->
