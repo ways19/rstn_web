@@ -61,14 +61,49 @@
                     @endforeach
                 </nav>
 
-                <!-- Search Capsule (Pill input like RSCM) -->
-                <form action="{{ route('news') }}" method="GET" class="relative">
-                    <input type="text" name="q" placeholder="Cari..." 
-                           class="w-28 xl:w-36 pl-3 pr-7 py-1.5 text-xs rounded-md bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-1 focus:ring-[#0e9384] focus:w-44 transition-all">
-                    <button type="submit" class="absolute right-2 top-2 text-slate-400 hover:text-[#0e9384] transition" aria-label="Cari">
-                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                    </button>
-                </form>
+                <!-- Interactive Search Trigger (Icon first, click to reveal input) -->
+                <div x-data="{ searchOpen: false }" class="relative flex items-center" @click.away="searchOpen = false">
+                    <form action="{{ route('news') }}" method="GET" class="flex items-center">
+                        <div class="relative flex items-center">
+                            <!-- Toggle Button (Magnifying Glass Icon) -->
+                            <button type="button" 
+                                    x-show="!searchOpen"
+                                    @click="searchOpen = true; $nextTick(() => $refs.searchInput.focus())"
+                                    class="p-2 rounded-lg text-slate-600 hover:text-[#0e9384] dark:text-slate-300 dark:hover:text-teal-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition cursor-pointer"
+                                    title="Cari"
+                                    aria-label="Buka Pencarian">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                            </button>
+
+                            <!-- Expanding Text Input Field -->
+                            <div x-show="searchOpen" 
+                                 x-transition:enter="transition ease-out duration-200"
+                                 x-transition:enter-start="opacity-0 scale-95"
+                                 x-transition:enter-end="opacity-100 scale-100"
+                                 x-transition:leave="transition ease-in duration-150"
+                                 x-transition:leave-start="opacity-100 scale-100"
+                                 x-transition:leave-end="opacity-0 scale-95"
+                                 class="relative flex items-center"
+                                 style="display: none;">
+                                <input x-ref="searchInput"
+                                       type="text" 
+                                       name="q" 
+                                       placeholder="Cari..." 
+                                       class="w-40 xl:w-48 pl-3 pr-14 py-1.5 text-xs rounded-md bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-1 focus:ring-[#0e9384] shadow-xs transition-all"
+                                       @keydown.escape="searchOpen = false">
+                                
+                                <div class="absolute right-1.5 flex items-center space-x-1">
+                                    <button type="submit" class="p-1 text-slate-400 hover:text-[#0e9384] transition" title="Cari">
+                                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                                    </button>
+                                    <button type="button" @click="searchOpen = false" class="p-1 text-slate-400 hover:text-rose-500 transition" title="Tutup">
+                                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
 
                 <!-- Vertical Divider Line -->
                 <div class="h-4 w-px bg-slate-300 dark:bg-slate-700"></div>
