@@ -395,5 +395,13 @@ class ContentSeeder extends Seeder
             'content' => 'Informasi yang berkaitan dengan hajat hidup orang banyak dan ketertiban umum seperti penanganan bencana darurat, protokol kewaspadaan penyakit menular, dan panduan evakuasi gempa.',
             'is_active' => true,
         ]);
+
+        Page::create([
+            'title' => 'Informasi Dikecualikan',
+            'slug' => 'informasi-dikecualikan',
+            'category' => 'PPID',
+            'content' => 'Informasi yang dikecualikan dari akses publik berdasarkan ketentuan peraturan perundang-undangan yang berlaku.',
+            'is_active' => true,
+        ]);
     }
 }

@@ -1,0 +1,491 @@
+/* =========================================
+   INFORMASI PUBLIK - SEJARAH RSUD
+   ========================================= */
+
+.informasi-publik-page {
+    --ip-blue: #0a56c4;
+    --ip-blue-dark: #00419c;
+    --ip-text: #0f172a;
+    --ip-body: #424653;
+    --ip-muted: #64748b;
+    --ip-border: #c3c6d5;
+    --ip-surface: #ffffff;
+
+    width: 100%;
+    max-width: 1280px;
+    margin-inline: auto;
+    color: var(--ip-text);
+    font-family: "Inter", sans-serif;
+}
+
+.informasi-publik-page,
+.informasi-publik-page * {
+    box-sizing: border-box;
+}
+
+/* Hero sejarah */
+
+.ip-history-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 500px;
+    overflow: hidden;
+    isolation: isolate;
+    padding: 64px;
+    border-radius: 4px;
+    background-color: #1e3a5f;
+    background-image:
+        linear-gradient(
+            111.34deg,
+            rgba(10, 86, 196, 0.94) 0%,
+            rgba(0, 65, 156, 0.94) 100%
+        );
+    background-position: center;
+    background-size: cover;
+}
+
+.ip-history-hero__overlay {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: linear-gradient(
+        111.34deg,
+        rgba(10, 86, 196, 0.92) 0%,
+        rgba(0, 65, 156, 0.94) 100%
+    );
+}
+
+.ip-history-hero__content {
+    position: relative;
+    width: 100%;
+    max-width: 850px;
+}
+
+.ip-history-hero__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    padding: 7px 16px;
+    margin-bottom: 22px;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.16);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.7px;
+}
+
+.ip-history-hero h2 {
+    margin: 0 0 22px;
+    color: #ffffff;
+    font-family: "Manrope", "Inter", sans-serif;
+    font-size: clamp(30px, 4vw, 48px);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.8px;
+}
+
+.ip-history-hero p {
+    max-width: 730px;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+/* Timeline */
+
+.ip-history-timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    padding: 16px 22px;
+    margin: 56px auto 72px;
+}
+
+/* Garis vertikal di tengah */
+
+.ip-history-timeline::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: var(--ip-border);
+    content: "";
+    transform: translateX(-50%);
+}
+
+.ip-history-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 64px;
+    min-height: 256px;
+}
+
+/* Foto atau visual di timeline */
+
+.ip-history-item__visual {
+    display: flex;
+    align-items: stretch;
+    min-width: 0;
+    min-height: 256px;
+}
+
+.ip-history-image-placeholder {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 256px;
+    padding: 24px;
+    overflow: hidden;
+    border: 1px solid #dbe3ee;
+    border-radius: 16px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(226, 237, 255, 0.96),
+            rgba(241, 245, 249, 0.98)
+        );
+    color: #475569;
+    text-align: center;
+}
+
+.ip-history-image-placeholder__icon {
+    display: grid;
+    width: 54px;
+    height: 54px;
+    place-items: center;
+    border-radius: 16px;
+    background: #ffffff;
+    color: var(--ip-blue);
+    font-size: 30px;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+}
+
+.ip-history-image-placeholder > span:not(.ip-history-image-placeholder__icon) {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.ip-history-image-placeholder small {
+    color: var(--ip-muted);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* Jika placeholder diganti dengan foto */
+
+.ip-history-item__visual img {
+    display: block;
+    width: 100%;
+    height: 256px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow:
+        0 20px 25px -5px rgba(0, 0, 0, 0.1),
+        0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+/* Kartu narasi */
+
+.ip-history-item__card {
+    position: relative;
+    z-index: 1;
+    min-width: 0;
+    padding: 30px 32px;
+    border: 1px solid var(--ip-border);
+    border-radius: 16px;
+    background: var(--ip-surface);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.ip-history-item__card h3 {
+    margin: 0 0 16px;
+    color: var(--ip-blue);
+    font-family: "Manrope", "Inter", sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.ip-history-item__card p {
+    margin: 0;
+    color: var(--ip-body);
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+.ip-history-item__card p + p {
+    margin-top: 12px;
+}
+
+/* Nomor di tengah timeline */
+
+.ip-history-item__marker {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    width: 48px;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid #ffffff;
+    border-radius: 50%;
+    background: var(--ip-blue);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    box-shadow: 0 0 0 1px rgba(10, 86, 196, 0.08);
+    transform: translate(-50%, -50%);
+}
+
+.ip-history-item__marker--muted {
+    background: #545f73;
+}
+
+.ip-history-item__marker--dark {
+    background: #213145;
+}
+
+/* Visual khusus bagian pandemi */
+
+.ip-history-special-card {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    min-height: 256px;
+    padding: 28px;
+    border: 1px solid rgba(84, 95, 115, 0.2);
+    border-radius: 16px;
+    background: rgba(84, 95, 115, 0.1);
+    text-align: center;
+}
+
+.ip-history-special-card__icon {
+    display: grid;
+    width: 56px;
+    height: 56px;
+    place-items: center;
+    border-radius: 16px;
+    background: #545f73;
+    color: #ffffff;
+    font-size: 30px;
+}
+
+.ip-history-special-card strong {
+    color: #545f73;
+    font-size: 19px;
+    line-height: 1.5;
+}
+
+.ip-history-special-card > span:last-child {
+    color: var(--ip-muted);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Kartu warisan nama */
+
+.ip-history-legacy-card {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 256px;
+    padding: 32px;
+    border: 1px solid rgba(10, 86, 196, 0.2);
+    border-radius: 16px;
+    background: #e5eeff;
+    text-align: center;
+}
+
+.ip-history-legacy-card__label {
+    margin-bottom: 16px;
+    color: var(--ip-blue);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.ip-history-legacy-card h3 {
+    margin: 0 0 12px;
+    color: var(--ip-blue-dark);
+    font-family: "Manrope", "Inter", sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.4;
+}
+
+.ip-history-legacy-card p {
+    max-width: 340px;
+    margin: 0;
+    color: var(--ip-body);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* Kartu gelap penutup */
+
+.ip-history-item__card--dark {
+    background: #213145;
+    border-color: #213145;
+    box-shadow:
+        0 20px 25px -5px rgba(0, 0, 0, 0.1),
+        0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+.ip-history-item__card--dark h3 {
+    color: #ffffff;
+}
+
+.ip-history-item__card--dark p {
+    color: #d3e4fe;
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+    .ip-history-hero {
+        min-height: 400px;
+        padding: 42px;
+    }
+
+    .ip-history-timeline {
+        gap: 36px;
+        padding-inline: 8px;
+    }
+
+    .ip-history-item {
+        gap: 32px;
+        min-height: 240px;
+    }
+
+    .ip-history-item__visual,
+    .ip-history-image-placeholder,
+    .ip-history-special-card,
+    .ip-history-legacy-card {
+        min-height: 240px;
+    }
+
+    .ip-history-item__visual img {
+        height: 240px;
+    }
+
+    .ip-history-item__card {
+        padding: 24px;
+    }
+
+    .ip-history-item__card p {
+        font-size: 14px;
+    }
+}
+
+/* Mobile: timeline menjadi satu kolom */
+
+@media (max-width: 640px) {
+    .informasi-publik-page {
+        padding-inline: 0;
+    }
+
+    .ip-history-hero {
+        min-height: 350px;
+        padding: 30px 24px;
+        border-radius: 0;
+    }
+
+    .ip-history-hero__eyebrow {
+        margin-bottom: 18px;
+        font-size: 11px;
+    }
+
+    .ip-history-hero h2 {
+        margin-bottom: 16px;
+        font-size: 30px;
+        line-height: 1.25;
+    }
+
+    .ip-history-hero p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .ip-history-timeline {
+        gap: 28px;
+        padding: 0 16px 0 30px;
+        margin: 36px auto 48px;
+    }
+
+    .ip-history-timeline::before {
+        left: 10px;
+    }
+
+    .ip-history-item {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+        min-height: auto;
+        padding-left: 0;
+    }
+
+    .ip-history-item__marker {
+        top: 0;
+        left: -20px;
+        width: 36px;
+        height: 36px;
+        border-width: 3px;
+        font-size: 10px;
+        transform: translate(-50%, 0);
+    }
+
+    .ip-history-item__visual,
+    .ip-history-image-placeholder,
+    .ip-history-special-card,
+    .ip-history-legacy-card {
+        width: 100%;
+        min-height: 190px;
+    }
+
+    .ip-history-item__visual img {
+        height: 210px;
+    }
+
+    .ip-history-item__card {
+        padding: 22px;
+        border-radius: 14px;
+    }
+
+    .ip-history-item__card h3 {
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+
+    .ip-history-item__card p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .ip-history-legacy-card {
+        padding: 24px;
+    }
+
+    .ip-history-legacy-card h3 {
+        font-size: 21px;
+    }
+}

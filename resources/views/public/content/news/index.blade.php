@@ -1,16 +1,19 @@
 <x-layouts.app title="Berita, Artikel &amp; Edukasi Kesehatan — RSUD R.A.A. Tjokronegoro" meta-description="Publikasi resmi, berita kegiatan, siaran pers, dan tips kesehatan dari dokter spesialis RSUD R.A.A. Tjokronegoro Purworejo.">
-<!-- Header Banner -->
-<section class="bg-gradient-to-r from-slate-900 to-[#005b64] text-white py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-3xl">
-            <span class="text-xs font-bold text-teal-300 uppercase tracking-widest bg-teal-500/20 px-3 py-1 rounded-full border border-teal-400/30">Publikasi & Edukasi</span>
-            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mt-3 leading-tight">Berita & Informasi Terkini</h1>
-            <p class="text-slate-300 text-sm sm:text-base mt-3 leading-relaxed">
-                Informasi aktual seputar aktivitas pelayanan rumah sakit dan wawasan hidup sehat untuk masyarakat.
-            </p>
-        </div>
+<x-page-header
+    title="Berita & Informasi Terkini"
+    description="Informasi aktual seputar aktivitas pelayanan rumah sakit dan wawasan hidup sehat untuk masyarakat."
+/>
+
+{{-- Breadcrumb --}}
+<div class="bg-slate-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <nav class="flex flex-wrap items-center gap-2 py-5 text-sm" aria-label="Breadcrumb">
+            <a href="{{ route('news') }}" class="font-medium text-slate-500 hover:text-[#007b83]">Media</a>
+            <span class="text-slate-300">&rsaquo;</span>
+            <span class="font-semibold text-[#007b83]">Berita & Artikel</span>
+        </nav>
     </div>
-</section>
+</div>
 
 <!-- News Content Grid -->
 <section class="py-16 bg-slate-50">

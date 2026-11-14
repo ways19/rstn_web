@@ -61,6 +61,7 @@ class ServiceService
             'description' => $data['description'],
             'facilities' => $facilities,
             'image' => $data['image'] ?: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80',
+            'image_360' => $data['image_360'] ?? null,
             'order' => $data['order'] ?? 0,
             'is_active' => $data['is_active'] ?? true,
         ]);
@@ -76,13 +77,14 @@ class ServiceService
 
         $service->update([
             'title' => $data['title'],
-            'slug' => Str::slug($data['title']),
+            'slug' => $service->slug ?: Str::slug($data['title']),
             'category' => $data['category'],
             'tag' => $data['tag'] ?? null,
             'excerpt' => $data['excerpt'],
             'description' => $data['description'],
             'facilities' => $facilities,
             'image' => $data['image'] ?: $service->image,
+            'image_360' => array_key_exists('image_360', $data) ? ($data['image_360'] ?: null) : $service->image_360,
             'order' => $data['order'] ?? 0,
             'is_active' => $data['is_active'] ?? false,
         ]);

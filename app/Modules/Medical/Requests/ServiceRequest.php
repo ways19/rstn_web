@@ -21,6 +21,8 @@ class ServiceRequest extends FormRequest
             'description' => ['required', 'string'],
             'facilities_text' => ['nullable', 'string'],
             'image' => ['nullable', 'string'],
+            'image_360' => ['nullable', 'string', 'max:1000'],
+            'image_360_file' => ['nullable', 'image', 'max:15360'],
             'order' => ['nullable', 'integer'],
             'is_active' => ['nullable', 'boolean'],
         ];

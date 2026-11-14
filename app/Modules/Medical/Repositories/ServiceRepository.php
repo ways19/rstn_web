@@ -45,6 +45,18 @@ class ServiceRepository extends BaseRepository implements ServiceRepositoryInter
 
     public function findBySlug(string $slug): ?Service
     {
-        return $this->model->where('slug', $slug)->first();
+        $service = $this->model->where('slug', $slug)->first();
+        if ($service) {
+            return $service;
+        }
+
+        // Fallback jika diakses menggunakan slug dari judul lengkap (misal: poliklinik-rawat-jalan vs rawat-jalan)
+        return $this->model->get()->first(function (Service $item) use ($slug) {
+            $titleSlug = \Illuminate\Support\Str::slug($item->title);
+
+            return $titleSlug === $slug
+                || str_contains($slug, $item->slug)
+                || str_contains($titleSlug, $slug);
+        });
     }
 }

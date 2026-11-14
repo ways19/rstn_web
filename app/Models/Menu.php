@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Facades\Route;
+use App\Models\Page;
 
 class Menu extends Model
 {
@@ -13,6 +14,7 @@ class Menu extends Model
         'location',
         'parent_id',
         'title',
+        'page_id',
         'url',
         'route_name',
         'icon',
@@ -30,6 +32,11 @@ class Menu extends Model
     public function parent(): BelongsTo
     {
         return $this->belongsTo(Menu::class, 'parent_id');
+    }
+
+    public function page(): BelongsTo
+    {
+        return $this->belongsTo(Page::class, 'page_id');
     }
 
     public function children(): HasMany

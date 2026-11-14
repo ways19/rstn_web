@@ -29,6 +29,14 @@ class AdminServiceController extends Controller
         $data = $request->validated();
         $data['is_active'] = $request->boolean('is_active', true);
 
+        if ($request->hasFile('image_360_file')) {
+            $path = $request->file('image_360_file')->store('services-360', 'public');
+            $data['image'] = '/storage/' . $path;
+            $data['image_360'] = '/storage/' . $path;
+        } elseif (! empty($data['image'])) {
+            $data['image_360'] = $data['image'];
+        }
+
         $this->serviceService->createService($data);
 
         return redirect()->route('admin.services.index')->with('success', 'Layanan berhasil ditambahkan.');
@@ -43,6 +51,14 @@ class AdminServiceController extends Controller
     {
         $data = $request->validated();
         $data['is_active'] = $request->boolean('is_active');
+
+        if ($request->hasFile('image_360_file')) {
+            $path = $request->file('image_360_file')->store('services-360', 'public');
+            $data['image'] = '/storage/' . $path;
+            $data['image_360'] = '/storage/' . $path;
+        } elseif (! empty($data['image'])) {
+            $data['image_360'] = $data['image'];
+        }
 
         $this->serviceService->updateService($service, $data);
 

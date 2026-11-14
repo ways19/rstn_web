@@ -43,10 +43,10 @@
                                      x-transition:leave="transition ease-in duration-100"
                                      x-transition:leave-start="opacity-100 translate-y-0"
                                      x-transition:leave-end="opacity-0 translate-y-2"
-                                     class="absolute left-0 mt-1 w-56 bg-white dark:bg-slate-900 rounded-xl shadow-xl border border-slate-100 dark:border-slate-800 py-2 z-50 text-sm font-medium"
+                                     class="absolute left-0 mt-1 w-max min-w-56 bg-white dark:bg-slate-900 rounded-xl shadow-xl border border-slate-100 dark:border-slate-800 py-2 z-50 text-sm font-medium"
                                      style="display: none;">
                                     @foreach($navItem->activeChildren as $child)
-                                        <a href="{{ $child->link }}" target="{{ $child->target }}" class="block px-4 py-2 text-slate-700 dark:text-slate-200 hover:text-[#0e9384] dark:hover:text-teal-400 hover:bg-teal-50/70 dark:hover:bg-slate-800/70 transition">
+                                        <a href="{{ $child->link }}" target="{{ $child->target }}" class="block whitespace-nowrap px-4 py-2 text-slate-700 dark:text-slate-200 hover:text-[#0e9384] dark:hover:text-teal-400 hover:bg-teal-50/70 dark:hover:bg-slate-800/70 transition">
                                             {{ $child->title }}
                                         </a>
                                     @endforeach

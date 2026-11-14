@@ -1,16 +1,51 @@
-<x-layouts.app title="Layanan Medis &amp; Fasilitas — RSUD R.A.A. Tjokronegoro" meta-description="Daftar layanan medis lengkap RSUD R.A.A. Tjokronegoro Purworejo: IGD 24 Jam, Rawat Jalan Spesialis, Rawat Inap, Hemodialisa, Radiologi Digital, Bedah Sentral, dan Laboratorium.">
-<!-- Header Banner -->
-<section class="bg-gradient-to-r from-slate-900 to-[#005b64] text-white py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-3xl">
-            <span class="text-xs font-bold text-teal-300 uppercase tracking-widest bg-teal-500/20 px-3 py-1 rounded-full border border-teal-400/30">Pelayanan Kesehatan</span>
-            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mt-3 leading-tight">Layanan Medis & Fasilitas</h1>
-            <p class="text-slate-300 text-sm sm:text-base mt-3 leading-relaxed">
-                Kami menyediakan ragam fasilitas diagnostik, kuratif, dan rehabilitatif berteknologi modern untuk menjamin keselamatan dan kenyamanan setiap pasien.
-            </p>
-        </div>
+@php
+    $categoryMeta = [
+        'semua' => [
+            'title' => 'Layanan Medis & Fasilitas',
+            'description' => 'Ragam fasilitas diagnostik, kuratif, dan rehabilitatif berteknologi modern untuk keselamatan dan kenyamanan pasien.',
+        ],
+        'darurat' => [
+            'title' => 'Instalasi Gawat Darurat (IGD 24 Jam)',
+            'description' => 'Pelayanan kegawatdaruratan medis 24 jam dengan tim dokter siaga, sistem triase cepat, dan ambulans darurat.',
+        ],
+        'rawat-jalan' => [
+            'title' => 'Instalasi Rawat Jalan',
+            'description' => 'Layanan pemeriksaan, konsultasi, dan tindakan poliklinik spesialis dengan fasilitas ruang tunggu yang nyaman.',
+        ],
+        'rawat-inap' => [
+            'title' => 'Instalasi Rawat Inap',
+            'description' => 'Fasilitas perawatan inap dari kelas reguler hingga VVIP serta ruang intensif yang mengutamakan kenyamanan dan keselamatan pasien.',
+        ],
+        'unggulan' => [
+            'title' => 'Layanan Unggulan',
+            'description' => 'Layanan medis unggulan berteknologi modern yang didukung oleh tim dokter spesialis dan subspesialis berpengalaman.',
+        ],
+        'penunjang' => [
+            'title' => 'Penunjang Medis',
+            'description' => 'Layanan diagnostik dan penunjang medis 24 jam meliputi laboratorium klinik, radiologi digital, dan instalasi farmasi.',
+        ],
+    ];
+
+    $activeMeta = $categoryMeta[$category] ?? $categoryMeta['semua'];
+    $headerTitle = $activeMeta['title'];
+    $headerDescription = $activeMeta['description'];
+@endphp
+<x-layouts.app :title="$headerTitle . ' — RSUD R.A.A. Tjokronegoro'" :meta-description="$headerDescription">
+<x-page-header
+    :title="$headerTitle"
+    :description="$headerDescription"
+/>
+
+{{-- Breadcrumb --}}
+<div class="bg-slate-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <nav class="flex flex-wrap items-center gap-2 py-5 text-sm" aria-label="Breadcrumb">
+            <a href="{{ route('services') }}" class="font-medium text-slate-500 hover:text-[#007b83]">Layanan</a>
+            <span class="text-slate-300">&rsaquo;</span>
+            <span class="font-semibold text-[#007b83]">{{ $headerTitle }}</span>
+        </nav>
     </div>
-</section>
+</div>
 
 <!-- Filter Tabs & Service List -->
 <section class="py-16 bg-slate-50">

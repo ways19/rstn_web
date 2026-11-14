@@ -3,6 +3,7 @@
 use App\Modules\Navigation\Controllers\AdminMenuController;
 use App\Modules\Navigation\Controllers\AdminModuleController;
 use App\Modules\Navigation\Controllers\AdminSettingController;
+use App\Modules\Navigation\Controllers\AdminTabReferenceController;
 use App\Modules\Navigation\Controllers\Public\PublicHomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -30,6 +31,20 @@ Route::prefix('admin')->middleware('auth')->name('admin.')->group(function () {
         Route::get('modules/{module}/edit', [AdminModuleController::class, 'edit'])->name('modules.edit');
         Route::put('modules/{module}', [AdminModuleController::class, 'update'])->name('modules.update');
         Route::post('modules/{module}/toggle', [AdminModuleController::class, 'toggle'])->name('modules.toggle');
+
+        // Tab & Referensi Menu
+        Route::get(
+            'tab-references',
+            [AdminTabReferenceController::class, 'index']
+        )->name('tab-references.index');
+        Route::post(
+            'tab-references/groups',
+            [AdminTabReferenceController::class, 'storeGroup']
+        )->name('tab-references.groups.store');
+        Route::put(
+            'tab-references/{menu}',
+            [AdminTabReferenceController::class, 'updateTab']
+        )->name('tab-references.update');
 
         // Pengelolaan Menu Navigasi
         Route::get('menus', [AdminMenuController::class, 'index'])->name('menus.index');

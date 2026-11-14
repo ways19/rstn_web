@@ -1,0 +1,380 @@
+/* =====================================================
+   TABEL PPID — PERMOHONAN INFORMASI
+===================================================== */
+
+/* PEMBUNGKUS TABEL */
+.ppid-requests-scroll {
+    width: 100%;
+    max-width: 100%;
+    max-height: 460px;
+    overflow: auto;
+    position: relative;
+    isolation: isolate;
+    background: #ffffff;
+    border-top: 1px solid #e5e7eb;
+}
+
+/* TABEL UTAMA */
+.ppid-requests-table {
+    width: 100%;
+    min-width: 760px;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #ffffff;
+    font-size: 13px;
+}
+
+/* HEADER */
+.ppid-requests-table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    padding: 15px 16px;
+    background: #f8fafc;
+    color: #475569;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: left;
+    vertical-align: middle;
+    line-height: 1.5;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    border: none;
+    border-bottom: 1px solid #dfe5ec;
+}
+
+/* ISI TABEL */
+.ppid-requests-table tbody td {
+    padding: 17px 16px;
+    color: #475569;
+    line-height: 1.65;
+    vertical-align: middle;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    background: #ffffff;
+    border: none;
+    border-bottom: 1px solid #edf0f4;
+    transition: background-color 0.15s ease;
+}
+
+/* EFEK BARIS */
+.ppid-requests-table tbody tr:hover td {
+    background: #f8fafc;
+}
+
+.ppid-requests-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* NOMOR TIKET */
+.ppid-requests-table .col-ticket {
+    width: 19%;
+    font-weight: 600;
+    color: #334155;
+    overflow-wrap: anywhere;
+}
+
+/* NAMA DAN EMAIL PEMOHON */
+.ppid-requests-table .col-applicant {
+    width: 20%;
+}
+
+.ppid-requests-table .col-applicant .font-medium {
+    color: #334155;
+    line-height: 1.5;
+}
+
+.ppid-requests-table .col-applicant .text-xs {
+    display: block;
+    margin-top: 4px;
+    color: #64748b;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+/* RINCIAN INFORMASI */
+.ppid-requests-table .col-information {
+    width: 24%;
+    color: #475569;
+}
+
+/* STATUS */
+.ppid-requests-table .col-status {
+    width: 13%;
+}
+
+.ppid-requests-table .col-status span {
+    display: inline-block;
+    max-width: 100%;
+    padding: 5px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.5;
+    white-space: normal;
+    text-align: center;
+}
+
+/* TANGGAL */
+.ppid-requests-table .col-date {
+    width: 15%;
+    color: #64748b;
+    font-size: 12px;
+    white-space: normal;
+}
+
+/* AKSI */
+.ppid-requests-table .col-action {
+    width: 9%;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.ppid-requests-table .col-action a {
+    display: inline-block;
+    padding: 7px 12px;
+    border: 1px solid #bae6fd;
+    border-radius: 8px;
+    background: #f0f9ff;
+    color: #0284c7;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.ppid-requests-table .col-action a:hover {
+    background: #e0f2fe;
+    color: #0369a1;
+}
+
+
+/* =====================================================
+   TABEL PPID — PENGAJUAN KEBERATAN
+===================================================== */
+
+/* PEMBUNGKUS TABEL */
+.ppid-objections-scroll {
+    width: 100%;
+    max-width: 100%;
+    max-height: 460px;
+    overflow: auto;
+    position: relative;
+    isolation: isolate;
+    background: #ffffff;
+    border-top: 1px solid #e5e7eb;
+}
+
+/* TABEL UTAMA */
+.ppid-objections-table {
+    width: 100%;
+    min-width: 850px;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #ffffff;
+    font-size: 13px;
+}
+
+/* HEADER */
+.ppid-objections-table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    padding: 15px 16px;
+    background: #f8fafc;
+    color: #475569;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: left;
+    vertical-align: middle;
+    line-height: 1.5;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    border: none;
+    border-bottom: 1px solid #dfe5ec;
+}
+
+/* ISI TABEL */
+.ppid-objections-table tbody td {
+    padding: 17px 16px;
+    color: #475569;
+    line-height: 1.65;
+    vertical-align: middle;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    background: #ffffff;
+    border: none;
+    border-bottom: 1px solid #edf0f4;
+    transition: background-color 0.15s ease;
+}
+
+/* EFEK BARIS */
+.ppid-objections-table tbody tr:hover td {
+    background: #f8fafc;
+}
+
+.ppid-objections-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* NOMOR TIKET */
+.ppid-objections-table .col-ticket {
+    width: 15%;
+    min-width: 0;
+    white-space: normal !important;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    font-weight: 600;
+    color: #334155;
+}
+
+/* NOMOR PERMOHONAN */
+.ppid-objections-table .col-request {
+    width: 16%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+/* PEMOHON */
+.ppid-objections-table .col-applicant {
+    width: 15%;
+}
+
+/* ALASAN KEBERATAN */
+.ppid-objections-table .col-reason {
+    width: 19%;
+}
+
+/* STATUS */
+.ppid-objections-table .col-status {
+    width: 11%;
+}
+
+.ppid-objections-table .col-status span {
+    display: inline-block;
+    max-width: 100%;
+    padding: 5px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.5;
+    white-space: normal;
+    text-align: center;
+}
+
+/* TANGGAL */
+.ppid-objections-table .col-date {
+    width: 15%;
+    color: #64748b;
+    font-size: 12px;
+    white-space: normal;
+}
+
+/* AKSI */
+.ppid-objections-table .col-action {
+    width: 9%;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.ppid-objections-table .col-action a {
+    display: inline-block;
+    padding: 7px 12px;
+    border: 1px solid #bae6fd;
+    border-radius: 8px;
+    background: #f0f9ff;
+    color: #0284c7;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.ppid-objections-table .col-action a:hover {
+    background: #e0f2fe;
+    color: #0369a1;
+}
+
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+.ppid-requests-scroll,
+.ppid-objections-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 #f8fafc;
+}
+
+.ppid-requests-scroll::-webkit-scrollbar,
+.ppid-objections-scroll::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.ppid-requests-scroll::-webkit-scrollbar-track,
+.ppid-objections-scroll::-webkit-scrollbar-track {
+    background: #f8fafc;
+}
+
+.ppid-requests-scroll::-webkit-scrollbar-thumb,
+.ppid-objections-scroll::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+.ppid-requests-scroll::-webkit-scrollbar-thumb:hover,
+.ppid-objections-scroll::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+
+
+/* =====================================================
+   RATA TENGAH TABEL PERMOHONAN INFORMASI
+===================================================== */
+
+.ppid-requests-table thead th {
+    text-align: center !important;
+    vertical-align: middle;
+}
+
+.ppid-requests-table tbody td {
+    text-align: center !important;
+    vertical-align: middle;
+}
+
+/* Nama dan email ikut rata tengah */
+.ppid-requests-table .col-applicant {
+    text-align: center !important;
+}
+
+/* Tombol Detail di tengah */
+.ppid-requests-table .col-action {
+    text-align: center !important;
+}
+
+
+/* =====================================================
+   RATA TENGAH TABEL PENGAJUAN KEBERATAN
+===================================================== */
+
+.ppid-objections-table thead th {
+    text-align: center !important;
+    vertical-align: middle;
+}
+
+.ppid-objections-table tbody td {
+    text-align: center !important;
+    vertical-align: middle;
+}
+
+/* Tombol Detail di tengah */
+.ppid-objections-table .col-action {
+    text-align: center !important;
+}

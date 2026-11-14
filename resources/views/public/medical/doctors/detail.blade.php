@@ -1,18 +1,20 @@
 <x-layouts.app :title="$doctor['name'] . ' — Dokter Spesialis RSUD R.A.A. Tjokronegoro'" :meta-description="'Profil lengkap, kualifikasi pendidikan, dan jadwal praktik ' . $doctor['name'] . ' di RSUD R.A.A. Tjokronegoro Purworejo.'">
-<!-- Header Banner -->
-<section class="bg-gradient-to-r from-slate-900 to-[#005b64] text-white py-14">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <nav class="flex items-center space-x-2 text-xs text-teal-200 mb-4" aria-label="Breadcrumb">
-            <a href="{{ route('home') }}" class="hover:text-white">Beranda</a>
-            <span>/</span>
-            <a href="{{ route('doctors') }}" class="hover:text-white">Dokter & Jadwal</a>
-            <span>/</span>
-            <span class="text-white font-medium">{{ $doctor['name'] }}</span>
+<x-page-header
+    title="Dokter & Jadwal"
+    description="Profil, kualifikasi pendidikan, dan jadwal praktik dokter spesialis."
+/>
+
+{{-- Breadcrumb --}}
+<div class="bg-slate-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <nav class="flex flex-wrap items-center gap-2 py-5 text-sm" aria-label="Breadcrumb">
+            <a href="{{ route('doctors') }}" class="font-medium text-slate-500 hover:text-[#007b83]">Dokter & Jadwal</a>
+            <span class="text-slate-300">&rsaquo;</span>
+            <span class="font-semibold text-[#007b83]">{{ $doctor['name'] }}</span>
+            <span class="ml-2 rounded-full border border-teal-200 bg-teal-50 px-3 py-0.5 text-xs font-bold uppercase tracking-wider text-[#007b83]">{{ $doctor['poli'] }}</span>
         </nav>
-        <span class="text-xs font-bold text-teal-300 uppercase tracking-widest bg-teal-500/20 px-3 py-1 rounded-full border border-teal-400/30">{{ $doctor['poli'] }}</span>
-        <h1 class="text-3xl sm:text-4xl font-extrabold mt-3">{{ $doctor['name'] }}</h1>
     </div>
-</section>
+</div>
 
 <!-- Doctor Detail Card -->
 <section class="py-16 bg-white">
@@ -21,7 +23,7 @@
             <!-- Doctor Photo & Quick Info -->
             <div class="lg:col-span-4">
                 <div class="rounded-3xl overflow-hidden shadow-lg border border-slate-100 p-6 bg-slate-50 text-center">
-                    <img src="{{ $doctor['photo'] }}" alt="{{ $doctor['name'] }}" class="w-48 h-56 rounded-2xl object-cover mx-auto shadow-md">
+                    <img src="{{ $doctor['photo'] }}" alt="{{ $doctor['name'] }}" referrerpolicy="no-referrer" class="w-48 h-56 rounded-2xl object-cover mx-auto shadow-md">
                     <h2 class="text-lg font-bold text-slate-900 mt-4">{{ $doctor['name'] }}</h2>
                     <p class="text-xs text-teal-700 font-semibold mt-1">{{ $doctor['speciality'] }}</p>
                     <p class="text-xs text-slate-500 mt-1">{{ $doctor['sub'] }}</p>

@@ -1,6 +1,6 @@
 <x-layouts.admin title="Edit Layanan">
 <div class="max-w-2xl bg-white p-8 rounded-3xl border border-slate-200 shadow-sm space-y-6">
-    <form action="{{ route('admin.services.update', $service) }}" method="POST" class="space-y-4 text-xs">
+    <form action="{{ route('admin.services.update', $service) }}" method="POST" enctype="multipart/form-data" class="space-y-4 text-xs">
         @csrf
         @method('PUT')
         <div>
@@ -40,9 +40,20 @@
             <textarea name="facilities_text" rows="3" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-teal-600">{{ old('facilities_text', is_array($service->facilities) ? implode("\n", $service->facilities) : '') }}</textarea>
         </div>
 
-        <div>
-            <label class="block font-bold text-slate-700 uppercase tracking-wider mb-1">URL Gambar Layanan</label>
-            <input type="text" name="image" value="{{ old('image', $service->image) }}" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-teal-600">
+        <div class="p-4 rounded-2xl bg-teal-50/60 border border-teal-200 space-y-3">
+            <div class="flex items-center justify-between">
+                <label class="block font-bold text-teal-900 uppercase tracking-wider">Foto Layanan (360° & Foto Standar)</label>
+                <span class="px-2.5 py-0.5 rounded-full bg-teal-600 text-white text-[10px] font-bold">1 Foto untuk 360° & Standar</span>
+            </div>
+            <div>
+                <label class="block font-semibold text-slate-700 mb-1">Upload File Foto Ruangan Baru (JPG/PNG)</label>
+                <input type="file" name="image_360_file" accept="image/*" class="w-full px-3 py-2 bg-white rounded-xl border border-slate-200 text-xs file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:bg-teal-600 file:text-white file:font-semibold hover:file:bg-teal-700">
+            </div>
+            <div>
+                <label class="block font-semibold text-slate-700 mb-1">Atau URL Gambar Layanan</label>
+                <input type="text" name="image" value="{{ old('image', $service->image) }}" placeholder="https://... atau /images/hospital-room-360.jpg" class="w-full px-4 py-2.5 bg-white rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-teal-600">
+                <p class="text-[11px] text-slate-500 mt-1">Satu foto ini akan otomatis digunakan baik pada tampilan 360° View maupun Foto Standar.</p>
+            </div>
         </div>
 
         <div class="flex items-center space-x-2 pt-2">

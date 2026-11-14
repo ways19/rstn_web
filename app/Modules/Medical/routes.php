@@ -17,7 +17,7 @@ Route::get('/layanan', [PublicMedicalController::class, 'services'])->name('serv
 Route::get('/layanan/{slug}', [PublicMedicalController::class, 'serviceDetail'])->name('services.detail');
 Route::get('/dokter', [PublicMedicalController::class, 'doctors'])->name('doctors');
 Route::get('/dokter/{id}', [PublicMedicalController::class, 'doctorDetail'])->name('doctors.detail');
-Route::get('/informasi-publik', [PublicMedicalController::class, 'information'])->name('information');
+Route::get('informasi/informasi-publik', [PublicMedicalController::class, 'information'])->name('information');
 
 // Admin CMS Routes
 Route::prefix('admin')->middleware('auth')->name('admin.')->group(function () {

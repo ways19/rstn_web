@@ -133,10 +133,10 @@ class ModuleAndMenuSeeder extends Seeder
             'order' => 1,
         ]);
 
-        // 2. Jadwal Poliklinik
+        // 2. Dokter & Jadwal
         Menu::create([
             'location' => 'public',
-            'title' => 'Jadwal Poliklinik',
+            'title' => 'Dokter & Jadwal',
             'route_name' => 'doctors',
             'order' => 2,
         ]);
@@ -148,12 +148,12 @@ class ModuleAndMenuSeeder extends Seeder
             'url' => '/layanan',
             'order' => 3,
         ]);
-        Menu::create(['location' => 'public', 'parent_id' => $mLayanan->id, 'title' => 'Instalasi Rawat Jalan', 'url' => '/layanan', 'order' => 1]);
-        Menu::create(['location' => 'public', 'parent_id' => $mLayanan->id, 'title' => 'Instalasi Rawat Inap', 'url' => '/layanan', 'order' => 2]);
+        Menu::create(['location' => 'public', 'parent_id' => $mLayanan->id, 'title' => 'Instalasi Rawat Jalan', 'url' => '/layanan?kategori=rawat-jalan', 'order' => 1]);
+        Menu::create(['location' => 'public', 'parent_id' => $mLayanan->id, 'title' => 'Instalasi Rawat Inap', 'url' => '/layanan?kategori=rawat-inap', 'order' => 2]);
         Menu::create(['location' => 'public', 'parent_id' => $mLayanan->id, 'title' => 'Instalasi Gawat Darurat (IGD 24 Jam)', 'url' => '/layanan/igd-24-jam', 'order' => 3]);
-        Menu::create(['location' => 'public', 'parent_id' => $mLayanan->id, 'title' => 'Hemodialisa (Cuci Darah)', 'url' => '/layanan', 'order' => 4]);
-        Menu::create(['location' => 'public', 'parent_id' => $mLayanan->id, 'title' => 'Laboratorium & Radiologi', 'url' => '/layanan', 'order' => 5]);
-        Menu::create(['location' => 'public', 'parent_id' => $mLayanan->id, 'title' => 'Instalasi Bedah Sentral (IBS)', 'url' => '/layanan', 'order' => 6]);
+        Menu::create(['location' => 'public', 'parent_id' => $mLayanan->id, 'title' => 'Hemodialisa (Cuci Darah)', 'url' => '/layanan/hemodialisa', 'order' => 4]);
+        Menu::create(['location' => 'public', 'parent_id' => $mLayanan->id, 'title' => 'Laboratorium & Radiologi', 'url' => '/layanan?kategori=penunjang', 'order' => 5]);
+        Menu::create(['location' => 'public', 'parent_id' => $mLayanan->id, 'title' => 'Instalasi Bedah Sentral (IBS)', 'url' => '/layanan/bedah-sentral', 'order' => 6]);
 
         // 4. Informasi
         $mInformasi = Menu::create([
@@ -168,28 +168,80 @@ class ModuleAndMenuSeeder extends Seeder
         Menu::create(['location' => 'public', 'parent_id' => $mInformasi->id, 'title' => 'Hak & Kewajiban Pasien', 'url' => '/informasi-publik#hak', 'order' => 4]);
 
         // 5. PPID
+
         $mPpid = Menu::create([
             'location' => 'public',
             'title' => 'PPID',
-            'url' => '/informasi-publik#ppid',
+            'url' => '/ppid/profil',
             'order' => 5,
         ]);
-        Menu::create(['location' => 'public', 'parent_id' => $mPpid->id, 'title' => 'Profil PPID', 'url' => '/informasi-publik#ppid', 'order' => 1]);
-        Menu::create(['location' => 'public', 'parent_id' => $mPpid->id, 'title' => 'Informasi Berkala', 'url' => '/informasi-publik#ppid', 'order' => 2]);
-        Menu::create(['location' => 'public', 'parent_id' => $mPpid->id, 'title' => 'Informasi Serta Merta & Setiap Saat', 'url' => '/informasi-publik#ppid', 'order' => 3]);
-        Menu::create(['location' => 'public', 'parent_id' => $mPpid->id, 'title' => 'Permohonan Informasi Publik', 'url' => '/kontak', 'order' => 4]);
 
-        // 6. Aduan
-        $mAduan = Menu::create([
+        Menu::create([
             'location' => 'public',
+            'parent_id' => $mPpid->id,
+            'title' => 'Profil PPID',
+            'url' => '/ppid/profil',
+            'order' => 1,
+        ]);
+
+        Menu::create([
+            'location' => 'public',
+            'parent_id' => $mPpid->id,
+            'title' => 'Informasi Publik',
+            'url' => '/ppid/informasi/berkala',
+            'order' => 2,
+        ]);
+
+        Menu::create([
+            'location' => 'public',
+            'parent_id' => $mPpid->id,
+            'title' => 'Permohonan Informasi',
+            'url' => '/ppid/permohonan/permintaan',
+            'order' => 3,
+        ]);
+        
+        // 6. Aduan
+        
+        Menu::create([
+            'location' => 'public',
+            'parent_id' => $mAduan->id,
             'title' => 'Aduan',
-            'url' => '/kontak',
+            'url' => '/aduan/pengaduan-online-pasien',
             'order' => 6,
         ]);
-        Menu::create(['location' => 'public', 'parent_id' => $mAduan->id, 'title' => 'Pengaduan Online Pasien', 'url' => '/kontak', 'order' => 1]);
-        Menu::create(['location' => 'public', 'parent_id' => $mAduan->id, 'title' => 'Lapor Benturan Kepentingan', 'url' => '/kontak', 'order' => 2]);
-        Menu::create(['location' => 'public', 'parent_id' => $mAduan->id, 'title' => 'Whistle Blowing System (WBS)', 'url' => '/kontak', 'order' => 3]);
-        Menu::create(['location' => 'public', 'parent_id' => $mAduan->id, 'title' => 'Saluran Kontak Pengaduan', 'url' => '/kontak', 'order' => 4]);
+
+        Menu::create([
+            'location' => 'public',
+            'parent_id' => $mAduan->id,
+            'title' => 'Pengaduan Online Pasien',
+            'url' => '/aduan/pengaduan-online-pasien',
+            'order' => 1,
+        ]);
+
+        Menu::create([
+            'location' => 'public',
+            'parent_id' => $mAduan->id,
+            'title' => 'Lapor Benturan Kepentingan',
+            'url' => '/aduan/lapor-benturan-kepentingan',
+            'order' => 2,
+        ]);
+
+        Menu::create([
+            'location' => 'public',
+            'parent_id' => $mAduan->id,
+            'title' => 'Whistle Blowing System (WBS)',
+            'url' => '/aduan/whistle-blowing-system-wbs',
+            'order' => 3,
+        ]);
+
+        Menu::create([
+            'location' => 'public',
+            'parent_id' => $mAduan->id,
+            'title' => 'Saluran Kontak Pengaduan',
+            'url' => '/aduan/saluran-kontak-pengaduan',
+            'order' => 4,
+        ]);
+
 
         // 7. Media
         $mMedia = Menu::create([

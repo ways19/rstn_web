@@ -1,0 +1,603 @@
+
+/* ========================================
+   PROFIL DIKLAT — MODERN HOSPITAL UI
+======================================== */
+
+.diklat-profile-page {
+    --dp-green: #087f5b;
+    --dp-green-dark: #075c46;
+    --dp-green-soft: #eaf7f1;
+    --dp-ink: #18352d;
+    --dp-muted: #64756f;
+    --dp-border: #e1ebe6;
+
+    width: 100%;
+    margin: 0 auto;
+    color: var(--dp-ink);
+    font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+    box-sizing: border-box;
+}
+
+.diklat-profile-page *,
+.diklat-profile-page *::before,
+.diklat-profile-page *::after {
+    box-sizing: border-box;
+}
+
+.diklat-profile-page h2,
+.diklat-profile-page h3,
+.diklat-profile-page h4,
+.diklat-profile-page p {
+    margin-top: 0;
+}
+
+/* HERO */
+
+.diklat-profile-hero {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 34px;
+    padding: 30px 32px;
+    border-radius: 18px;
+    background: linear-gradient(125deg, #086c50 0%, #0b8964 100%);
+    color: #fff;
+    isolation: isolate;
+}
+
+.diklat-profile-hero::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 210px;
+    height: 210px;
+    right: -65px;
+    bottom: -115px;
+    border: 1px solid rgb(255 255 255 / 15%);
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 25px rgb(255 255 255 / 5%),
+        0 0 0 50px rgb(255 255 255 / 4%);
+}
+
+.diklat-profile-hero-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 17px;
+    padding: 6px 11px;
+    border: 1px solid rgb(255 255 255 / 20%);
+    border-radius: 999px;
+    background: rgb(255 255 255 / 10%);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.diklat-profile-hero-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #9ce8c5;
+}
+
+.diklat-profile-hero h1,
+.diklat-profile-hero h2 {
+    font-family: Poppins, "Plus Jakarta Sans", system-ui,
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-size: clamp(25px, 3vw, 32px);
+    font-weight: 800;
+    line-height: 1.3;
+    letter-spacing: -0.8px;
+}
+
+.diklat-profile-hero > p {
+    width: 100%;
+    max-width: none;
+    margin-bottom: 22px;
+    color: rgb(255 255 255 / 88%);
+    font-size: 13px;
+    line-height: 1.85;
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
+.diklat-profile-hero-footer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgb(255 255 255 / 82%);
+    font-size: 11px;
+}
+
+.diklat-profile-hero-line {
+    width: 26px;
+    height: 2px;
+    border-radius: 2px;
+    background: #9ce8c5;
+}
+
+/* SECTION HEADING */
+
+.diklat-profile-intro,
+.diklat-profile-functions {
+    margin-bottom: 34px;
+}
+
+.diklat-profile-section-heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    margin-bottom: 18px;
+}
+
+.diklat-profile-section-index {
+    display: flex;
+    flex: 0 0 38px;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border: 1px solid #cce9dc;
+    border-radius: 11px;
+    background: var(--dp-green-soft);
+    color: var(--dp-green);
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.diklat-profile-section-heading h3 {
+    margin-bottom: 3px;
+    color: var(--dp-ink);
+    font-size: 19px;
+    font-weight: 800;
+    line-height: 1.45;
+    letter-spacing: -0.4px;
+}
+
+.diklat-profile-section-heading p {
+    margin-bottom: 0;
+    color: var(--dp-muted);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+/* INTRO CONTENT */
+
+.diklat-profile-intro-content {
+    display: flex;
+    align-items: stretch;
+    gap: 16px;
+    padding: 20px 22px;
+    border: 1px solid var(--dp-border);
+    border-radius: 14px;
+    background: #f8fbf9;
+}
+
+.diklat-profile-intro-accent {
+    flex: 0 0 3px;
+    border-radius: 5px;
+    background: #15966a;
+}
+
+.diklat-profile-intro-content p {
+    margin: 0;
+    color: #52665e;
+    font-size: 13px;
+    line-height: 1.95;
+}
+
+/* FUNCTION CARDS */
+
+.diklat-function-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 16px;
+}
+
+.diklat-function-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 21px 19px 16px;
+    border: 1px solid var(--dp-border);
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0 3px 12px rgb(18 58 42 / 3%);
+    transition: transform .2s ease, box-shadow .2s ease,
+                border-color .2s ease;
+}
+
+.diklat-function-card:hover {
+    transform: translateY(-3px);
+    border-color: #b4dfca;
+    box-shadow: 0 10px 25px rgb(18 91 62 / 8%);
+}
+
+.diklat-function-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 19px;
+}
+
+.diklat-function-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 42px;
+    height: 30px;
+    padding: 0 10px;
+    border: 1px solid #d5eee1;
+    border-radius: 8px;
+    background: var(--dp-green-soft);
+    color: var(--dp-green);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .5px;
+}
+
+.diklat-function-symbol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    background: #f3f8f5;
+    color: #43876a;
+    font-size: 17px;
+}
+
+.diklat-function-card h4 {
+    margin-bottom: 11px;
+    color: var(--dp-ink);
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1.65;
+    letter-spacing: -.2px;
+}
+
+.diklat-function-card > p {
+    flex: 1;
+    margin-bottom: 20px;
+    color: var(--dp-muted);
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+.diklat-function-card-footer {
+    padding-top: 12px;
+    border-top: 1px solid #edf2ef;
+}
+
+.diklat-function-card-footer span {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--dp-green);
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.diklat-function-card-footer span::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #43ad7c;
+}
+
+/* COMMITMENT */
+
+.diklat-profile-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 26px;
+    padding: 23px;
+    border: 1px solid #cce9dc;
+    border-radius: 15px;
+    background: linear-gradient(120deg, #edf8f2, #f8fbf9);
+}
+
+.diklat-profile-note-icon {
+    display: flex;
+    flex: 0 0 42px;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: #087f5b;
+    color: #fff;
+    font-size: 20px;
+}
+
+.diklat-profile-note-content {
+    min-width: 0;
+}
+
+.diklat-profile-note-label {
+    display: block;
+    margin-bottom: 5px;
+    color: #16845d;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.diklat-profile-note h3 {
+    margin-bottom: 7px;
+    color: var(--dp-ink);
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.55;
+}
+
+.diklat-profile-note p {
+    margin-bottom: 0;
+    color: #52665e;
+    font-size: 12px;
+    line-height: 1.85;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+    .diklat-function-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .diklat-function-card:last-child {
+        grid-column: 1 / -1;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+    .diklat-profile-hero {
+        margin-bottom: 28px;
+        padding: 24px 20px;
+        border-radius: 15px;
+    }
+
+    .diklat-profile-hero h1 {
+        font-size: 24px;
+    }
+
+    .diklat-profile-hero > p {
+        font-size: 12px;
+    }
+
+    .diklat-profile-intro,
+    .diklat-profile-functions {
+        margin-bottom: 28px;
+    }
+
+    .diklat-profile-section-heading {
+        gap: 10px;
+    }
+
+    .diklat-profile-section-index {
+        flex-basis: 34px;
+        width: 34px;
+        height: 34px;
+    }
+
+    .diklat-profile-section-heading h3 {
+        font-size: 17px;
+    }
+
+    .diklat-profile-section-heading p {
+        font-size: 11px;
+    }
+
+    .diklat-profile-intro-content {
+        gap: 12px;
+        padding: 16px;
+    }
+
+    .diklat-profile-intro-content p {
+        font-size: 12px;
+        line-height: 1.9;
+    }
+
+    .diklat-function-grid {
+        grid-template-columns: 1fr;
+        gap: 13px;
+    }
+
+    .diklat-function-card:last-child {
+        grid-column: auto;
+    }
+
+    .diklat-function-card {
+        padding: 18px 17px 15px;
+    }
+
+    .diklat-function-card-top {
+        margin-bottom: 13px;
+    }
+
+    .diklat-function-card h4 {
+        font-size: 14px;
+    }
+
+    .diklat-function-card > p {
+        margin-bottom: 16px;
+    }
+
+    .diklat-profile-note {
+        gap: 12px;
+        padding: 17px 15px;
+    }
+
+    .diklat-profile-note-icon {
+        flex-basis: 36px;
+        width: 36px;
+        height: 36px;
+    }
+
+    .diklat-profile-note h3 {
+        font-size: 14px;
+    }
+}
+
+/* REDUCE MOTION */
+@media (prefers-reduced-motion: reduce) {
+    .diklat-function-card {
+        transition: none;
+    }
+}
+
+/* ========================================
+   HEADER HALAMAN PENDIDIKAN & PELATIHAN
+======================================== */
+
+.diklat-page-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    margin-bottom: 2px;
+    padding: 30px 32px;
+    border-radius: 18px;
+    background: linear-gradient(125deg, #086c50 0%, #0b8964 100%);
+    color: #fff;
+}
+
+.diklat-page-hero::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    right: -65px;
+    bottom: -115px;
+    width: 210px;
+    height: 210px;
+    border: 1px solid rgb(255 255 255 / 15%);
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 25px rgb(255 255 255 / 5%),
+        0 0 0 50px rgb(255 255 255 / 4%);
+    pointer-events: none;
+}
+
+.diklat-page-hero-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 17px;
+    padding: 6px 11px;
+    border: 1px solid rgb(255 255 255 / 20%);
+    border-radius: 999px;
+    background: rgb(255 255 255 / 10%);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.diklat-page-hero-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #9ce8c5;
+}
+
+.diklat-page-hero h1 {
+    max-width: 680px;
+    margin: 0 0 12px;
+    color: #fff;
+    font-size: clamp(25px, 3vw, 32px);
+    font-weight: 800;
+    line-height: 1.3;
+    letter-spacing: -0.8px;
+}
+
+.diklat-page-hero > p {
+    width: 100%;
+    max-width: none;
+    margin: 0 0 22px;
+    color: rgb(255 255 255 / 90%);
+    font-size: 13px;
+    line-height: 1.85;
+    overflow-wrap: break-word;
+    word-break: normal;
+}
+
+.diklat-page-hero-footer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgb(255 255 255 / 82%);
+    font-size: 11px;
+}
+
+.diklat-page-hero-line {
+    width: 26px;
+    height: 2px;
+    border-radius: 2px;
+    background: #9ce8c5;
+}
+
+@media (max-width: 600px) {
+    .diklat-page-hero {
+        padding: 24px 20px;
+        border-radius: 15px;
+    }
+
+    .diklat-page-hero h1 {
+        font-size: 24px;
+    }
+
+    .diklat-page-hero > p {
+        font-size: 12px;
+    }
+}
+
+
+.diklat-table-wrap {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.diklat-table {
+    width: 100%;
+    min-width: 850px;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+.diklat-table th,
+.diklat-table td {
+    padding: 12px 10px;
+    text-align: left;
+    vertical-align: top;
+    overflow-wrap: anywhere;
+}
+
+.diklat-table th:nth-child(1) { width: 21%; }
+.diklat-table th:nth-child(2) { width: 21%; }
+.diklat-table th:nth-child(3) { width: 18%; }
+.diklat-table th:nth-child(4) { width: 12%; }
+.diklat-table th:nth-child(5) { width: 16%; }
+.diklat-table th:nth-child(6) { width: 12%; }
+
+.diklat-table td small {
+    display: block;
+    margin-top: 4px;
+    color: #8a938f;
+    line-height: 1.5;
+}
+
+.diklat-target-cell strong {
+    display: block;
+    line-height: 1.5;
+}
+
+

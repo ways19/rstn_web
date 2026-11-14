@@ -17,6 +17,7 @@ class MenuRequest extends FormRequest
             'location' => ['required', 'in:public,admin'],
             'parent_id' => ['nullable', 'exists:menus,id'],
             'title' => ['required', 'string', 'max:255'],
+            'page_id' => ['nullable', 'exists:pages,id'],
             'url' => ['nullable', 'string', 'max:255'],
             'route_name' => ['nullable', 'string', 'max:255'],
             'icon' => ['nullable', 'string', 'max:50'],

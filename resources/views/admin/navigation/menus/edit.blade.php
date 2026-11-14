@@ -56,6 +56,40 @@
                 @error('title') <span class="text-xs text-rose-500 mt-1 block">{{ $message }}</span> @enderror
             </div>
 
+            {{-- Tautkan Konten Halaman --}}
+            <div>
+                <label for="page_id" class="block text-sm font-semibold text-slate-700">
+                    Tautkan Konten Halaman (Pages)
+                </label>
+
+                <select
+                    name="page_id"
+                    id="page_id"
+                    class="mt-2 w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm focus:border-[#007b83] focus:ring-[#007b83]"
+                >
+                    <option value="">-- Tidak ditautkan ke Pages --</option>
+
+                    @foreach ($pages as $page)
+                        <option
+                            value="{{ $page->id }}"
+                            @selected(old('page_id', $menu->page_id) == $page->id)
+                        >
+                            {{ $page->title }}
+                        </option>
+                    @endforeach
+                </select>
+
+                <p class="mt-1 text-xs text-slate-500">
+                    Pilih halaman yang menjadi sumber konten untuk menu ini.
+                </p>
+
+                @error('page_id')
+                    <p class="mt-1 text-sm text-red-600">
+                        {{ $message }}
+                    </p>
+                @enderror
+            </div>
+
             <!-- Route Name or URL -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>

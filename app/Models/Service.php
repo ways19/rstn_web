@@ -8,7 +8,7 @@ class Service extends Model
 {
     protected $fillable = [
         'title', 'slug', 'category', 'tag', 'excerpt',
-        'description', 'facilities', 'image', 'order', 'is_active'
+        'description', 'facilities', 'image', 'image_360', 'order', 'is_active'
     ];
 
     protected $casts = [

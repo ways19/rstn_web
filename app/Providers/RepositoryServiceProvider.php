@@ -25,6 +25,8 @@ use App\Modules\Content\Contracts\BannerRepositoryInterface;
 use App\Modules\Content\Repositories\BannerRepository;
 use App\Modules\Content\Contracts\PageRepositoryInterface;
 use App\Modules\Content\Repositories\PageRepository;
+use App\Modules\Content\Contracts\PpidDocumentRepositoryInterface;
+use App\Modules\Content\Repositories\PpidDocumentRepository;
 
 // Patient
 use App\Modules\Patient\Contracts\RegistrationRepositoryInterface;
@@ -59,6 +61,7 @@ class RepositoryServiceProvider extends ServiceProvider
         PostRepositoryInterface::class => PostRepository::class,
         BannerRepositoryInterface::class => BannerRepository::class,
         PageRepositoryInterface::class => PageRepository::class,
+        PpidDocumentRepositoryInterface::class => PpidDocumentRepository::class,
 
         // Patient
         RegistrationRepositoryInterface::class => RegistrationRepository::class,

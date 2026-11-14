@@ -1,16 +1,8 @@
-<x-layouts.app title="Dokter &amp; Jadwal Praktik Spesialis — RSUD R.A.A. Tjokronegoro" meta-description="Direktori dokter spesialis dan jadwal praktik lengkap di RSUD R.A.A. Tjokronegoro Purworejo. Penyakit Dalam, Anak, Obgyn, Bedah, Jantung, Mata, dan lainnya.">
-<!-- Header Banner -->
-<section class="bg-gradient-to-r from-slate-900 to-[#005b64] text-white py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-3xl">
-            <span class="text-xs font-bold text-teal-300 uppercase tracking-widest bg-teal-500/20 px-3 py-1 rounded-full border border-teal-400/30">Tenaga Medis Spesialis</span>
-            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mt-3 leading-tight">Dokter & Jadwal Praktik</h1>
-            <p class="text-slate-300 text-sm sm:text-base mt-3 leading-relaxed">
-                Temukan dokter spesialis terbaik kami, periksa jadwal hari praktik, dan lakukan reservasi antrean poliklinik dengan mudah.
-            </p>
-        </div>
-    </div>
-</section>
+<x-layouts.app title="Dokter &amp; Jadwal — RSUD R.A.A. Tjokronegoro" meta-description="Direktori dokter spesialis dan jadwal praktik lengkap di RSUD R.A.A. Tjokronegoro Purworejo. Penyakit Dalam, Anak, Obgyn, Bedah, Jantung, Mata, dan lainnya.">
+<x-page-header
+    title="Dokter & Jadwal"
+    description="Temukan dokter spesialis, periksa jadwal hari praktik, dan lakukan reservasi antrean poliklinik dengan mudah."
+/>
 
 <!-- Interactive Doctor Directory via Alpine.js -->
 <section class="py-16 bg-slate-50" x-data="{
@@ -87,7 +79,7 @@
                 <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col justify-between">
                     <div class="p-6">
                         <div class="flex items-start space-x-4">
-                            <img :src="doctor.photo" :alt="doctor.name" class="w-24 h-28 rounded-2xl object-cover shrink-0 bg-slate-100 shadow-sm">
+                            <img :src="doctor.photo" :alt="doctor.name" referrerpolicy="no-referrer" class="w-24 h-28 rounded-2xl object-cover shrink-0 bg-slate-100 shadow-sm">
                             <div>
                                 <span class="text-xs font-semibold text-teal-700 bg-teal-50 px-2.5 py-0.5 rounded-full inline-block mb-1" x-text="doctor.poli"></span>
                                 <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug" x-text="doctor.name"></h3>

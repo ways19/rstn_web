@@ -75,7 +75,7 @@ class DoctorService
             'days' => $data['days'] ?? $doctor->days,
             'experience' => $data['experience'] ?? null,
             'education' => $data['education'] ?? null,
-            'photo' => $data['photo'] ?: $doctor->photo,
+            'photo' => array_key_exists('photo', $data) && $data['photo'] !== null ? $data['photo'] : $doctor->getRawOriginal('photo'),
             'order' => $data['order'] ?? 0,
             'is_active' => $data['is_active'] ?? false,
         ]);

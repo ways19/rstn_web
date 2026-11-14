@@ -1,16 +1,19 @@
 <x-layouts.app title="Informasi Publik &amp; Ketersediaan Tempat Tidur — RSUD R.A.A. Tjokronegoro" meta-description="Ketersediaan tempat tidur rawat inap terkini, tata tertib jam besuk, hak &amp; kewajiban pasien, dan FAQ di RSUD R.A.A. Tjokronegoro Purworejo.">
-<!-- Header Banner -->
-<section class="bg-gradient-to-r from-slate-900 to-[#005b64] text-white py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-3xl">
-            <span class="text-xs font-bold text-teal-300 uppercase tracking-widest bg-teal-500/20 px-3 py-1 rounded-full border border-teal-400/30">Transparansi Layanan</span>
-            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mt-3 leading-tight">Informasi Publik & Ketersediaan Kamar</h1>
-            <p class="text-slate-300 text-sm sm:text-base mt-3 leading-relaxed">
-                Pantau ketersediaan bed rawat inap secara real-time, panduan tata tertib pengunjung, dan informasi hak pasien.
-            </p>
-        </div>
+<x-page-header
+    title="Informasi Publik & Ketersediaan Kamar"
+    description="Pantau ketersediaan bed rawat inap, panduan tata tertib pengunjung, dan informasi hak pasien."
+/>
+
+{{-- Breadcrumb --}}
+<div class="bg-slate-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <nav class="flex flex-wrap items-center gap-2 py-5 text-sm" aria-label="Breadcrumb">
+            <a href="{{ route('information') }}" class="font-medium text-slate-500 hover:text-[#007b83]">Informasi</a>
+            <span class="text-slate-300">&rsaquo;</span>
+            <span class="font-semibold text-[#007b83]">Ketersediaan Kamar</span>
+        </nav>
     </div>
-</section>
+</div>
 
 <!-- Bed Monitoring Section -->
 <section class="py-16 bg-white">

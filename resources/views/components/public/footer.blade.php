@@ -30,7 +30,7 @@
                     <li><a href="{{ route('about') }}" class="hover:text-teal-300 transition">Profil & Visi Misi</a></li>
                     <li><a href="{{ route('services') }}" class="hover:text-teal-300 transition">Layanan Rawat Jalan & Inap</a></li>
                     <li><a href="{{ route('doctors') }}" class="hover:text-teal-300 transition">Jadwal Dokter Spesialis</a></li>
-                    <li><a href="{{ route('registration') }}" class="hover:text-teal-300 transition">Alur Pendaftaran Online</a></li>
+                    <li><a href="{{ route('registration') }}" class="hover:text-teal-300 transition">Alur Pendaftaran</a></li>
                     <li><a href="{{ route('information') }}" class="hover:text-teal-300 transition">Ketersediaan Tempat Tidur</a></li>
                     <li><a href="{{ route('news') }}" class="hover:text-teal-300 transition">Berita & Informasi PKRS</a></li>
                 </ul>

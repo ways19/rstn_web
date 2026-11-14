@@ -26,6 +26,13 @@ class RbacSeeder extends Seeder
             // Humas & Konten
             ['name' => 'manage_posts', 'label' => 'Kelola Berita & Edukasi PKRS', 'group' => 'Konten Website'],
             ['name' => 'manage_banners', 'label' => 'Kelola Hero Slider Beranda', 'group' => 'Konten Website'],
+            ['name' => 'manage_pages', 'label' => 'Kelola Halaman & Konten PPID', 'group' => 'Konten Website'],
+            [
+                'name' => 'manage_diklat_registrations',
+                'label' => 'Kelola Pendaftaran Diklat',
+                'group' => 'Pendidikan & Pelatihan',
+            ],
+
 
             // Sistem & User
             ['name' => 'manage_settings', 'label' => 'Kelola Pengaturan Profil RS', 'group' => 'Sistem & Konfigurasi'],
@@ -64,7 +71,12 @@ class RbacSeeder extends Seeder
             ['label' => 'Humas & PKRS', 'description' => 'Mengelola publikasi berita kegiatan, edukasi kesehatan, banner, dan tanggapan aduan.']
         );
         $petugasHumas->permissions()->sync(
-            Permission::whereIn('name', ['manage_posts', 'manage_complaints', 'manage_banners'])->pluck('id')
+            Permission::whereIn('name', [
+                'manage_posts',
+                'manage_complaints',
+                'manage_banners',
+                'manage_pages',
+            ])->pluck('id')
         );
 
         $petugasPelayanan = Role::updateOrCreate(

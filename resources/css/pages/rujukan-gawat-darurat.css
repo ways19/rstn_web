@@ -1,0 +1,34 @@
+/* ========================================
+   RUJUKAN GAWAT DARURAT
+======================================== */
+
+.emergency-referral-content {
+    width: 100%;
+    color: #1e293b;
+    font-family: inherit;
+}
+
+.emergency-referral-content *,
+.emergency-referral-content *::before,
+.emergency-referral-content *::after {
+    box-sizing: border-box;
+}
+
+.emergency-referral-content img {
+    max-width: 100%;
+    height: auto;
+}
+
+.emergency-referral-content table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.emergency-referral-content a {
+    overflow-wrap: anywhere;
+}
+
+
+
+
+

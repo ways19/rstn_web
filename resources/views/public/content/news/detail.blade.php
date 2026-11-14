@@ -1,23 +1,20 @@
 <x-layouts.app :title="$item['title'] . ' — RSUD R.A.A. Tjokronegoro'" :meta-description="$item['excerpt']">
-<!-- Header Banner -->
-<section class="bg-gradient-to-r from-slate-900 to-[#005b64] text-white py-14">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <nav class="flex items-center space-x-2 text-xs text-teal-200 mb-4" aria-label="Breadcrumb">
-            <a href="{{ route('home') }}" class="hover:text-white">Beranda</a>
-            <span>/</span>
-            <a href="{{ route('news') }}" class="hover:text-white">Berita & Artikel</a>
-            <span>/</span>
-            <span class="text-white font-medium">{{ $item['category'] }}</span>
+<x-page-header
+    title="Berita & Informasi Terkini"
+    description="Informasi aktual seputar aktivitas pelayanan rumah sakit dan wawasan hidup sehat untuk masyarakat."
+/>
+
+{{-- Breadcrumb --}}
+<div class="bg-slate-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <nav class="flex flex-wrap items-center gap-2 py-5 text-sm" aria-label="Breadcrumb">
+            <a href="{{ route('news') }}" class="font-medium text-slate-500 hover:text-[#007b83]">Berita & Artikel</a>
+            <span class="text-slate-300">&rsaquo;</span>
+            <span class="font-semibold text-[#007b83]">{{ $item['title'] }}</span>
+            <span class="ml-2 rounded-full border border-teal-200 bg-teal-50 px-3 py-0.5 text-xs font-bold uppercase tracking-wider text-[#007b83]">{{ $item['category'] }}</span>
         </nav>
-        <span class="text-xs font-bold text-teal-300 uppercase tracking-widest bg-teal-500/20 px-3 py-1 rounded-full border border-teal-400/30">{{ $item['category'] }}</span>
-        <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold mt-3 max-w-4xl leading-tight">{{ $item['title'] }}</h1>
-        <div class="text-xs text-teal-200 mt-3 flex items-center space-x-4">
-            <span>Tanggal: {{ $item['date'] }}</span>
-            <span>•</span>
-            <span>Oleh: Promosi Kesehatan Rumah Sakit (PKRS)</span>
-        </div>
     </div>
-</section>
+</div>
 
 <!-- Article Content -->
 <section class="py-16 bg-white">
@@ -25,6 +22,15 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
             <!-- Article Body -->
             <div class="lg:col-span-8 space-y-8">
+                <div class="space-y-3">
+                    <h1 class="text-2xl sm:text-3xl font-bold text-slate-900 leading-tight">{{ $item['title'] }}</h1>
+                    <div class="flex flex-wrap items-center gap-x-4 text-xs text-slate-500">
+                        <span>Tanggal: {{ $item['date'] }}</span>
+                        <span>&bull;</span>
+                        <span>Oleh: Promosi Kesehatan Rumah Sakit (PKRS)</span>
+                    </div>
+                </div>
+
                 <div class="rounded-3xl overflow-hidden shadow-lg border border-slate-100">
                     <img src="{{ $item['image'] }}" alt="{{ $item['title'] }}" class="w-full h-[400px] object-cover">
                 </div>

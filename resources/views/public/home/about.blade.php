@@ -1,16 +1,8 @@
 <x-layouts.app title="Tentang Kami — Profil RSUD R.A.A. Tjokronegoro Purworejo" meta-description="Profil, Sejarah, Visi &amp; Misi, Jajaran Direksi, serta Maklumat Pelayanan RSUD R.A.A. Tjokronegoro Kabupaten Purworejo.">
-<!-- Page Header Banner -->
-<section class="bg-gradient-to-r from-slate-900 to-[#005b64] text-white py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-3xl">
-            <span class="text-xs font-bold text-teal-300 uppercase tracking-widest bg-teal-500/20 px-3 py-1 rounded-full border border-teal-400/30">Profil Rumah Sakit</span>
-            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mt-3 leading-tight">Tentang RSUD R.A.A. Tjokronegoro</h1>
-            <p class="text-slate-300 text-sm sm:text-base mt-3 leading-relaxed">
-                Mengenal lebih dekat sejarah, visi, misi, dan komitmen kami dalam melayani kesehatan masyarakat Kabupaten Purworejo dan sekitarnya.
-            </p>
-        </div>
-    </div>
-</section>
+<x-page-header
+    title="Tentang RSUD R.A.A. Tjokronegoro"
+    description="Mengenal lebih dekat sejarah, visi, misi, dan komitmen kami dalam melayani kesehatan masyarakat Kabupaten Purworejo dan sekitarnya."
+/>
 
 <!-- Sejarah & Pengantar -->
 <section class="py-16 bg-white">

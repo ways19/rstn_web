@@ -1,4 +1,20 @@
 @import 'tailwindcss';
+@import "./pages/pengaduan-online-pasien";
+@import "./pages/rujukan-gawat-darurat";
+@import "./pages/faq";
+@import "./pages/profil-diklat";
+@import "./pages/alur-pendaftaran";
+@import "./pages/tata-tertib";
+@import "./pages/pendidikan-pelatihan-diklat";
+@import "./pages/fasilitas-diklat";
+@import "./pages/akreditasi-diklat";
+@import "./pages/dokumentasi-diklat";
+@import "./pages/informasi-publik";
+@import "./pages/tabel-ppid-cms";
+@import "./pages/diklat-registration";
+
+
+
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -146,4 +162,17 @@ body {
 .dark table tbody tr:hover {
     background-color: rgba(30, 41, 59, 0.5);
 }
+
+/* Utilitas Hide Scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+
+
+
 

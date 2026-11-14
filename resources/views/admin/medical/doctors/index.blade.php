@@ -22,7 +22,7 @@
                 @foreach($doctors as $doc)
                     <tr class="hover:bg-slate-50 transition">
                         <td class="px-6 py-4 flex items-center space-x-3">
-                            <img src="{{ $doc->photo }}" alt="{{ $doc->name }}" class="w-10 h-10 rounded-full object-cover">
+                            <img src="{{ $doc->photo }}" alt="{{ $doc->name }}" referrerpolicy="no-referrer" class="w-10 h-10 rounded-full object-cover">
                             <div>
                                 <span class="font-bold text-slate-900 block">{{ $doc->name }}</span>
                                 <span class="text-[11px] text-slate-400">{{ $doc->sub_speciality }}</span>

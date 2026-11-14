@@ -1,0 +1,688 @@
+/* =========================================================
+   FASILITAS PENDIDIKAN & PELATIHAN
+   RSUD R.A.A. Tjokronegoro
+   ========================================================= */
+
+
+.facility-page {
+    --facility-primary: #2563eb;
+    --facility-heading: #0f172a;
+    --facility-text: #475569;
+    --facility-muted: #64748b;
+    --facility-border: #e2e8f0;
+
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--facility-text);
+    font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+}
+
+
+/* Intro halaman */
+.facility-page .facility-intro {
+    margin: 0 0 20px;
+}
+
+.facility-page .facility-intro h2 {
+    margin: 0 0 8px;
+    color: var(--facility-heading);
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: -0.5px;
+}
+
+.facility-page .facility-intro p {
+    max-width: 760px;
+    margin: 0;
+    color: var(--facility-muted);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.facility-page .facility-eyebrow {
+    margin-bottom: 10px;
+    color: var(--facility-primary);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+}
+
+.facility-page .facility-intro h2 {
+    margin: 0 0 12px;
+    color: var(--facility-heading);
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: -0.75px;
+}
+
+.facility-page .facility-intro p {
+    max-width: 760px;
+    margin: 0;
+    color: var(--facility-muted);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* Kartu fasilitas */
+.facility-page .facility-card {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 0 24px;
+    padding: 20px;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid var(--facility-border);
+    border-radius: 16px;
+    box-shadow: 0 1px 2px rgb(15 23 42 / 5%);
+}
+
+.facility-page .facility-card:last-child {
+    margin-bottom: 0;
+}
+
+.facility-page .facility-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    min-height: 40px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.facility-page .facility-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+}
+
+.facility-page .facility-heading h3 {
+    margin: 0;
+    color: var(--facility-heading);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: -0.5px;
+}
+
+.facility-page .facility-icon {
+    display: inline-flex;
+    flex: 0 0 32px;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+}
+
+.facility-page .facility-icon svg {
+    display: block;
+    width: 17px;
+    height: 17px;
+}
+
+.facility-page .facility-icon-blue {
+    color: #2563eb;
+    background: #eff6ff;
+}
+
+.facility-page .facility-icon-green {
+    color: #059669;
+    background: #ecfdf5;
+}
+
+.facility-page .facility-icon-teal {
+    color: #0d9488;
+    background: #f0fdfa;
+}
+
+.facility-page .facility-category {
+    flex-shrink: 0;
+    padding: 5px 10px;
+    color: #64748b;
+    background: #f1f5f9;
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* Area foto */
+.facility-page .facility-photo {
+    position: relative;
+    height: 322px;
+    overflow: hidden;
+    isolation: isolate;
+    background: #e2e8f0;
+    border: 1px solid var(--facility-border);
+    border-radius: 12px;
+}
+
+.facility-page .facility-photo img {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.facility-page .facility-photo::before {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(
+        0deg,
+        rgb(2 6 23 / 82%) 0%,
+        rgb(2 6 23 / 22%) 50%,
+        rgb(2 6 23 / 0%) 100%
+    );
+    content: "";
+    pointer-events: none;
+}
+
+.facility-page .facility-photo-overlay {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    padding: 20px;
+    color: #fff;
+}
+
+
+.facility-page .facility-photo-label {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    max-width: 100%;
+    padding: 8px 14px;
+    border-radius: 8px;
+    background-color: #0d9488;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+
+.facility-page .facility-label-blue {
+    background: rgb(37 99 235 / 92%);
+}
+
+.facility-page .facility-label-green {
+    background: rgb(5 150 105 / 92%);
+}
+
+.facility-page .facility-label-teal {
+    background: rgb(13 148 136 / 92%);
+}
+
+.facility-page .facility-photo-overlay p {
+    margin: 0;
+    color: rgb(255 255 255 / 96%);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+/* Deskripsi fasilitas */
+.facility-page .facility-description {
+    margin: 12px 0 0;
+    color: var(--facility-text);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.7;
+}
+
+/* Informasi perpustakaan */
+.facility-page .facility-library-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+    padding: 14px;
+    background: #f8fafc;
+    border: 1px solid rgb(226 232 240 / 80%);
+    border-radius: 12px;
+}
+
+.facility-page .facility-library-info p {
+    margin: 0;
+    color: #334155;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.facility-page .facility-library-info strong {
+    color: #1e293b;
+    font-weight: 700;
+}
+
+/* Deskripsi dan banner e-library */
+.facility-page .facility-library-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    margin-top: 18px;
+    padding: 16px;
+    color: #fff;
+    background: linear-gradient(90deg, #0d9488 0%, #059669 100%);
+    border-radius: 12px;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 5%);
+}
+
+.facility-page .facility-library-banner-content {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
+}
+
+.facility-page .facility-library-banner-icon {
+    display: inline-flex;
+    flex: 0 0 44px;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    color: #fff;
+    background: rgb(255 255 255 / 20%);
+    border-radius: 8px;
+}
+
+.facility-page .facility-library-banner-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+.facility-page .facility-library-banner h4 {
+    margin: 0 0 4px;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.facility-page .facility-library-banner p {
+    margin: 0;
+    color: rgb(255 255 255 / 90%);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.facility-page .facility-library-link {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 12px;
+    color: #fff;
+    background: rgb(255 255 255 / 20%);
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s ease;
+}
+
+.facility-page .facility-library-link:hover {
+    color: #fff;
+    background: rgb(255 255 255 / 30%);
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .facility-page {
+        padding: 0;
+    }
+
+    .facility-page .facility-card {
+        margin-bottom: 20px;
+        padding: 18px;
+    }
+
+    .facility-page .facility-card-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .facility-page .facility-heading h3 {
+        font-size: 20px;
+    }
+
+    .facility-page .facility-photo {
+        height: 280px;
+    }
+
+    .facility-page .facility-library-banner {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .facility-page {
+        padding: 0;
+    }
+
+    .facility-page .facility-intro h2 {
+        font-size: 25px;
+    }
+
+    .facility-page .facility-intro p {
+        font-size: 14px;
+    }
+
+    .facility-page .facility-card {
+        padding: 14px;
+        border-radius: 13px;
+    }
+
+    .facility-page .facility-heading {
+        align-items: flex-start;
+    }
+
+    .facility-page .facility-heading h3 {
+        font-size: 18px;
+    }
+
+    .facility-page .facility-category {
+        font-size: 9px;
+    }
+
+    .facility-page .facility-photo {
+        height: 220px;
+    }
+
+    .facility-page .facility-photo-overlay {
+        padding: 14px;
+    }
+
+    .facility-page .facility-photo-overlay p {
+        font-size: 12px;
+    }
+
+    .facility-page .facility-library-info {
+        padding: 12px;
+    }
+
+    .facility-page .facility-library-banner {
+        padding: 16px;
+    }
+
+    .facility-page .facility-library-banner-content {
+        align-items: flex-start;
+    }
+}
+
+
+
+.facility-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.facility-card {
+    overflow: hidden;
+    padding: 18px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    box-shadow: 0 2px 8px rgb(15 23 42 / 4%);
+}
+
+.facility-photo {
+    position: relative;
+    height: 260px;
+    overflow: hidden;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #94a3b8, #334155);
+}
+
+.facility-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.facility-photo-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 18px;
+    background: linear-gradient(
+        to top,
+        rgb(15 23 42 / 85%),
+        transparent
+    );
+    color: #fff;
+}
+
+.facility-photo-overlay p {
+    margin: 0;
+    color: #fff;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.facility-description {
+    margin-top: 14px;
+    margin-bottom: 0;
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* ========================================
+   HEADER SUBHALAMAN PENDIDIKAN & DIKLAT
+======================================== */
+
+.diklat-subpage-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    margin-bottom: 28px;
+    padding: 30px 32px;
+    border-radius: 18px;
+    background: linear-gradient(125deg, #086c50 0%, #0b8964 100%);
+    color: #fff;
+}
+
+.diklat-subpage-hero::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    right: -65px;
+    bottom: -115px;
+    width: 210px;
+    height: 210px;
+    border: 1px solid rgb(255 255 255 / 15%);
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 25px rgb(255 255 255 / 5%),
+        0 0 0 50px rgb(255 255 255 / 4%);
+    pointer-events: none;
+}
+
+.diklat-subpage-hero-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 17px;
+    padding: 6px 11px;
+    border: 1px solid rgb(255 255 255 / 20%);
+    border-radius: 999px;
+    background: rgb(255 255 255 / 10%);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.diklat-subpage-hero-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #9ce8c5;
+}
+
+.diklat-subpage-hero h1 {
+    max-width: 760px;
+    margin: 0 0 12px;
+    color: #fff;
+    font-size: clamp(25px, 3vw, 32px);
+    font-weight: 800;
+    line-height: 1.3;
+    letter-spacing: -.8px;
+}
+
+
+
+/* HEADER SUBHALAMAN FASILITAS */
+.diklat-subpage-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    margin-bottom: 2px;
+    padding: 30px 32px;
+    border-radius: 18px;
+    background: linear-gradient(125deg, #086c50 0%, #0b8964 100%);
+    color: #fff;
+}
+
+.diklat-subpage-hero h1 {
+    margin: 0 0 12px;
+    color: #fff;
+    font-size: clamp(25px, 3vw, 32px);
+    font-weight: 800;
+    line-height: 1.3;
+    letter-spacing: -0.8px;
+}
+
+.diklat-subpage-hero > p {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    color: rgb(255 255 255 / 90%);
+    font-size: 13px;
+    line-height: 1.85;
+    font-weight: 400;
+    overflow-wrap: break-word;
+}
+
+.diklat-subpage-hero-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 17px;
+    padding: 6px 11px;
+    border: 1px solid rgb(255 255 255 / 20%);
+    border-radius: 999px;
+    background: rgb(255 255 255 / 10%);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.diklat-subpage-hero-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #9ce8c5;
+}
+
+.diklat-subpage-hero::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    right: -65px;
+    bottom: -115px;
+    width: 210px;
+    height: 210px;
+    border: 1px solid rgb(255 255 255 / 15%);
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 25px rgb(255 255 255 / 5%),
+        0 0 0 50px rgb(255 255 255 / 4%);
+    pointer-events: none;
+}
+
+@media (max-width: 600px) {
+    .diklat-subpage-hero {
+        padding: 24px 20px;
+        border-radius: 15px;
+    }
+
+    .diklat-subpage-hero h1 {
+        font-size: 24px;
+    }
+
+    .diklat-subpage-hero > p {
+        font-size: 12px;
+    }
+}
+
+
+/* Jarak bawah halaman fasilitas sebelum footer */
+.facility-page {
+    padding-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+    .facility-page {
+        padding-bottom: 32px;
+    }
+}
+
+
+/* Memperpendek jarak header ke konten fasilitas */
+.facility-page {
+    padding-top: 0 !important;
+}
+
+.facility-page .facility-header {
+    margin-bottom: 24px !important;
+}
+
+/* Jika jarak berasal dari section konten */
+.facility-page .facility-content {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+
+/* FIX JARAK HEADER HIJAU KE KARTU FASILITAS */
+.facility-page {
+    margin-top: -40px !important;
+}
+
+
+

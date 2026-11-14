@@ -1,0 +1,852 @@
+/* ========================================
+   ALUR PENDAFTARAN RSUD R.A.A. TJOKRONEGORO
+======================================== */
+
+.alur-page {
+    font-family: Arial, sans-serif;
+    color: #0b1c30;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: -40px; /* sebelumnya -40px */
+}
+
+.alur-page *,
+.alur-page *::before,
+.alur-page *::after {
+    box-sizing: border-box;
+}
+
+.alur-page .container {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+/* ========================================
+   JUDUL BAGIAN
+======================================== */
+
+.alur-page .heading {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.alur-page .heading h2 {
+    font-size: 25px;
+    line-height: 1.35;
+    font-weight: 700;
+    margin: 0 0 8px;
+    color: #10233c;
+}
+
+.alur-page .heading p {
+    font-size: 13px;
+    color: #596273;
+    margin: 0;
+    line-height: 1.7;
+}
+
+/* ========================================
+   DOKUMEN PERSYARATAN — SPACING DIPERBAIKI
+======================================== */
+
+.alur-page .docs {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 16px;
+}
+
+.alur-page .doc {
+    height: 100%;
+    padding: 26px 24px;
+    border: 1px solid #d7e0eb;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.045);
+}
+
+.alur-page .doc.bpjs {
+    background: #3670df;
+    color: #fff;
+    border-color: #3670df;
+    transform: translateY(-4px);
+}
+
+.alur-page .doc .icon {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    border-radius: 8px;
+    background: #e8efff;
+    color: #2459a9;
+    font-size: 19px;
+}
+
+.alur-page .doc.bpjs .icon {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.alur-page .doc h3 {
+    margin: 0 0 10px;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.alur-page .doc > p {
+    margin: 0 0 18px;
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.alur-page .doc.bpjs > p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.alur-page .doc ul {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.alur-page .doc li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.85;
+    overflow-wrap: anywhere;
+}
+
+.alur-page .doc .check {
+    display: inline-flex;
+    flex: 0 0 16px;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    margin-top: 3px;
+    border-radius: 50%;
+    background: #0756c9;
+    color: #fff;
+    font-size: 10px;
+    line-height: 1;
+}
+
+.alur-page .doc.bpjs .check {
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    background: transparent;
+    color: #fff;
+}
+
+.alur-page .doc.additional .check {
+    background: #006577;
+}
+
+/* Responsif */
+@media (max-width: 760px) {
+    .alur-page .docs {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .alur-page .doc {
+        padding: 22px;
+    }
+
+    .alur-page .doc.bpjs {
+        transform: none;
+    }
+}
+
+/* ========================================
+   VISUAL ALUR KEDATANGAN
+   Jarak atas diperbesar agar tidak menempel
+======================================== */
+
+.alur-page .arrival {
+    position: relative;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 34px;
+    padding: 30px 24px 28px;
+    background: #edf4ff;
+    border-radius: 10px;
+}
+
+.alur-page .arrival .heading {
+    margin-bottom: 0;
+}
+
+.alur-page .arrival .heading h2 {
+    margin-bottom: 0;
+}
+
+.alur-page .line {
+    width: 48px;
+    height: 3px;
+    margin: 15px auto 26px;
+    border-radius: 4px;
+    background: #1263df;
+}
+
+.alur-page .steps {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    align-items: start;
+    gap: 18px;
+}
+
+.alur-page .step {
+    min-width: 0;
+    text-align: center;
+}
+
+.alur-page .step-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    margin: 0 auto 12px;
+    border: 2px solid #d3e4fe;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 3px 8px rgba(15, 23, 42, 0.06);
+    font-size: 22px;
+    color: #173657;
+}
+
+.alur-page .step h3 {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin: 0 0 7px;
+    color: #10233c;
+}
+
+.alur-page .step p {
+    font-size: 10px;
+    line-height: 1.65;
+    color: #596273;
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+
+/* ========================================
+   REGISTRATION - MODERN HOSPITAL UI
+======================================== */
+
+.alur-page .registration {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 24px;
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto 48px;
+}
+
+.alur-page .reg-card {
+    position: relative;
+    min-width: 0;
+    height: 100%;
+    padding: 28px;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #e3eaf4;
+    border-radius: 18px;
+    box-shadow: 0 8px 28px rgba(25, 55, 95, 0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.alur-page .reg-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 4px;
+    background: linear-gradient(90deg, #1769c2, #59a6f5);
+}
+
+.alur-page .reg-onsite::before {
+    background: linear-gradient(90deg, #168477, #55c2ad);
+}
+
+.alur-page .reg-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 34px rgba(25, 55, 95, 0.10);
+}
+
+/* HEADER KARTU */
+
+.alur-page .reg-card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 22px;
+}
+
+.alur-page .reg-icon {
+    display: flex;
+    flex: 0 0 52px;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    color: #1769c2;
+    background: #eaf3ff;
+    border-radius: 15px;
+    font-size: 21px;
+}
+
+.alur-page .reg-onsite .reg-icon {
+    color: #168477;
+    background: #e8f7f3;
+}
+
+.alur-page .reg-heading {
+    min-width: 0;
+}
+
+.alur-page .reg-label {
+    display: inline-block;
+    margin-bottom: 7px;
+    color: #1769c2;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+
+.alur-page .reg-onsite .reg-label {
+    color: #168477;
+}
+
+.alur-page .reg-heading h2 {
+    margin: 0 0 8px;
+    color: #142b46;
+    font-size: 21px;
+    font-weight: 750;
+    line-height: 1.35;
+}
+
+.alur-page .reg-heading p {
+    margin: 0;
+    color: #718096;
+    font-size: 12.5px;
+    line-height: 1.75;
+}
+
+/* PEMISAH */
+
+.alur-page .reg-divider {
+    width: 100%;
+    height: 1px;
+    margin-bottom: 24px;
+    background: #e9eef5;
+}
+
+/* LANGKAH PENDAFTARAN */
+
+.alur-page .reg-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.alur-page .reg-step {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding-bottom: 25px;
+}
+
+.alur-page .reg-step:last-child {
+    padding-bottom: 8px;
+}
+
+.alur-page .reg-step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 39px;
+    bottom: 4px;
+    left: 17px;
+    width: 2px;
+    background: #e2ebf7;
+}
+
+.alur-page .reg-onsite .reg-step:not(:last-child)::after {
+    background: #dcefe9;
+}
+
+.alur-page .reg-step-number {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex: 0 0 36px;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    color: #1769c2;
+    background: #edf5ff;
+    border: 1px solid #d9e9ff;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.alur-page .reg-onsite .reg-step-number {
+    color: #168477;
+    background: #eaf8f4;
+    border-color: #d3eee6;
+}
+
+.alur-page .reg-step-content {
+    flex: 1;
+    min-width: 0;
+    padding-top: 1px;
+}
+
+.alur-page .reg-step-tag {
+    display: inline-block;
+    margin-bottom: 6px;
+    color: #6481a3;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+}
+
+.alur-page .reg-step-content h3 {
+    margin: 0 0 6px;
+    color: #203953;
+    font-size: 14px;
+    font-weight: 750;
+    line-height: 1.5;
+}
+
+.alur-page .reg-step-content p {
+    margin: 0;
+    color: #66768b;
+    font-size: 12.5px;
+    line-height: 1.8;
+}
+
+/* CATATAN DI BAWAH KARTU */
+
+.alur-page .reg-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 18px;
+    padding: 13px 14px;
+    color: #315d8c;
+    background: #f1f7ff;
+    border: 1px solid #e0edfc;
+    border-radius: 10px;
+}
+
+.alur-page .reg-onsite .reg-note {
+    color: #287568;
+    background: #eff9f6;
+    border-color: #dcefe9;
+}
+
+.alur-page .reg-note i {
+    flex: 0 0 auto;
+    margin-top: 3px;
+    font-size: 13px;
+}
+
+.alur-page .reg-note p {
+    margin: 0;
+    font-size: 11.5px;
+    line-height: 1.75;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    .alur-page .registration {
+        grid-template-columns: 1fr;
+        max-width: 680px;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 520px) {
+    .alur-page .reg-card {
+        padding: 21px 18px;
+        border-radius: 15px;
+    }
+
+    .alur-page .reg-card-header {
+        gap: 12px;
+    }
+
+    .alur-page .reg-icon {
+        flex-basis: 44px;
+        width: 44px;
+        height: 44px;
+        font-size: 18px;
+        border-radius: 12px;
+    }
+
+    .alur-page .reg-heading h2 {
+        font-size: 18px;
+    }
+
+    .alur-page .reg-heading p,
+    .alur-page .reg-step-content p {
+        font-size: 12px;
+    }
+
+    .alur-page .reg-step {
+        gap: 12px;
+        padding-bottom: 22px;
+    }
+}
+
+
+/* ========================================
+   BANTUAN DAN KONTAK
+======================================== */
+
+.alur-page .help {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 30px;
+    padding: 22px;
+    border: 1px solid #d4e2ff;
+    border-radius: 9px;
+    background: #eaf2ff;
+}
+
+.alur-page .help > div:first-child {
+    flex: 1;
+    min-width: 0;
+}
+
+.alur-page .help h2 {
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #0756c9;
+    margin: 0 0 7px;
+}
+
+.alur-page .help p {
+    max-width: 440px;
+    font-size: 12px;
+    line-height: 1.7;
+    color: #596273;
+    margin: 0;
+}
+
+.alur-page .contacts {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 9px;
+}
+
+.alur-page .contact {
+    min-width: 0;
+    padding: 11px 13px;
+    border: 1px solid #d5dfec;
+    border-radius: 7px;
+    background: #fff;
+    font-size: 11px;
+}
+
+.alur-page .contact small {
+    display: block;
+    margin-bottom: 6px;
+    color: #64748b;
+    font-size: 9px;
+    line-height: 1.4;
+}
+
+.alur-page .contact a {
+    color: #0b1c30;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.6;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+.alur-page .contact a:hover {
+    color: #087987;
+}
+
+/* ========================================
+   VISI PELAYANAN
+======================================== */
+
+.alur-page .vision {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 24px;
+    padding-bottom: 12px;
+}
+
+.alur-page .vision h2 {
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin: 0 0 14px;
+    color: #10233c;
+}
+
+.alur-page .quote {
+    margin: 0;
+    padding-left: 13px;
+    border-left: 3px solid #1263df;
+    color: #596273;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.alur-page .stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 9px;
+}
+
+.alur-page .stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    min-height: 88px;
+    padding: 14px 7px;
+    border-radius: 8px;
+    background: #dce8ff;
+    text-align: center;
+}
+
+.alur-page .stat strong {
+    margin-bottom: 5px;
+    color: #0756c9;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.alur-page .stat span {
+    color: #475569;
+    font-size: 10px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+    .alur-page .container {
+        max-width: 100%;
+    }
+
+    .alur-page .docs {
+        gap: 12px;
+    }
+
+    .alur-page .doc {
+        padding: 19px 16px;
+    }
+
+    .alur-page .steps {
+        gap: 12px;
+    }
+
+    .alur-page .arrival {
+        padding-right: 18px;
+        padding-left: 18px;
+    }
+
+    .alur-page .registration {
+        gap: 14px;
+    }
+
+    .alur-page .reg-card {
+        padding: 20px;
+    }
+
+    .alur-page .help {
+        align-items: flex-start;
+    }
+
+    .alur-page .contacts {
+        max-width: 48%;
+    }
+}
+
+/* ========================================
+   TABLET KECIL / PONSEL
+======================================== */
+
+@media (max-width: 760px) {
+    .alur-page .requirements {
+        padding-top: 20px;
+    }
+
+    .alur-page .docs {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .alur-page .doc,
+    .alur-page .doc.bpjs {
+        height: auto;
+        transform: none;
+    }
+
+    .alur-page .arrival {
+        margin-top: 25px;
+        margin-bottom: 26px;
+        padding: 26px 16px;
+    }
+
+    .alur-page .steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px 14px;
+    }
+
+    .alur-page .step:last-child {
+        grid-column: 1 / -1;
+    }
+
+    .alur-page .step p {
+        max-width: 260px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .alur-page .registration {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-bottom: 25px;
+    }
+
+    .alur-page .reg-card {
+        height: auto;
+    }
+
+    .alur-page .help {
+        flex-direction: column;
+        gap: 18px;
+        padding: 19px;
+    }
+
+    .alur-page .contacts {
+        width: 100%;
+        max-width: none;
+    }
+
+    .alur-page .contact {
+        flex: 1 1 180px;
+    }
+
+    .alur-page .vision {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+/* ========================================
+   PONSEL KECIL
+======================================== */
+
+@media (max-width: 420px) {
+    .alur-page .heading {
+        margin-bottom: 20px;
+    }
+
+    .alur-page .heading h2 {
+        font-size: 21px;
+    }
+
+    .alur-page .heading p {
+        font-size: 12px;
+    }
+
+    .alur-page .doc,
+    .alur-page .reg-card {
+        padding: 17px;
+    }
+
+    .alur-page .arrival {
+        margin-top: 20px;
+        padding: 24px 12px;
+        border-radius: 8px;
+    }
+
+    .alur-page .arrival .heading h2 {
+        font-size: 20px;
+    }
+
+    .alur-page .steps {
+        gap: 23px 9px;
+    }
+
+    .alur-page .step-icon {
+        width: 47px;
+        height: 47px;
+        font-size: 20px;
+    }
+
+    .alur-page .step h3 {
+        font-size: 12px;
+    }
+
+    .alur-page .step p {
+        font-size: 10px;
+    }
+
+    .alur-page .reg-title h2 {
+        font-size: 15px;
+    }
+
+    .alur-page .help h2 {
+        font-size: 19px;
+    }
+
+    .alur-page .contacts {
+        flex-direction: column;
+    }
+
+    .alur-page .contact {
+        width: 100%;
+        flex-basis: auto;
+    }
+
+    .alur-page .stats {
+        gap: 6px;
+    }
+
+    .alur-page .stat {
+        min-height: 78px;
+        padding: 10px 5px;
+    }
+
+    .alur-page .stat span {
+        font-size: 9px;
+    }
+}

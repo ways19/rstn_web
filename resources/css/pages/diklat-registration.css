@@ -1,0 +1,3011 @@
+
+/* =========================================
+   PENDAFTARAN DIKLAT
+   Font, warna, dan layout utama
+========================================= */
+
+.diklat-registration,
+.diklat-registration * {
+    box-sizing: border-box;
+}
+
+main.diklat-registration {
+    width: 100%;
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 28px 24px 36px;
+    color: #1e293b;
+    font-family: "Plus Jakarta Sans", "Poppins", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.diklat-registration a {
+    text-decoration: none;
+}
+
+/* HEADER */
+
+.diklat-registration__header {
+    margin-bottom: 22px;
+}
+
+.diklat-registration__back {
+    display: inline-flex;
+    margin-bottom: 20px;
+    color: #526782;
+    font-size: 12px;
+    font-weight: 600;
+    transition: color .2s ease;
+}
+
+.diklat-registration__back:hover {
+    color: #1554c0;
+}
+
+.diklat-registration__eyebrow {
+    display: block;
+    margin-bottom: 10px;
+    color: #1554c0;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+.diklat-registration__header h1 {
+    margin: 0;
+    color: #17386c;
+    font-size: clamp(26px, 4vw, 36px);
+    font-weight: 800;
+    line-height: 1.35;
+    letter-spacing: -.6px;
+}
+
+.diklat-registration__header > p {
+    max-width: 650px;
+    margin: 12px 0 0;
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* NOTIFIKASI ERROR */
+
+.diklat-registration__alert {
+    margin-bottom: 20px;
+    padding: 16px 18px;
+    border: 1px solid #fecaca;
+    border-radius: 10px;
+    background: #fff1f2;
+    color: #b91c1c;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.diklat-registration__alert ul {
+    margin: 8px 0 0;
+    padding-left: 20px;
+}
+
+/* INDIKATOR TAHAP PENDAFTARAN */
+
+#registration-content {
+    scroll-margin-top: 16px;
+}
+
+.wizard-panel[hidden] {
+    display: none !important;
+}
+
+.diklat-wizard-progress {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+    gap: 16px;
+    margin: 0 0 26px;
+    padding: 22px 24px;
+    border: 1px solid #e0e8f4;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 4px 18px rgb(30 64 120 / 4%);
+}
+
+.diklat-wizard-step {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    min-width: 0;
+    color: #8a9ab1;
+}
+
+.diklat-wizard-step__number {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    flex: 0 0 36px;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border: 2px solid #d9e4f2;
+    border-radius: 50%;
+    background: #e5edf9;
+    color: #52709f;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background-color .2s ease, color .2s ease,
+        box-shadow .2s ease;
+}
+
+/* Garis penghubung tahap */
+.diklat-wizard-step:not(:last-of-type)::after {
+    content: "";
+    position: absolute;
+    top: 17px;
+    left: 44px;
+    right: -8px;
+    height: 2px;
+    background: #d9e4f7;
+    transition: background-color .2s ease;
+}
+
+.diklat-wizard-step__label {
+    display: block;
+    max-width: 190px;
+    color: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.diklat-wizard-step.is-active {
+    color: #1554c0;
+}
+
+.diklat-wizard-step.is-active .diklat-wizard-step__number {
+    border-color: #1554c0;
+    background: #1554c0;
+    color: #fff;
+    box-shadow: 0 0 0 4px #e5efff;
+}
+
+.diklat-wizard-step.is-complete {
+    color: #17386c;
+}
+
+.diklat-wizard-step.is-complete .diklat-wizard-step__number {
+    border-color: #1554c0;
+    background: #1554c0;
+    color: #fff;
+}
+
+.diklat-wizard-step.is-complete::after {
+    background: #1554c0;
+}
+
+/* Panah lama digantikan garis penghubung */
+.diklat-wizard-progress__arrow {
+    display: none !important;
+}
+
+/* KARTU UTAMA */
+
+.diklat-registration__card {
+    padding: 28px;
+    border: 1px solid #e2eaf5;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 5px 22px rgb(23 43 77 / 4%);
+}
+
+/* RINGKASAN PROGRAM */
+
+.diklat-registration__program {
+    padding: 24px;
+    border: 1px solid #dce8fa;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #f2f7ff 0%, #fbfdff 100%);
+}
+
+.diklat-registration__program-label {
+    display: inline-block;
+    margin-bottom: 8px;
+    color: #1554c0;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .7px;
+    text-transform: uppercase;
+}
+
+.diklat-registration__program h2 {
+    margin: 0;
+    color: #17386c;
+    font-size: 21px;
+    font-weight: 800;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.diklat-registration__program-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px 30px;
+    margin-top: 20px;
+    padding-top: 18px;
+    border-top: 1px solid #dfe8f6;
+}
+
+.diklat-registration__program-details p {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.diklat-registration__program-details p > span {
+    color: #64748b;
+    font-size: 11px;
+}
+
+.diklat-registration__program-details strong {
+    color: #334b70;
+    font-size: 12px;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+/* INFORMASI DAN PERSYARATAN */
+
+.diklat-wizard-information {
+    margin-top: 20px;
+    padding-top: 18px;
+    border-top: 1px solid #e1e9f4;
+}
+
+.diklat-wizard-information h3,
+.diklat-wizard-requirements h3 {
+    margin: 0 0 8px;
+    color: #17386c;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1.6;
+}
+
+.diklat-wizard-information p,
+.diklat-wizard-requirements p {
+    margin: 0;
+    color: #526782;
+    font-size: 12px;
+    line-height: 1.8;
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+}
+
+.diklat-wizard-requirements {
+    margin-top: 18px;
+    padding: 20px;
+    border: 1px solid #e1e9f4;
+    border-radius: 12px;
+    background: #f8faff;
+}
+
+.diklat-wizard-requirements .diklat-wizard-note {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #e3eaf5;
+    color: #64748b;
+    font-size: 11px;
+}
+
+/* JUDUL FORMULIR */
+
+.diklat-registration__form-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 24px;
+}
+
+.diklat-registration__form-heading h2 {
+    margin: 0;
+    color: #17386c;
+    font-size: 19px;
+    font-weight: 800;
+}
+
+.diklat-registration__form-heading p {
+    margin: 0;
+    color: #64748b;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.diklat-registration__form-heading p span,
+.diklat-registration__field label span {
+    color: #dc2626;
+}
+
+/* GRID FORMULIR */
+
+.diklat-registration__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px 24px;
+}
+
+.diklat-registration__field {
+    min-width: 0;
+}
+
+.diklat-registration__field--full {
+    grid-column: 1 / -1;
+}
+
+.diklat-registration__field label {
+    display: block;
+    margin-bottom: 8px;
+    color: #334155;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.6;
+}
+
+.diklat-registration__field input,
+.diklat-registration__field textarea,
+.diklat-registration__field select {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    min-height: 45px;
+    padding: 12px 14px;
+    border: 1px solid #d8e2ef;
+    border-radius: 9px;
+    outline: none;
+    background: #fff;
+    color: #1e293b;
+    font-family: inherit;
+    font-size: 13px;
+    line-height: 1.6;
+    transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.diklat-registration__field textarea {
+    min-height: 115px;
+    resize: vertical;
+}
+
+.diklat-registration__field input::placeholder,
+.diklat-registration__field textarea::placeholder {
+    color: #9aa7b8;
+}
+
+.diklat-registration__field input:focus,
+.diklat-registration__field textarea:focus,
+.diklat-registration__field select:focus {
+    border-color: #3974df;
+    box-shadow: 0 0 0 3px rgb(21 84 192 / 9%);
+}
+
+.diklat-registration__error {
+    display: block;
+    margin-top: 7px;
+    color: #dc2626;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+/* CATATAN INFORMASI */
+
+.diklat-registration__notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 24px;
+    padding: 16px;
+    border: 1px solid #dce8fa;
+    border-radius: 10px;
+    background: #f3f8ff;
+}
+
+.diklat-registration__notice-icon {
+    display: inline-flex;
+    flex: 0 0 22px;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #dce9ff;
+    color: #1554c0;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.diklat-registration__notice p {
+    margin: 0;
+    color: #526782;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* TOMBOL */
+
+.diklat-registration__actions,
+.diklat-wizard-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 26px;
+    padding-top: 20px;
+    border-top: 1px solid #e6edf6;
+}
+
+.diklat-registration__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 44px;
+    padding: 12px 20px;
+    border: 1px solid transparent;
+    border-radius: 9px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color .2s ease, border-color .2s ease,
+        color .2s ease, transform .2s ease;
+}
+
+.diklat-registration__button:hover {
+    transform: translateY(-1px);
+}
+
+.diklat-registration__button--primary {
+    background: #1554c0;
+    color: #fff;
+}
+
+.diklat-registration__button--primary:hover {
+    background: #10449f;
+}
+
+.diklat-registration__button--secondary {
+    border-color: #d8e2ef;
+    background: #fff;
+    color: #526782;
+}
+
+.diklat-registration__button--secondary:hover {
+    border-color: #aabbd1;
+    background: #f8fafc;
+}
+
+/* RESUME PENDAFTARAN */
+
+.diklat-resume {
+    overflow: hidden;
+    border: 1px solid #e0e8f3;
+    border-radius: 12px;
+}
+
+.diklat-resume__program {
+    padding: 22px;
+    background: linear-gradient(135deg, #f2f7ff 0%, #fbfdff 100%);
+}
+
+.diklat-resume__program > span {
+    color: #1554c0;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .8px;
+}
+
+.diklat-resume__program h3 {
+    margin: 8px 0;
+    color: #17386c;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.diklat-resume__program p {
+    margin: 0;
+    color: #64748b;
+    font-size: 12px;
+}
+
+.diklat-resume__list { 
+    margin: 0;
+    padding: 6px 22px;
+}
+
+.diklat-resume__list > div {
+    display: grid;
+    grid-template-columns: minmax(140px, .8fr) minmax(0, 1.2fr);
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #e9eef5;
+}
+
+.diklat-resume__list > div:last-child {
+    border-bottom: 0;
+}
+
+.diklat-resume__list dt {
+    color: #647894;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.diklat-resume__list dd {
+    margin: 0;
+    color: #233b60;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.7;
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+}
+
+.diklat-resume__document-link {
+    display: inline-block;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #2563eb;
+    font-weight: 600;
+    text-decoration: underline !important;
+    cursor: pointer;
+}
+
+.diklat-resume__document-link:hover {
+    color: #1d4ed8;
+}
+
+/* HALAMAN KONFIRMASI BERHASIL */
+
+.diklat-registration__success {
+    max-width: 650px;
+    margin: 50px auto;
+    padding: 0 12px;
+    text-align: center;
+}
+
+.diklat-registration__success-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 62px;
+    height: 62px;
+    margin: 0 auto 22px;
+    border-radius: 50%;
+    background: #dcfce7;
+    color: #15803d;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.diklat-registration__success > h1 {
+    margin: 12px 0;
+    color: #172b4d;
+    font-size: 27px;
+    line-height: 1.4;
+}
+
+.diklat-registration__success > p {
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.diklat-registration__number {
+    margin: 24px 0;
+    padding: 20px;
+    border: 1px dashed #a9c0ff;
+    border-radius: 10px;
+    background: #f4f7ff;
+}
+
+.diklat-registration__number span {
+    display: block;
+    margin-bottom: 9px;
+    color: #64748b;
+    font-size: 11px;
+}
+
+.diklat-registration__number strong {
+    color: #2455c5;
+    font-size: 22px;
+    overflow-wrap: anywhere;
+}
+
+.diklat-registration__success .diklat-registration__button {
+    margin-top: 16px;
+}
+
+/* =========================================
+   STATUS & HASIL KONFIRMASI DIKLAT
+========================================= */
+
+.diklat-status {
+    color: #153567;
+}
+
+.diklat-status-progress {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.diklat-status-progress__step {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    min-width: 0;
+}
+
+.diklat-status-progress__step::before {
+    content: "";
+    position: absolute;
+    top: 17px;
+    left: 42px;
+    right: -8px;
+    height: 2px;
+    background: #d9e4f7;
+}
+
+.diklat-status-progress__step:last-child::before {
+    display: none;
+}
+
+.diklat-status-progress__number {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #e5edf9;
+    color: #52709f;
+    font-weight: 700;
+}
+
+.diklat-status-progress__step.is-complete .diklat-status-progress__number,
+.diklat-status-progress__step.is-current .diklat-status-progress__number {
+    background: #155eef;
+    color: #fff;
+}
+
+.diklat-status-progress__step.is-complete::before {
+    background: #155eef;
+}
+
+.diklat-status-progress__step strong {
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.diklat-status-progress__step small {
+    color: #61799f;
+    font-size: 12px;
+}
+
+.diklat-status-progress__step.is-current strong,
+.diklat-status-progress__step.is-current small {
+    color: #155eef;
+}
+
+/* LAYOUT STATUS */
+
+.diklat-status-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, .9fr);
+    align-items: start;
+    gap: 28px;
+    padding: 24px;
+    border: 1px solid #e0e8f4;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 4px 18px rgb(30 64 120 / 4%);
+}
+
+.diklat-status-main,
+.diklat-status-sidebar {
+    min-width: 0;
+}
+
+/* RINGKASAN STATUS */
+
+.diklat-status-summary {
+    display: flex;
+    gap: 18px;
+    padding: 22px;
+    border-radius: 12px;
+    background: #f0f6ff;
+}
+
+.diklat-status-summary.is-finished {
+    background: #effaf5;
+}
+
+.diklat-status-summary.is-rejected {
+    background: #fff3f2;
+}
+
+.diklat-status-summary__icon {
+    display: grid;
+    place-items: center;
+    flex: 0 0 52px;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #dbeafe;
+    color: #155eef;
+    font-size: 27px;
+    font-weight: 700;
+}
+
+.diklat-status-summary.is-finished .diklat-status-summary__icon {
+    background: #d1fae5;
+    color: #047857;
+}
+
+.diklat-status-summary.is-rejected .diklat-status-summary__icon {
+    background: #fee2e2;
+    color: #b42318;
+}
+
+.diklat-status-summary__content {
+    flex: 1;
+    min-width: 0;
+}
+
+.diklat-status-summary h2 {
+    margin: 0 0 10px;
+    color: #1246a0;
+    font-size: 20px;
+    font-weight: 750;
+    line-height: 1.4;
+}
+
+.diklat-status-summary p {
+    margin: 0;
+    color: #526b91;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.diklat-status-summary__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.diklat-status-badge,
+.diklat-status-category {
+    display: inline-flex;
+    padding: 6px 10px;
+    border-radius: 7px;
+    background: #dbeafe;
+    color: #1555b8;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.diklat-status-date {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    color: #526b91;
+    font-size: 12px;
+}
+
+/* TIMELINE STATUS */
+
+.diklat-status-timeline {
+    margin-top: 28px;
+}
+
+.diklat-status-timeline > h2 {
+    margin: 0 0 22px;
+    font-size: 19px;
+    font-weight: 750;
+}
+
+.diklat-status-timeline__item {
+    position: relative;
+    display: flex;
+    gap: 15px;
+    padding-bottom: 27px;
+}
+
+.diklat-status-timeline__item:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    top: 36px;
+    bottom: 0;
+    left: 17px;
+    width: 2px;
+    background: #dce5f2;
+}
+
+.diklat-status-timeline__item.is-complete:not(:last-child)::before {
+    background: #8ce0c5;
+}
+
+.diklat-status-timeline__marker {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    flex: 0 0 36px;
+    width: 36px;
+    height: 36px;
+    border: 4px solid #edf2fa;
+    border-radius: 50%;
+    background: #dbe5f5;
+    color: #526b91;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.diklat-status-timeline__item.is-complete .diklat-status-timeline__marker {
+    border-color: #d7f7eb;
+    background: #07966e;
+    color: #fff;
+}
+
+.diklat-status-timeline__item.is-current .diklat-status-timeline__marker {
+    border-color: #dbeafe;
+    background: #155eef;
+    color: #fff;
+}
+
+.diklat-status-timeline__body {
+    min-width: 0;
+    padding-top: 4px;
+}
+
+.diklat-status-timeline__body h3 {
+    margin: 0 0 5px;
+    font-size: 13px;
+    font-weight: 750;
+}
+
+.diklat-status-timeline__body p {
+    margin: 0;
+    color: #61799f;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.diklat-status-timeline__body > small {
+    display: block;
+    margin-top: 5px;
+    color: #61799f;
+    font-size: 11px;
+}
+
+.diklat-status-admin-notes {
+    margin-top: 10px;
+    padding: 12px;
+    border: 1px solid #e0e8f4;
+    border-radius: 8px;
+    background: #f8faff;
+    font-size: 12px;
+}
+
+.diklat-status-admin-notes p {
+    margin-top: 5px;
+}
+
+/* DETAIL PROGRAM */
+
+.diklat-status-program {
+    padding: 20px;
+    border: 1px solid #e0e8f4;
+    border-radius: 12px;
+}
+
+.diklat-status-program__heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 22px;
+}
+
+.diklat-status-program__icon {
+    display: grid;
+    place-items: center;
+    flex: 0 0 48px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #e7f0ff;
+    color: #155eef;
+    font-size: 24px;
+}
+
+.diklat-status-program__heading small {
+    display: block;
+    margin-bottom: 5px;
+    color: #7186a8;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .04em;
+}
+
+.diklat-status-program__heading h2 {
+    margin: 0 0 9px;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.diklat-status-program__details {
+    display: grid;
+    gap: 16px;
+    margin: 0 0 22px;
+}
+
+.diklat-status-program__details dt {
+    margin-bottom: 4px;
+    font-size: 12px;
+    font-weight: 750;
+}
+
+.diklat-status-program__details dd {
+    margin: 0;
+    color: #61799f;
+    font-size: 12px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+/* DATA PENDAFTAR */
+
+.diklat-status-applicant {
+    padding: 16px;
+    border-radius: 10px;
+    background: #f0f6ff;
+}
+
+.diklat-status-applicant h3 {
+    margin: 0 0 15px;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.diklat-status-applicant dl {
+    display: grid;
+    gap: 12px;
+    margin: 0;
+}
+
+.diklat-status-applicant dl > div {
+    display: grid;
+    grid-template-columns: minmax(105px, .9fr) minmax(0, 1.1fr);
+    gap: 10px;
+}
+
+.diklat-status-applicant dt,
+.diklat-status-applicant dd {
+    overflow-wrap: anywhere;
+    font-size: 11px;
+    line-height: 1.65;
+}
+
+.diklat-status-applicant dt {
+    color: #61799f;
+}
+
+.diklat-status-applicant dd {
+    margin: 0;
+    color: #36557f;
+    font-weight: 500;
+}
+
+/* CATATAN STATUS DAN BANTUAN */
+
+.diklat-status-notice {
+    margin-top: 16px;
+    padding: 15px;
+    border: 1px solid #b7f0df;
+    border-radius: 10px;
+    background: #effcf8;
+}
+
+.diklat-status-notice strong {
+    display: block;
+    margin-bottom: 6px;
+    color: #087f68;
+    font-size: 12px;
+}
+
+.diklat-status-notice p {
+    margin: 0;
+    color: #367c70;
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+.diklat-status-help {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #e0e8f4;
+    border-radius: 12px;
+    background: #f8fbff;
+}
+
+.diklat-status-help__icon {
+    display: grid;
+    place-items: center;
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #e0ecff;
+    color: #155eef;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.diklat-status-help > div:nth-child(2) {
+    flex: 1;
+    min-width: 0;
+}
+
+.diklat-status-help h2 {
+    margin: 0 0 5px;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.diklat-status-help p {
+    margin: 0;
+    color: #61799f;
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+.diklat-status-help .diklat-registration__button {
+    flex-shrink: 0;
+    font-size: 12px;
+}
+
+/* =========================================
+   RESPONSIVE TABLET DAN MOBILE
+========================================= */
+
+@media (max-width: 800px) {
+    .diklat-wizard-progress {
+        gap: 10px;
+        padding: 18px 16px;
+    }
+
+    .diklat-wizard-step:not(:last-of-type)::after {
+        left: 40px;
+        right: -5px;
+    }
+
+    .diklat-wizard-step__label {
+        font-size: 11px;
+    }
+
+    .diklat-status-layout {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 16px;
+    }
+
+    .diklat-status-progress {
+        gap: 10px;
+    }
+
+    .diklat-status-progress__step::before {
+        left: 35px;
+        right: -5px;
+    }
+
+    .diklat-status-progress__step strong {
+        font-size: 11px;
+    }
+
+    .diklat-status-progress__step small {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 640px) {
+    main.diklat-registration {
+        padding: 22px 14px 28px;
+    }
+
+    .diklat-registration__header {
+        margin-bottom: 22px;
+    }
+
+    .diklat-registration__back {
+        margin-bottom: 20px;
+    }
+
+    .diklat-registration__header > p {
+        font-size: 13px;
+    }
+
+    .diklat-registration__card {
+        padding: 20px 16px;
+        border-radius: 12px;
+    }
+
+    .diklat-wizard-progress {
+        padding: 16px 12px;
+    }
+
+    .diklat-wizard-step {
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .diklat-wizard-step:not(:last-of-type)::after {
+        left: 40px;
+        right: -5px;
+    }
+
+    .diklat-wizard-step__label {
+        max-width: 100%;
+        font-size: 10px;
+        line-height: 1.5;
+    }
+
+    .diklat-registration__program {
+        padding: 18px;
+    }
+
+    .diklat-registration__program h2 {
+        font-size: 18px;
+    }
+
+    .diklat-registration__program-details {
+        gap: 15px 20px;
+    }
+
+    .diklat-registration__form-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .diklat-registration__grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .diklat-registration__field--full {
+        grid-column: auto;
+    }
+
+    .diklat-wizard-requirements {
+        padding: 16px;
+    }
+
+    .diklat-registration__actions,
+    .diklat-wizard-actions {
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+
+    .diklat-registration__actions .diklat-registration__button,
+    .diklat-wizard-actions .diklat-registration__button {
+        width: 100%;
+    }
+
+    .diklat-resume__list {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+
+    .diklat-resume__list > div {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 6px;
+    }
+
+    .diklat-registration__success {
+        margin: 20px auto;
+        padding: 24px 18px;
+    }
+
+    .diklat-registration__success > h1 {
+        font-size: 23px;
+    }
+
+    .diklat-registration__number strong {
+        font-size: 19px;
+    }
+}
+
+@media (max-width: 520px) {
+    .diklat-wizard-progress {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px 14px;
+        margin-bottom: 24px;
+        padding: 18px 14px;
+    }
+
+    .diklat-wizard-step {
+        align-items: flex-start;
+    }
+
+    .diklat-wizard-step::after {
+        display: none;
+    }
+
+    .diklat-wizard-step__label {
+        font-size: 11px;
+    }
+
+    .diklat-status-progress {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px 14px;
+    }
+
+    .diklat-status-progress__step::before {
+        display: none;
+    }
+
+    .diklat-status-summary {
+        flex-direction: column;
+        padding: 18px;
+    }
+
+    .diklat-status-summary h2 {
+        font-size: 18px;
+    }
+
+    .diklat-status-summary__meta {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .diklat-status-help {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .diklat-status-help > div:nth-child(2) {
+        flex-basis: calc(100% - 65px);
+    }
+
+    .diklat-status-help .diklat-registration__button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .diklat-status-applicant dl > div {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 2px;
+    }
+}
+
+
+
+
+/* =========================================
+   PENYERAGAMAN INDIKATOR TAHAP PENDAFTARAN
+========================================= */
+
+main.diklat-registration.diklat-status .diklat-status-progress {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: start;
+    gap: 16px;
+    margin: 0 0 26px;
+    padding: 22px 24px;
+    border: 1px solid #e0e8f4;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 4px 18px rgb(30 64 120 / 4%);
+}
+
+main.diklat-registration.diklat-status .diklat-status-progress__step {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    min-width: 0;
+    color: #8a9ab1;
+}
+
+/* Garis penghubung antar tahap */
+main.diklat-registration.diklat-status
+.diklat-status-progress__step:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    top: 17px;
+    left: 44px;
+    right: -8px;
+    height: 2px;
+    background: #d9e4f7;
+}
+
+main.diklat-registration.diklat-status
+.diklat-status-progress__step.is-complete::before {
+    background: #1554c0;
+}
+
+main.diklat-registration.diklat-status
+.diklat-status-progress__step:last-child::before {
+    display: none;
+}
+
+/* Lingkaran nomor tahap */
+main.diklat-registration.diklat-status
+.diklat-status-progress__number {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    flex: 0 0 36px;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border: 2px solid #d9e4f2;
+    border-radius: 50%;
+    background: #e5edf9;
+    color: #52709f;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* Tahap yang sudah selesai */
+main.diklat-registration.diklat-status
+.diklat-status-progress__step.is-complete {
+    color: #17386c;
+}
+
+main.diklat-registration.diklat-status
+.diklat-status-progress__step.is-complete
+.diklat-status-progress__number {
+    border-color: #1554c0;
+    background: #1554c0;
+    color: #fff;
+}
+
+/* Tahap aktif */
+main.diklat-registration.diklat-status
+.diklat-status-progress__step.is-current {
+    color: #1554c0;
+}
+
+main.diklat-registration.diklat-status
+.diklat-status-progress__step.is-current
+.diklat-status-progress__number {
+    border-color: #1554c0;
+    background: #1554c0;
+    color: #fff;
+    box-shadow: 0 0 0 4px #e5efff;
+}
+
+/* Label dan keterangan */
+main.diklat-registration.diklat-status
+.diklat-status-progress__step strong {
+    display: block;
+    max-width: 190px;
+    margin: 0;
+    color: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+main.diklat-registration.diklat-status
+.diklat-status-progress__step small {
+    color: #64748b;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+/* Tablet */
+@media (max-width: 800px) {
+    main.diklat-registration.diklat-status .diklat-status-progress {
+        gap: 10px;
+        padding: 18px 16px;
+    }
+
+    main.diklat-registration.diklat-status
+    .diklat-status-progress__step:not(:last-child)::before {
+        left: 40px;
+        right: -5px;
+    }
+
+    main.diklat-registration.diklat-status
+    .diklat-status-progress__step strong {
+        font-size: 11px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+    main.diklat-registration.diklat-status .diklat-status-progress {
+        padding: 16px 12px;
+    }
+
+    main.diklat-registration.diklat-status
+    .diklat-status-progress__step {
+        gap: 8px;
+    }
+
+    main.diklat-registration.diklat-status
+    .diklat-status-progress__step strong {
+        font-size: 10px;
+        line-height: 1.5;
+    }
+}
+
+/* Layar kecil: dua kolom */
+@media (max-width: 520px) {
+    main.diklat-registration.diklat-status .diklat-status-progress {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px 14px;
+        padding: 18px 14px;
+    }
+
+    main.diklat-registration.diklat-status
+    .diklat-status-progress__step::before {
+        display: none;
+    }
+
+    main.diklat-registration.diklat-status
+    .diklat-status-progress__step strong {
+        max-width: 100%;
+        font-size: 11px;
+    }
+}
+
+
+
+/* =========================================
+   PERBAIKAN POSISI PROGRES STATUS DIKLAT
+========================================= */
+
+main.diklat-registration.diklat-status .diklat-status-progress {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: start;
+    justify-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 22px 24px;
+    margin: 0 0 26px;
+    border: 1px solid #e0e8f4;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 4px 18px rgb(30 64 120 / 4%);
+}
+
+main.diklat-registration.diklat-status
+.diklat-status-progress__step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    width: 100%;
+    min-width: 0;
+}
+
+/* Posisi garis penghubung */
+main.diklat-registration.diklat-status
+.diklat-status-progress__step:not(:last-child)::before {
+    top: 17px;
+    left: calc(50% + 22px);
+    right: calc(-50% + 22px);
+}
+
+/* Nomor tahap */
+main.diklat-registration.diklat-status
+.diklat-status-progress__number {
+    flex: 0 0 36px;
+    width: 36px;
+    height: 36px;
+}
+
+/* Label tahap berada di tengah */
+main.diklat-registration.diklat-status
+.diklat-status-progress__step strong {
+    max-width: 180px;
+    text-align: center;
+    overflow-wrap: break-word;
+}
+
+/* Keterangan tahap */
+main.diklat-registration.diklat-status
+.diklat-status-progress__step small {
+    text-align: center;
+}
+
+/* Tablet */
+@media (max-width: 800px) {
+    main.diklat-registration.diklat-status
+    .diklat-status-progress {
+        gap: 8px;
+        padding: 18px 12px;
+    }
+
+    main.diklat-registration.diklat-status
+    .diklat-status-progress__step strong {
+        font-size: 11px;
+    }
+}
+
+/* HP tetap dua kolom agar tulisan tidak terlalu sempit */
+@media (max-width: 520px) {
+    main.diklat-registration.diklat-status
+    .diklat-status-progress {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px 12px;
+    }
+
+    main.diklat-registration.diklat-status
+    .diklat-status-progress__step::before {
+        display: none;
+    }
+}
+
+
+
+/* PROGRESS PENDAFTARAN — SATU BARIS DAN TERPUSAT */
+#registration-content .diklat-wizard-progress {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto 26px;
+    padding: 22px 20px;
+    box-sizing: border-box;
+}
+
+#registration-content .diklat-wizard-step {
+    display: flex;
+    flex: 1 1 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-width: 0;
+    gap: 10px;
+    text-align: center;
+}
+
+#registration-content .diklat-wizard-step__number {
+    flex-shrink: 0;
+}
+
+#registration-content .diklat-wizard-step__label {
+    display: block;
+    width: 100%;
+    max-width: 170px;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+#registration-content .diklat-wizard-progress__arrow {
+    flex: 0 0 20px;
+    margin-top: 17px;
+}
+
+@media (max-width: 640px) {
+    #registration-content .diklat-wizard-progress {
+        gap: 5px;
+        padding: 18px 10px;
+    }
+
+    #registration-content .diklat-wizard-progress__arrow {
+        flex-basis: 10px;
+    }
+
+    #registration-content .diklat-wizard-step__label {
+        font-size: 11px;
+        line-height: 1.4;
+    }
+}
+
+
+
+/* SAMAKAN INDIKATOR PROGRES PENDAFTARAN DENGAN HALAMAN STATUS */
+#registration-content .diklat-status-progress {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: start;
+    justify-items: center;
+    gap: 12px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto 26px;
+    padding: 22px 24px;
+    box-sizing: border-box;
+    border: 1px solid #e0e8f4;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 4px 18px rgb(30 64 120 / 4%);
+}
+
+#registration-content .diklat-status-progress__step {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    min-width: 0;
+    text-align: center;
+}
+
+#registration-content .diklat-status-progress__step:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    top: 17px;
+    left: calc(50% + 22px);
+    right: calc(-50% + 22px);
+    height: 2px;
+    background: #dce4ef;
+    z-index: 0;
+}
+
+#registration-content .diklat-status-progress__number {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 36px;
+    width: 36px;
+    height: 36px;
+    box-sizing: border-box;
+    border: 1px solid #d5deeb;
+    border-radius: 50%;
+    background: #fff;
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+#registration-content .diklat-status-progress__step.is-complete
+.diklat-status-progress__number {
+    border-color: #16845b;
+    background: #16845b;
+    color: #fff;
+}
+
+#registration-content .diklat-status-progress__step.is-current
+.diklat-status-progress__number {
+    border-color: #2563eb;
+    background: #2563eb;
+    color: #fff;
+}
+
+#registration-content .diklat-status-progress__step strong {
+    display: block;
+    max-width: 180px;
+    color: #334155;
+    font-size: 12px;
+    line-height: 1.5;
+    font-weight: 600;
+    text-align: center;
+    overflow-wrap: break-word;
+}
+
+#registration-content .diklat-status-progress__step.is-current strong {
+    color: #1d4ed8;
+}
+
+#registration-content .diklat-status-progress__step small {
+    display: block;
+    color: #64748b;
+    font-size: 11px;
+    line-height: 1.4;
+    text-align: center;
+}
+
+@media (max-width: 640px) {
+    #registration-content .diklat-status-progress {
+        gap: 6px;
+        padding: 18px 10px;
+    }
+
+    #registration-content .diklat-status-progress__step strong {
+        font-size: 10px;
+    }
+
+    #registration-content .diklat-status-progress__step small {
+        font-size: 10px;
+    }
+
+    #registration-content .diklat-status-progress__step:not(:last-child)::before {
+        left: calc(50% + 19px);
+        right: calc(-50% + 19px);
+    }
+
+    #registration-content .diklat-status-progress__number {
+        flex-basis: 32px;
+        width: 32px;
+        height: 32px;
+    }
+}
+
+
+/* =========================================
+   STATUS DIKLAT — KARTU PROGRAM & PENDAFTAR SEJAJAR
+========================================= */
+
+.diklat-status-layout--clean {
+    display: block;
+    width: 100%;
+    max-width: 100% !important; /* Lebar mengikuti penuh sejajar indikator atas */
+    margin: 24px auto 0;
+    padding: 24px 24px !important;    /* Memberikan jarak atas-bawah (16px) dan kanan-kiri (4px) */
+    box-sizing: border-box;
+}
+
+/* Biarkan elemen pembungkus menggunakan display contents */
+.diklat-status-layout--clean > .diklat-status-main,
+.diklat-status-layout--clean > .diklat-status-sidebar {
+    display: contents;
+}
+
+/* KHUSUS BAGIAN TENGAH: INFORMASI PROGRAM & DATA PENDAFTAR DIBUAT 2 KOLOM SEJAJAR */
+.diklat-status-layout--clean .status-program-card,
+.diklat-status-layout--clean .status-applicant-card {
+    grid-column: span 1;
+}
+
+/* Bungkus atau atur agar baris program & pendaftar sejajar berdampingan */
+@media (min-width: 769px) {
+    /* Jika elemen di HTML terpisah, kita jadikan satu baris grid 2 kolom */
+    .diklat-status-layout--clean {
+        /* Kita atur ulang area grid agar program dan pendaftar sejajar berdampingan */
+    }
+}
+
+/* Kita buat sub-grid atau flex khusus untuk baris tengah */
+.diklat-status-layout--clean .status-program-card,
+.diklat-status-layout--clean .status-applicant-card {
+    height: 100%; /* Menyamakan tinggi kartu secara otomatis */
+}
+
+/* Wrapper khusus untuk menyandingkan program dan pendaftar secara seimbang */
+.diklat-status-layout--clean {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Membuat baris tengah (Program & Pendaftar) berdampingan dan sama tinggi */
+.diklat-status-row-dual {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    align-items: stretch;
+}
+
+@media (max-width: 768px) {
+    .diklat-status-row-dual {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* KARTU UTAMA */
+.diklat-status-layout--clean .status-card {
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    box-sizing: border-box;
+    border: 1px solid #e1e7ef;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 4px 16px rgb(15 23 42 / 0.04);
+    color: #334155;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+/* LABEL KECIL / EYEBROW */
+.diklat-status-layout--clean .status-eyebrow {
+    display: block;
+    margin: 0 0 6px;
+    color: #087f5b;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+/* JUDUL KARTU */
+.diklat-status-layout--clean .status-overview h2,
+.diklat-status-layout--clean .status-section-heading h2,
+.diklat-status-layout--clean .status-program-card h2,
+.diklat-status-layout--clean .status-applicant-card h2,
+.diklat-status-layout--clean .status-help h2 {
+    margin: 0;
+    color: #172b4d;
+    font-size: 19px;
+    font-weight: 800;
+    line-height: 1.4;
+    letter-spacing: -0.2px;
+    overflow-wrap: anywhere;
+}
+
+.diklat-status-layout--clean .status-section-heading {
+    margin-bottom: 16px;
+}
+
+/* BAGIAN ATAS STATUS */
+.diklat-status-layout--clean .status-overview__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.diklat-status-layout--clean .status-overview__description {
+    margin: 10px 0 0;
+    color: #475569;
+    font-size: 13px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+/* PILL / BADGE STATUS */
+.diklat-status-layout--clean .status-pill {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 750;
+    line-height: 1.5;
+}
+
+.diklat-status-layout--clean .status-pill--success {
+    background: #e4f5ee;
+    color: #066649;
+}
+
+.diklat-status-layout--clean .status-pill--pending {
+    background: #eef2ff;
+    color: #1d4ed8;
+}
+
+.diklat-status-layout--clean .status-pill--danger {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+/* =========================================
+   METADATA NOMOR & TANGGAL (DIPERBAIKI)
+========================================= */
+
+.diklat-status-layout--clean .status-overview__metadata {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+    padding: 16px 20px;                  /* Ditambah padding kiri-kanan & atas-bawah */
+    background: #f8fafc;                 /* Diberi background kotak abu-abu muda */
+    border: 1px solid #f1f5f9;           /* Diberi border tipis halus */
+    border-radius: 12px;                 /* Sudut kotak dibuat melengkung halus */
+}
+
+.diklat-status-layout--clean .status-overview__metadata span {
+    display: block;
+    color: #64748b;
+    font-size: 11.5px;
+    font-weight: 650;
+    margin-bottom: 4px;                  /* Menambah jarak antara label dan teks nomor */
+}
+
+.diklat-status-layout--clean .status-overview__metadata strong {
+    color: #1e293b;
+    font-size: 13.5px;
+    font-weight: 750;
+    overflow-wrap: anywhere;
+}
+
+/* TOMBOL AKSI */
+.diklat-status-layout--clean .status-action {
+    display: grid;
+    justify-items: start;
+    gap: 12px;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid #f1f5f9;
+}
+
+.diklat-status-layout--clean .status-action p {
+    margin: 0;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.diklat-status-layout--clean .status-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 10px 18px;
+    border: 1px solid #087f5b;
+    border-radius: 9px;
+    background: #087f5b;
+    color: #fff;
+    font-size: 12.5px;
+    font-weight: 750;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.diklat-status-layout--clean .status-button:hover {
+    background: #066649;
+}
+
+.diklat-status-layout--clean .status-button--secondary {
+    border-color: #cbd5e1;
+    background: #fff;
+    color: #475569;
+}
+
+.diklat-status-layout--clean .status-button--secondary:hover {
+    border-color: #94a3b8;
+    background: #f8fafc;
+    color: #1e293b;
+}
+
+/* TIMELINE PENGAJUAN */
+.diklat-status-layout--clean .status-timeline {
+    display: grid;
+    gap: 0;
+}
+
+.diklat-status-layout--clean .status-timeline__item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 32px minmax(0, 1fr);
+    gap: 16px;
+    padding-bottom: 24px;
+}
+
+.diklat-status-layout--clean .status-timeline__item:last-child {
+    padding-bottom: 0;
+}
+
+.diklat-status-layout--clean .status-timeline__item:not(:last-child)::after {
+    position: absolute;
+    top: 34px;
+    bottom: 0;
+    left: 15.5px;
+    width: 2px;
+    background: #e2e8f0;
+    content: "";
+}
+
+.diklat-status-layout--clean .status-timeline__marker {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    width: 32px;
+    height: 32px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #cbd5e1;
+    border-radius: 50%;
+    background: #fff;
+    color: #64748b;
+    font-size: 12px;
+    font-weight: 750;
+}
+
+.diklat-status-layout--clean .status-timeline__item.is-complete .status-timeline__marker {
+    border-color: #a7f3d0;
+    background: #e4f5ee;
+    color: #066649;
+}
+
+.diklat-status-layout--clean .status-timeline__content {
+    min-width: 0;
+    padding-top: 4px;
+}
+
+.diklat-status-layout--clean .status-timeline__content h3 {
+    margin: 0;
+    color: #1e293b;
+    font-size: 14px;
+    font-weight: 750;
+}
+
+.diklat-status-layout--clean .status-timeline__content > p {
+    margin: 4px 0 0;
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.diklat-status-layout--clean .status-timeline__content time {
+    display: inline-block;
+    margin-top: 6px;
+    color: #94a3b8;
+    font-size: 11.5px;
+}
+
+/* CATATAN ADMIN */
+.diklat-status-layout--clean .status-admin-note {
+    margin-top: 12px;
+    padding: 14px;
+    border-left: 3px solid #087f5b;
+    border-radius: 8px;
+    background: #f8fafc;
+}
+
+.diklat-status-layout--clean .status-admin-note strong {
+    color: #1e293b;
+    font-size: 13px;
+}
+
+.diklat-status-layout--clean .status-admin-note p {
+    margin: 4px 0 0;
+    color: #475569;
+    font-size: 12.5px;
+    line-height: 1.6;
+}
+
+/* KATEGORI PROGRAM */
+.diklat-status-layout--clean .status-program-category {
+    display: inline-block;
+    margin-top: 6px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: #e4f5ee;
+    color: #066649;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+/* DAFTAR DETAIL (INFORMASI PROGRAM & DATA PENDAFTAR) */
+.diklat-status-layout--clean .status-detail-list {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    margin: 14px 0 0;
+}
+
+.diklat-status-layout--clean .status-detail-list > div {
+    display: grid;
+    grid-title: auto;
+    grid-template-columns: minmax(130px, 0.4fr) minmax(0, 0.6fr);
+    align-items: start;
+    gap: 12px;
+    padding: 11px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.diklat-status-layout--clean .status-detail-list > div:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.diklat-status-layout--clean .status-detail-list dt {
+    margin: 0;
+    color: #64748b;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.diklat-status-layout--clean .status-detail-list dd {
+    margin: 0;
+    color: #1e293b;
+    font-size: 13px;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+    white-space: pre-line;
+}
+
+/* =========================================
+   KOTAK BANTUAN DI BAWAH (PANJANG PENUH & SEJAJAR)
+========================================= */
+
+.diklat-status-layout--clean .status-help {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;                 /* Memastikan kotak memanjang penuh ke kanan */
+    max-width: 100% !important;  /* Menyesuaikan lebar penuh selaras dengan atasnya */
+    padding: 22px 24px;
+    border: 1px solid #e1e7ef;
+    border-radius: 16px;
+    background: #f8fafc;
+    box-sizing: border-box;
+}
+
+/* Memastikan bagian teks di sebelah kiri mengambil ruang fleksibel */
+.diklat-status-layout--clean .status-help > div {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Tombol bantuan/link di sebelah kanan */
+.diklat-status-layout--clean .status-help .status-button {
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+.diklat-status-layout--clean .status-help p {
+    margin: 4px 0 0;
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* RESPONSIF UNTUK PERANGKAT MOBILE */
+@media (max-width: 768px) {
+    .diklat-status-layout--clean {
+        row-gap: 16px;
+        margin-top: 18px;
+    }
+
+    .diklat-status-layout--clean .status-card {
+        padding: 18px;
+        border-radius: 12px;
+    }
+
+    .diklat-status-layout--clean .status-detail-list > div {
+        grid-template-columns: minmax(110px, 0.45fr) minmax(0, 0.55fr);
+        gap: 10px;
+        padding: 9px 0;
+    }
+
+    .diklat-status-layout--clean .status-help {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+        padding: 18px;
+        width: 100%;
+    }
+}
+
+
+
+/* KONTAINER UTAMA 2 KOLOM BERIMBANG */
+.diklat-status-grid-2col {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+    box-sizing: border-box;
+}
+
+/* SETIAP KOLOM KIRI / KANAN */
+.diklat-status-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 0;
+}
+
+/* RESPONSIF UNTUK MOBILE (JADI 1 KOLOM KE BAWAH) */
+@media (max-width: 900px) {
+    .diklat-status-grid-2col {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Tombol aksi di bagian bawah informasi pendaftaran */
+.status-action-bottom {
+    margin-top: 20px;
+    padding-top: 18px;
+    border-top: 1px solid #edf1f7;
+}
+
+.status-action-bottom .status-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 11px 22px;
+    border-radius: 9px;
+    text-decoration: none;
+}
+
+
+/* TABEL PENDAFTARAN PENDIDIKAN */
+.pendidikan-table-wrapper {
+    width: 100%;
+    max-height: 390px;
+    overflow-y: auto;
+    overflow-x: auto;
+    position: relative;
+}
+
+/* Header tabel tetap terlihat saat scroll */
+.pendidikan-table-wrapper thead th {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background-color: #f9fafb;
+}
+
+/* Scrollbar */
+.pendidikan-table-wrapper::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+
+.pendidikan-table-wrapper::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+.pendidikan-table-wrapper::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+
+.diklat-registration__hint {
+    display: block;
+    margin-top: 6px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #9ca3af;
+    font-weight: 400;
+}
+
+.diklat-resume__document-link {
+    color: #2563eb;
+    font-weight: 500;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.diklat-resume__document-link:hover {
+    color: #1d4ed8;
+}
+
+.diklat-resume__list > div:has(#applicationLetterLink) {
+    display: grid !important;
+    grid-template-columns: minmax(140px, .8fr) minmax(0, 1.2fr) !important;
+    align-items: center !important;
+    padding: 12px 0 !important;
+    min-height: 28px !important;
+}
+
+.diklat-resume__list > div:has(#applicationLetterLink) dt,
+.diklat-resume__list > div:has(#applicationLetterLink) dd {
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    line-height: 1 !important;
+}
+
+/* =========================================
+   MODERN REGISTRATION FORM REDESIGN (SCOPED & COLLISION-PROOF)
+   ========================================= */
+
+/* Hero Banner Program */
+.diklat-program-hero {
+    position: relative;
+    border: 1px solid #ccfbf1;
+    background: linear-gradient(135deg, #f0fdfa 0%, #ffffff 75%);
+    border-radius: 20px;
+    padding: 24px 28px;
+    margin-bottom: 28px;
+    box-shadow: 0 4px 20px rgba(0, 123, 131, 0.05);
+}
+
+.diklat-program-hero__badges {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.diklat-badge-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px;
+    border-radius: 9999px;
+    font-size: 11.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.diklat-badge-pill--teal {
+    background-color: #e6fffa;
+    color: #007b83;
+    border: 1px solid #99f6e4;
+}
+
+.diklat-badge-pill--green {
+    background-color: #ecfdf5;
+    color: #047857;
+    border: 1px solid #a7f3d0;
+}
+
+.diklat-badge-pill--amber {
+    background-color: #fffbeb;
+    color: #b45309;
+    border: 1px solid #fde68a;
+}
+
+.diklat-program-hero h1 {
+    font-size: clamp(20px, 2.5vw, 25px);
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.35;
+    margin: 0 0 8px;
+}
+
+.diklat-program-hero p {
+    font-size: 13px;
+    color: #475569;
+    line-height: 1.6;
+    margin: 0 0 16px;
+}
+
+.diklat-program-hero__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+    padding-top: 14px;
+    border-top: 1px solid #e6f4f2;
+}
+
+.diklat-hero-meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12px;
+    color: #334155;
+    font-weight: 600;
+    background: #ffffff;
+    padding: 6px 12px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+}
+
+.diklat-hero-meta-item svg {
+    width: 15px;
+    height: 15px;
+    color: #007b83;
+    flex-shrink: 0;
+}
+
+/* Stepper Modern */
+#registration-content .diklat-status-progress {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 16px !important;
+    margin: 0 auto 28px auto !important;
+    padding: 18px 24px !important;
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 16px !important;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.03) !important;
+    max-width: 900px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+#registration-content .diklat-status-progress__step {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 12px !important;
+    text-align: left !important;
+    min-width: 0 !important;
+    flex: 1 1 0 !important;
+    max-width: 250px !important;
+}
+
+#registration-content .diklat-status-progress__step::before {
+    display: none !important;
+}
+
+#registration-content .diklat-status-progress__step:not(:last-child)::after {
+    display: none !important;
+}
+
+#registration-content .diklat-status-progress__arrow {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    color: #94a3b8 !important;
+    width: 28px !important;
+    height: 28px !important;
+    transition: all 0.25s ease !important;
+}
+
+#registration-content .diklat-status-progress__arrow svg {
+    width: 20px !important;
+    height: 20px !important;
+    display: block !important;
+}
+
+#registration-content .diklat-status-progress__arrow.is-passed {
+    color: #007b83 !important;
+}
+
+#registration-content .diklat-status-progress__number {
+    position: relative !important;
+    z-index: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 50% !important;
+    background: #f1f5f9 !important;
+    color: #64748b !important;
+    font-size: 13px !important;
+    font-weight: 800 !important;
+    border: 2px solid #e2e8f0 !important;
+    transition: all 0.2s ease !important;
+}
+
+#registration-content .diklat-status-progress__step-body {
+    display: flex !important;
+    flex-direction: column !important;
+    min-width: 0 !important;
+}
+
+#registration-content .diklat-status-progress__step strong {
+    display: block !important;
+    color: #1e293b !important;
+    font-size: 12.5px !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+    text-align: left !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+#registration-content .diklat-status-progress__step small {
+    display: block !important;
+    color: #64748b !important;
+    font-size: 11px !important;
+    line-height: 1.3 !important;
+    text-align: left !important;
+    margin-top: 2px !important;
+}
+
+#registration-content .diklat-status-progress__step.is-current .diklat-status-progress__number {
+    background: #007b83 !important;
+    color: #ffffff !important;
+    border-color: #007b83 !important;
+    box-shadow: 0 0 0 4px rgba(0, 123, 131, 0.15) !important;
+}
+
+#registration-content .diklat-status-progress__step.is-current strong {
+    color: #007b83 !important;
+}
+
+#registration-content .diklat-status-progress__step.is-current small {
+    color: #007b83 !important;
+    font-weight: 600 !important;
+}
+
+#registration-content .diklat-status-progress__step.is-complete .diklat-status-progress__number {
+    background: #007b83 !important;
+    color: #ffffff !important;
+    border-color: #007b83 !important;
+}
+
+#registration-content .diklat-status-progress__step.is-complete strong {
+    color: #0f172a !important;
+}
+
+@media (max-width: 768px) {
+    #registration-content .diklat-status-progress {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 12px !important;
+        padding: 16px !important;
+    }
+
+    #registration-content .diklat-status-progress__step {
+        max-width: 100% !important;
+        justify-content: flex-start !important;
+    }
+
+    #registration-content .diklat-status-progress__arrow {
+        margin: 0 auto !important;
+        transform: rotate(90deg) !important;
+        height: 16px !important;
+    }
+}
+
+/* Modern Scoped Section Cards */
+.diklat-reg-card {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 18px !important;
+    padding: 24px 26px !important;
+    margin-bottom: 24px !important;
+    box-shadow: 0 1px 4px rgba(15, 23, 42, 0.03) !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.diklat-reg-card:hover {
+    border-color: #cbd5e1 !important;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05) !important;
+}
+
+/* SECTION HEADER FIX (COLLISION-PROOF & LEFT-ALIGNED) */
+.diklat-reg-card__header {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 14px !important;
+    text-align: left !important;
+    padding-bottom: 16px !important;
+    margin-bottom: 22px !important;
+    border-bottom: 1px solid #f1f5f9 !important;
+}
+
+.diklat-reg-card__icon {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 42px !important;
+    height: 42px !important;
+    border-radius: 12px !important;
+    background-color: #f0fdfa !important;
+    color: #007b83 !important;
+    border: 1px solid #ccfbf1 !important;
+    flex-shrink: 0 !important;
+}
+
+.diklat-reg-card__icon svg {
+    width: 22px !important;
+    height: 22px !important;
+}
+
+.diklat-reg-card__titles {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    flex: 1 1 auto !important;
+    text-align: left !important;
+}
+
+.diklat-reg-card__title {
+    margin: 0 !important;
+    font-size: 15.5px !important;
+    font-weight: 800 !important;
+    color: #0f172a !important;
+    line-height: 1.35 !important;
+    text-align: left !important;
+}
+
+.diklat-reg-card__desc {
+    margin: 3px 0 0 !important;
+    font-size: 12px !important;
+    color: #64748b !important;
+    line-height: 1.5 !important;
+    text-align: left !important;
+}
+
+/* Inputs & Form Groups */
+.diklat-form-group {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+    text-align: left !important;
+}
+
+.diklat-form-label {
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    font-size: 12.5px !important;
+    font-weight: 700 !important;
+    color: #1e293b !important;
+    line-height: 1.4 !important;
+    text-align: left !important;
+}
+
+.diklat-form-label .req {
+    color: #e11d48 !important;
+    font-size: 13px !important;
+}
+
+.diklat-form-label .opt {
+    color: #94a3b8 !important;
+    font-size: 11px !important;
+    font-weight: normal !important;
+}
+
+.diklat-form-input,
+.diklat-form-select,
+.diklat-form-textarea {
+    width: 100% !important;
+    padding: 11px 14px !important;
+    border: 1.5px solid #cbd5e1 !important;
+    border-radius: 10px !important;
+    font-size: 13px !important;
+    color: #0f172a !important;
+    background-color: #ffffff !important;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease !important;
+    outline: none !important;
+    font-family: inherit !important;
+}
+
+.diklat-form-input:focus,
+.diklat-form-select:focus,
+.diklat-form-textarea:focus {
+    border-color: #007b83 !important;
+    box-shadow: 0 0 0 3px rgba(0, 123, 131, 0.12) !important;
+}
+
+.diklat-form-hint {
+    display: block !important;
+    font-size: 11px !important;
+    color: #64748b !important;
+    line-height: 1.4 !important;
+    margin-top: 2px !important;
+    text-align: left !important;
+}
+
+/* COMPACT MODERN DOCUMENT UPLOAD CARD */
+.diklat-upload-card {
+    position: relative !important;
+    border: 1.5px dashed #cbd5e1 !important;
+    border-radius: 14px !important;
+    background: #f8fafc !important;
+    padding: 14px 18px !important;
+    transition: all 0.2s ease !important;
+    cursor: pointer !important;
+}
+
+.diklat-upload-card:hover,
+.diklat-upload-card.is-dragover {
+    border-color: #007b83 !important;
+    background-color: #f0fdfa !important;
+}
+
+.diklat-upload-card input[type="file"] {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    opacity: 0 !important;
+    cursor: pointer !important;
+    z-index: 5 !important;
+}
+
+.diklat-upload-card__content {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 14px !important;
+}
+
+.diklat-upload-card__left {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    min-width: 0 !important;
+}
+
+.diklat-upload-card__icon-badge {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 10px !important;
+    flex-shrink: 0 !important;
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+}
+
+.diklat-upload-card__icon-badge svg {
+    width: 20px !important;
+    height: 20px !important;
+}
+
+.diklat-upload-card__icon-badge--pdf {
+    color: #ef4444 !important;
+    background: #fef2f2 !important;
+    border-color: #fecaca !important;
+}
+
+.diklat-upload-card__icon-badge--sheet {
+    color: #10b981 !important;
+    background: #ecfdf5 !important;
+    border-color: #a7f3d0 !important;
+}
+
+.diklat-upload-card__icon-badge--photo {
+    color: #8b5cf6 !important;
+    background: #f5f3ff !important;
+    border-color: #ddd6fe !important;
+}
+
+.diklat-upload-card__icon-badge--shield {
+    color: #007b83 !important;
+    background: #f0fdfa !important;
+    border-color: #ccfbf1 !important;
+}
+
+.diklat-upload-card__icon-badge--payment {
+    color: #b45309 !important;
+    background: #fffbeb !important;
+    border-color: #fde68a !important;
+}
+
+.diklat-upload-card__text {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    min-width: 0 !important;
+    text-align: left !important;
+}
+
+.diklat-upload-card__title {
+    font-size: 12.5px !important;
+    font-weight: 700 !important;
+    color: #0f172a !important;
+    line-height: 1.35 !important;
+    text-align: left !important;
+}
+
+.diklat-upload-card__subtitle {
+    font-size: 11px !important;
+    color: #64748b !important;
+    line-height: 1.35 !important;
+    margin-top: 2px !important;
+    text-align: left !important;
+}
+
+.diklat-upload-card__selected-file {
+    display: none !important;
+    align-items: center !important;
+    gap: 6px !important;
+    margin-top: 4px !important;
+    font-size: 11px !important;
+    color: #007b83 !important;
+    font-weight: 700 !important;
+}
+
+.diklat-upload-card__btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    padding: 7px 14px !important;
+    border-radius: 8px !important;
+    background: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    font-size: 11.5px !important;
+    font-weight: 700 !important;
+    color: #334155 !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    pointer-events: none !important;
+    transition: all 0.15s ease !important;
+}
+
+.diklat-upload-card.has-file {
+    border-color: #007b83 !important;
+    border-style: solid !important;
+    background-color: #f0fdfa !important;
+}
+
+.diklat-upload-card.has-file .diklat-upload-card__selected-file {
+    display: flex !important;
+}
+
+.diklat-upload-card.has-file .diklat-upload-card__subtitle {
+    display: none !important;
+}
+
+.diklat-upload-card.has-file .diklat-upload-card__btn {
+    background: #007b83 !important;
+    color: #ffffff !important;
+    border-color: #007b83 !important;
+}
+
+@media (max-width: 640px) {
+    .diklat-upload-card__content {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+    .diklat-upload-card__btn {
+        width: 100% !important;
+        justify-content: center !important;
+    }
+}
+
+/* Modern Resume Stage 2 */
+.diklat-resume-card {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 20px !important;
+    padding: 28px !important;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04) !important;
+}
+
+.diklat-resume-section {
+    padding: 18px 0 !important;
+    border-bottom: 1px solid #f1f5f9 !important;
+}
+
+.diklat-resume-section:last-child {
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+}
+
+.diklat-resume-section__title {
+    font-size: 11px !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.6px !important;
+    color: #007b83 !important;
+    margin-bottom: 12px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    text-align: left !important;
+}
+
+.diklat-resume-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 14px 20px !important;
+    text-align: left !important;
+}
+
+@media (max-width: 640px) {
+    .diklat-resume-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+.diklat-resume-item {
+    font-size: 12px !important;
+    text-align: left !important;
+}
+
+.diklat-resume-item dt {
+    color: #64748b !important;
+    font-size: 11px !important;
+    margin-bottom: 2px !important;
+    text-align: left !important;
+}
+
+.diklat-resume-item dd {
+    margin: 0 !important;
+    color: #0f172a !important;
+    font-weight: 700 !important;
+    word-break: break-word !important;
+    text-align: left !important;
+}
+
+.diklat-resume-file-chip {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    padding: 5px 12px !important;
+    border-radius: 8px !important;
+    background: #f0fdfa !important;
+    border: 1px solid #ccfbf1 !important;
+    color: #007b83 !important;
+    font-size: 11.5px !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    transition: all 0.15s ease !important;
+}
+
+.diklat-resume-file-chip:hover {
+    background: #ccfbf1 !important;
+    color: #005b64 !important;
+}
+
+/* Modern Action Buttons */
+.diklat-btn-modern-primary {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    padding: 13px 28px !important;
+    border-radius: 12px !important;
+    background-color: #007b83 !important;
+    color: #ffffff !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    border: none !important;
+    cursor: pointer !important;
+    box-shadow: 0 4px 14px rgba(0, 123, 131, 0.25) !important;
+    transition: all 0.2s ease !important;
+    text-decoration: none !important;
+}
+
+.diklat-btn-modern-primary:hover {
+    background-color: #005b64 !important;
+    box-shadow: 0 6px 20px rgba(0, 123, 131, 0.35) !important;
+    transform: translateY(-1px) !important;
+    color: #ffffff !important;
+}
+
+.diklat-btn-modern-primary:active {
+    transform: translateY(0) !important;
+}
+
+.diklat-btn-modern-secondary {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    padding: 12px 22px !important;
+    border-radius: 12px !important;
+    background-color: #f8fafc !important;
+    color: #334155 !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    border: 1px solid #cbd5e1 !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    text-decoration: none !important;
+}
+
+.diklat-btn-modern-secondary:hover {
+    background-color: #f1f5f9 !important;
+    color: #0f172a !important;
+    border-color: #94a3b8 !important;
+}
+

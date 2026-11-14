@@ -22,6 +22,36 @@
             <input type="text" name="image" value="{{ old('image') }}" placeholder="https://..." class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-teal-600">
         </div>
 
+                <div>
+            <label class="block font-bold text-slate-700 uppercase tracking-wider mb-1">
+                Digunakan Pada *
+            </label>
+
+            <select
+                name="display_location"
+                required
+                class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-teal-600"
+            >
+                <option
+                    value="homepage"
+                    {{ old('display_location', 'homepage') === 'homepage' ? 'selected' : '' }}
+                >
+                    Homepage
+                </option>
+
+                <option
+                    value="permintaan-informasi"
+                    {{ old('display_location') === 'permintaan-informasi' ? 'selected' : '' }}
+                >
+                    Permintaan Informasi
+                </option>
+            </select>
+
+            <p class="mt-1 text-[11px] text-slate-400">
+                Tentukan halaman tempat banner ini akan ditampilkan.
+            </p>
+        </div>
+
         <div class="grid grid-cols-2 gap-4">
             <div>
                 <label class="block font-bold text-slate-700 uppercase tracking-wider mb-1">Teks Tombol Utama</label>

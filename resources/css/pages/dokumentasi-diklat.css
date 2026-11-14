@@ -1,0 +1,393 @@
+
+/* =====================================================
+   DOKUMENTASI RSUD R.A.A. TJOKRONEGORO
+   Filter, Grid, Kartu, dan Pagination
+   ===================================================== */
+
+/* =========================
+   FILTER KATEGORI
+   ========================= */
+
+.diklat-dokumentasi .dokumentasi-filter {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+    width: 100%;
+    margin: 20px 0 14px !important;
+}
+
+.diklat-dokumentasi .dokumentasi-filter__item {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 7px !important;
+
+    width: 100% !important;
+    min-width: 0;
+    min-height: 76px !important;
+    padding: 10px 12px !important;
+
+    border: 1px solid #dce9e3 !important;
+    border-radius: 11px !important;
+    background: #fff !important;
+    color: #334155 !important;
+
+    text-align: center !important;
+    white-space: normal !important;
+    box-shadow: 0 2px 5px rgb(15 23 42 / 3%);
+    cursor: pointer;
+
+    transition:
+        background .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease,
+        color .2s ease;
+}
+
+.diklat-dokumentasi .dokumentasi-filter__item:hover {
+    border-color: #80b9a1 !important;
+    background: #f4faf6 !important;
+}
+
+/* Filter aktif: hijau, bukan biru */
+.diklat-dokumentasi .dokumentasi-filter__item.is-active {
+    border-color: #087f5b !important;
+    background: #edf7f1 !important;
+    color: #086c50 !important;
+    box-shadow: 0 0 0 1px #087f5b !important;
+}
+
+/* Ikon filter */
+.diklat-dokumentasi .dokumentasi-filter__icon {
+    display: flex !important;
+    flex: 0 0 30px !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: 30px !important;
+    height: 30px !important;
+    margin: 0 auto !important;
+
+    border-radius: 9px;
+    background: #f0f4f2;
+    color: #527466;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.diklat-dokumentasi .dokumentasi-filter__item.is-active
+.dokumentasi-filter__icon {
+    background: #d4eadc !important;
+    color: #086c50 !important;
+}
+
+/* Teks filter selalu di tengah */
+.diklat-dokumentasi .dokumentasi-filter__text {
+    display: flex !important;
+    flex: 1 1 auto !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 2px !important;
+
+    width: 100%;
+    min-width: 0;
+    text-align: center !important;
+}
+
+/* Memperbesar tulisan filter dokumentasi */
+.diklat-dokumentasi .dokumentasi-filter__text strong {
+    font-size: 13px !important;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: center !important;
+}
+
+.diklat-dokumentasi .dokumentasi-filter__text small {
+    font-size: 11px !important;
+    line-height: 1.5;
+    text-align: center !important;
+}
+
+
+.diklat-dokumentasi .dokumentasi-filter__item.is-active
+.dokumentasi-filter__text small {
+    color: #477461;
+}
+
+/* Status filter */
+.diklat-dokumentasi .dokumentasi-filter__status {
+    margin: 0 0 14px !important;
+    color: #64748b;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* =========================
+   GRID DOKUMENTASI
+   ========================= */
+
+.diklat-dokumentasi .diklat-dokumentasi__grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    align-items: stretch;
+    gap: 18px !important;
+
+    width: 100%;
+    max-width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    overflow: visible !important;
+    overflow-x: visible !important;
+    overflow-y: visible !important;
+
+    scroll-snap-type: none !important;
+    scroll-behavior: auto !important;
+}
+
+/* =========================
+   KARTU DOKUMENTASI
+   ========================= */
+
+.diklat-dokumentasi .diklat-dokumentasi__card {
+    display: block !important;
+    position: relative;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100%;
+    height: auto;
+
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    border-radius: 11px;
+    background: #fff;
+    color: #17233b;
+    text-decoration: none;
+
+    box-shadow: 0 2px 5px rgb(15 23 42 / 4%);
+    scroll-snap-align: unset !important;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.diklat-dokumentasi .diklat-dokumentasi__card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgb(15 23 42 / 9%);
+}
+
+.diklat-dokumentasi .diklat-dokumentasi__card[hidden] {
+    display: none !important;
+}
+
+/* Foto kartu */
+.diklat-dokumentasi .diklat-dokumentasi__image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: #f1f5f9;
+}
+
+.diklat-dokumentasi .diklat-dokumentasi__image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Informasi di bawah foto */
+.diklat-dokumentasi .diklat-dokumentasi__caption {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    min-height: 94px;
+    padding: 11px 32px 12px 12px;
+
+    border-top: 1px solid #f1f5f9;
+    background: #fff;
+}
+
+.diklat-dokumentasi .diklat-dokumentasi__caption h3 {
+    margin: 0;
+    color: #17233b;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.diklat-dokumentasi .diklat-dokumentasi__category {
+    display: block;
+    margin: 0;
+    color: #087f5b;
+    font-size: 9px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.diklat-dokumentasi .diklat-dokumentasi__meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    margin: 0;
+    color: #718096;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.diklat-dokumentasi .diklat-dokumentasi__meta svg {
+    flex: 0 0 auto;
+    margin: 0;
+    color: #64748b;
+}
+
+/* Ikon panah kartu */
+.diklat-dokumentasi .diklat-dokumentasi__card-arrow {
+    position: absolute;
+    right: 11px;
+    bottom: 11px;
+    color: #087f5b;
+    font-size: 17px;
+    line-height: 1;
+}
+
+/* Hilangkan tombol geser lama */
+.diklat-dokumentasi .diklat-dokumentasi__controls,
+.diklat-dokumentasi .diklat-dokumentasi__arrow {
+    display: none !important;
+}
+
+/* =========================
+   PAGINATION
+   ========================= */
+
+.diklat-dokumentasi .dokumentasi-pagination {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin: 22px 0 10px;
+}
+
+.diklat-dokumentasi .dokumentasi-pagination:empty {
+    display: none;
+}
+
+.diklat-dokumentasi .dokumentasi-pagination button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 32px;
+    height: 32px;
+    padding: 0 9px;
+
+    border: 1px solid #dce9e3;
+    border-radius: 7px;
+    background: #fff;
+    color: #334155;
+
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.diklat-dokumentasi .dokumentasi-pagination button:hover:not(:disabled) {
+    border-color: #80b9a1;
+    background: #f4faf6;
+    color: #087f5b;
+}
+
+.diklat-dokumentasi .dokumentasi-pagination button.is-active {
+    border-color: #087f5b;
+    background: #087f5b;
+    color: #fff;
+}
+
+.diklat-dokumentasi .dokumentasi-pagination button:disabled {
+    opacity: .4;
+    cursor: not-allowed;
+}
+
+/* =========================
+   JARAK KONTEN
+   ========================= */
+
+.diklat-dokumentasi .diklat-page > .diklat-subpage-hero {
+    margin-bottom: 10px !important;
+}
+
+.diklat-dokumentasi .diklat-dokumentasi__share {
+    margin-top: 22px !important;
+}
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media (max-width: 1000px) {
+    .diklat-dokumentasi .dokumentasi-filter {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 10px !important;
+    }
+
+    .diklat-dokumentasi .diklat-dokumentasi__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 16px !important;
+    }
+}
+
+/* =========================
+   PONSEL
+   ========================= */
+
+@media (max-width: 560px) {
+    .diklat-dokumentasi .dokumentasi-filter {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+        margin-top: 16px !important;
+    }
+
+    .diklat-dokumentasi .dokumentasi-filter__item {
+        min-height: 70px !important;
+        gap: 5px !important;
+        padding: 8px !important;
+    }
+
+    .diklat-dokumentasi .dokumentasi-filter__icon {
+        flex-basis: 25px !important;
+        width: 25px !important;
+        height: 25px !important;
+        font-size: 15px;
+    }
+
+    /* Ukuran tulisan pada layar kecil */
+    @media (max-width: 560px) {
+        .diklat-dokumentasi .dokumentasi-filter__text strong {
+            font-size: 11px !important;
+        }
+
+        .diklat-dokumentasi .dokumentasi-filter__text small {
+            font-size: 10px !important;
+        }
+    }
+
+    .diklat-dokumentasi .diklat-dokumentasi__grid {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 14px !important;
+    }
+
+    .diklat-dokumentasi .diklat-dokumentasi__caption {
+        min-height: 86px;
+        padding: 11px 32px 11px 11px;
+    }
+}
